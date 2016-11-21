@@ -6,7 +6,7 @@ STAGING_BUCKET=docs-mongodb-org-staging
 PRODUCTION_BUCKET=docs-mongodb-org-prod
 PREFIX=bi-connector
 
-.PHONY: help stage fake-deploy deploy
+.PHONY: help html publish stage fake-deploy deploy
 
 help:
 	@echo 'Targets'
@@ -17,6 +17,12 @@ help:
 	@echo ''
 	@echo 'Variables'
 	@echo '  ARGS         - Arguments to pass to mut-publish'
+
+html:
+	giza make html
+
+publish:
+	giza make publish
 
 stage:
 	mut-publish build/${GIT_BRANCH}/html ${STAGING_BUCKET} --prefix=${PREFIX} --stage ${ARGS}
