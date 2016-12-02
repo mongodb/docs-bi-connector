@@ -55,4 +55,66 @@ type: 'redirect'
 code: 301
 outputs:
   - 'before-v1.1': {'/bi-connector': 'https://docs.mongodb.com/bi-connector'}
+---
+
+###
+### Artifacts from the /bi-connector to /bi-connector/<branch> transition
+###
+
+code: 301
+from: '/schema-configuration'
+to: '/v1.1/schema-configuration'
+outputs:
+  - {'/bi-connector': 'https://docs.mongodb.com/bi-connector'}
+type: redirect
+---
+code: 301
+from: '/installation'
+to: '/v1.1/installation'
+outputs:
+  - {'/bi-connector': 'https://docs.mongodb.com/bi-connector'}
+type: redirect
+---
+code: 301
+from: '/components'
+to: '/v1.1/components'
+outputs:
+  - {'/bi-connector': 'https://docs.mongodb.com/bi-connector'}
+type: redirect
+---
+code: 301
+from: '/components/mongobiuser'
+to: '/v1.1/components/mongobiuser'
+outputs:
+  - {'/bi-connector': 'https://docs.mongodb.com/bi-connector'}
+type: redirect
+---
+code: 301
+from: '/components/mongodrdl'
+to: '/v1.1/components/mongodrdl'
+outputs:
+  - {'/bi-connector': 'https://docs.mongodb.com/bi-connector'}
+type: redirect
+---
+code: 301
+from: '/components/mongobischema'
+to: '/v1.1/components/mongobischema'
+outputs:
+  - {'/bi-connector': 'https://docs.mongodb.com/bi-connector'}
+type: redirect
+---
+code: 301
+from: '/faq'
+to: '/v1.1/faq'
+outputs:
+  - {'/bi-connector': 'https://docs.mongodb.com/bi-connector'}
+type: redirect
+---
+code: 301
+from: '/release-notes'
+to: '/v1.1/release-notes'
+outputs:
+  - {'/bi-connector': 'https://docs.mongodb.com/bi-connector'}
+type: redirect
+
 ...
