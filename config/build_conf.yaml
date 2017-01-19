@@ -30,8 +30,8 @@ system:
     - images: '/source/images/metadata.yaml'
     - htaccess: ['htaccess.yaml']
 version:
-  release: '1.1'
-  branch: '1.1'
+  release: 'v1.1'
+  branch: 'v1.1'
 assets:
   - branch: master
     path: build/docs-tools
