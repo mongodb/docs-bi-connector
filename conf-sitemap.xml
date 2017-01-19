@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site
-  base_url="https://docs.mongodb.org/bi-connector/"
-  store_into="build/master/sitemap.xml.gz"
+  base_url="https://docs.mongodb.org/bi-connector/v1.1/"
+  store_into="build/v1.1/sitemap.xml.gz"
   verbose="1"
   >
 
 <directory 
-	path="build/public/" 
-	url="https://docs.mongodb.org/bi-connector/"
+	path="build/public/v1.1/" 
+	url="https://docs.mongodb.org/bi-connector/v1.1/"
 	default_file="index.html"
 	/>
 <filter  action="drop"  type="wildcard"  pattern="*~" />
