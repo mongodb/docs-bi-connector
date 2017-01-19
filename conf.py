@@ -44,7 +44,7 @@ language = 'en'
 project = sconf.project
 copyright = u'2008-{0}'.format(datetime.date.today().year)
 
-version = '3.0'
+version = conf.version.branch
 release = version
 
 rst_epilog = '\n'.join([
