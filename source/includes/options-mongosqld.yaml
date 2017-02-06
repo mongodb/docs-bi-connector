@@ -68,6 +68,12 @@ description: |
 
   To enable TLS/SSL in this connection, use the :option:`--mongo-ssl`
   option.
+
+  The {{role}} option also supports the :urioption:`readPreference` and
+  :urioption:`readPreferenceTags` connection string URI Options. To
+  learn how these connection string URI options work, see
+  :ref:`Read Preference Options <connections-read-preference>`.
+
 optional: true
 default: mongodb://localhost:27017
 ---
