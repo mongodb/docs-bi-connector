@@ -70,9 +70,9 @@ description: |
   option.
 
   The {{role}} option also supports the :urioption:`readPreference` and
-  :urioption:`readPreferenceTags` connection string URI Options. To
-  learn how these connection string URI options work, see
-  :ref:`Read Preference Options <connections-read-preference>`.
+  :urioption:`readPreferenceTags` {{program}}  connection string URI
+  options. To learn more about connection string URI options,
+  see :ref:`Read Preference options <connections-read-preference>`.
 
 optional: true
 default: mongodb://localhost:27017
