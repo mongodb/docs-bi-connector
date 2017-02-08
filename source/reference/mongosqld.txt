@@ -29,6 +29,9 @@ Description
 proxies those requests to a :program:`mongod` or :program:`mongos`
 instance.
 
+:program:`mongosqld` enables the :dbcommand:`aggregate`
+``allowDiskUse`` option by default.
+
 Options
 -------
 
