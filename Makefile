@@ -36,8 +36,7 @@ deploy: build/public
 	@echo "Doing a dry-run"
 	mut-publish build/public ${PRODUCTION_BUCKET} --prefix=${PREFIX} --deploy --verbose --dry-run ${ARGS}
 
-	@echo ''
-	read -p "Press any key to perform the previous"
+	@echo 'Press any key to perform the previous' && read result
 	mut-publish build/public ${PRODUCTION_BUCKET} --prefix=${PREFIX} --deploy ${ARGS}
 
 	@echo "Hosted at ${PRODUCTION_URL}/${PREFIX}/index.html"
