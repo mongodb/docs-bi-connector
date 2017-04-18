@@ -83,7 +83,7 @@ action:
          .. cssclass:: copyable-code
          .. code-block:: powershell
 
-            move * "C:\Program Files\MongoDB BI Connector"
+            move <donwloadDirectory>/bin/* "C:\Program Files\MongoDB BI Connector"
 
 ---
 title: Generate your schema definition file.
