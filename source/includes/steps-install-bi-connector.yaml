@@ -25,7 +25,7 @@ pre: |
 
     .. code-block:: sh
 
-       sudo brew update && sudo brew install openssl
+       brew update && brew install openssl
 
   Linux
     Ensure that your system has its OpenSSL package installed.
