@@ -83,7 +83,7 @@ action:
          .. cssclass:: copyable-code
          .. code-block:: powershell
 
-            move {downloadDirectory}\* "C:\Program Files\MongoDB BI Connector"
+            move <downloadDirectory>/bin/* "C:\Program Files\MongoDB BI Connector"
 
 ---
 title: Generate your schema definition file.
@@ -95,16 +95,9 @@ pre: |
   If you do not specify a collection, :program:`mongodrdl` will generate a
   schema from all collections in ``dbname``.
 action:
-  - heading: "Linux / macOS"
-    language: sh
-    copyable: true
-    code: |
-      mongodrdl --host {your.mongohost.com} -d dbname [-c collname] -o schema.drdl
-  - heading: "Windows"
-    language: powershell
-    copyable: true
-    code: |
-      "C:\Program Files\MongoDB BI Connector\bin\mongodrdl.exe" --host {your.mongohost.com} -d dbname [-c collname] -o schema.drdl
+  language: sh
+  code: |
+    mongodrdl --host example.com -d dbname [-c collname] -o schema.drdl
 post: |
   .. note::
      The :option:`--host` option only accepts a hostname. You cannot
@@ -121,12 +114,12 @@ action:
     language: sh
     copyable: true
     code: |
-      mongosqld --schema schema.drdl --mongo-uri {your.mongohost.com}
+      mongosqld --schema schema.drdl --mongo-uri <your.mongohost.com>
   - heading: "Windows"
     language: powershell
     copyable: true
     code: |
-      "C:\Program Files\MongoDB BI Connector\bin\mongosqld.exe" --schema schema.drdl --mongo-uri {your.mongohost.com}
+      sc create MongoDB_BI binpath= "\"C:\Program Files\MongoDB BI Connector\mongosqld.exe\" --schema schema.drdl --mongo-uri <your.mongohost.com>" displayname= "MongoDB BI Connector" start= auto
 
 ---
 title: Connect to the |bi|
