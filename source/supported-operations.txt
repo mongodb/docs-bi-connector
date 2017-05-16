@@ -402,7 +402,7 @@ Utility Functions
    * - Function
      - Description
 
-   * - ``USE``
+   * - ``USE <databaseName>``
      - Choose the database to use as the current database for subsequent statements
 
 Database Administration Functions
@@ -415,8 +415,8 @@ Database Administration Functions
    * - Function
      - Description
 
-   * - ``SHOW CREATE TABLE``
-     - Shows the ``CREATE TABLE`` statement that creates the named table
+   * - ``SHOW CREATE TABLE <tableName>``
+     - Shows the ``CREATE TABLE`` statement that created the named table
 
 GROUP BY (Aggregate) Functions
 -------------------------------
