@@ -11,6 +11,12 @@ Supported SQL Functions and Operators
 The following tables list the various MySQL functions, constructors, and
 operators supported in |bi| 2.0.0.
 
+.. contents:: Supported MySQL functions, constructors, and operators
+   :local:
+   :backlinks: none
+   :depth: 1
+   :class: singlecol
+
 Comparison Functions and Operators
 ----------------------------------
 
@@ -392,34 +398,8 @@ Information Functions
    * - ``VERSION()``
      - Return a string that indicates the MySQL server version
 
-Utility Functions
------------------
-
-.. list-table::
-   :header-rows: 1
-   :widths: 30 70
-
-   * - Function
-     - Description
-
-   * - ``USE <databaseName>``
-     - Choose the database to use as the current database for subsequent statements
-
-Database Administration Functions
----------------------------------
-
-.. list-table::
-   :header-rows: 1
-   :widths: 30 70
-
-   * - Function
-     - Description
-
-   * - ``SHOW CREATE TABLE <tableName>``
-     - Shows the ``CREATE TABLE`` statement that created the named table
-
-GROUP BY (Aggregate) Functions
--------------------------------
+``GROUP BY`` (Aggregate) Functions
+----------------------------------
 
 .. list-table::
    :header-rows: 1
@@ -448,3 +428,32 @@ GROUP BY (Aggregate) Functions
      - Return the sample standard deviation
    * - ``SUM()``
      - Return the sum
+
+
+Utility Statements
+------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Statement
+     - Description
+
+   * - ``USE <databaseName>``
+     - Choose the database to use as the current database for subsequent statements
+
+Database Administration Statements
+----------------------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Statement
+     - Description
+
+   * - ``SHOW CREATE TABLE <tableName>``
+     - Shows the structure of the ``<tableName>`` table. The structure
+       includes comments that describe the mapping from the SQL table and
+       columns to MongoDB collection and fields.
