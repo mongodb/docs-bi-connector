@@ -54,6 +54,16 @@ Install the |bi|
 
 .. include:: /includes/steps/install-bi-connector.rst
 
+Change the Schema File
+----------------------
+
+If you need to use a different schema and database:
+
+1. Stop the ``mongosql`` service.
+#. Edit the ``schema.path`` setting in your configuration file. 
+#. Save the configuration file.
+#. Start the ``mongosql`` service.
+
 .. class:: hidden
 
    .. toctree::
