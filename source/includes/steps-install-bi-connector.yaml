@@ -1,61 +1,3 @@
-title: Uninstall old versions of the |bi| (optional).
-ref: uninstall-old-bi
-level: 4
-pre: |
-  If you have an older version of the |bi| installed, uninstall it.
-
-action:
-  - heading: "Red Hat Enterprise Linux and CentOS"
-    pre: |
-
-    copyable: true
-    language: sh
-    code: |
-      sudo yum remove mongodb-bi*
-
-  - heading: "Debian and Ubuntu"
-    pre: |
-
-    copyable: true
-    language: sh
-    code: |
-      sudo apt-get remove mongodb-bi*
-
-  - heading: "Windows"
-    pre: | 
-      Delete the MongoDB BI Connector directory from the 
-      :guilabel:`Program Files` directory.
-
----
-title: Install OpenSSL.
-ref: install-prereqs
-level: 4
-action:
-
-  - heading: "macOS"
-    pre: |
-
-      a. Install `Homebrew <http://brew.sh/>`_.
-      b. Update Homebrew.
-      c. Install OpenSSL using Homebrew.
-
-         .. cssclass:: copyable-code
-         .. code-block:: sh
-
-            brew update && brew install openssl
-
-  - heading: "Linux"
-    pre: |
-
-      Ensure that your system has its OpenSSL package installed.
-
-  - heading: "Windows"
-    pre: |
-
-      The |bi| for Windows bundles the OpenSSL libraries. You do not
-      need to take any special action.
-
----
 title: Install the |bi|.
 ref: install-bi-server
 level: 4
@@ -65,12 +7,69 @@ pre: |
 
 action:
 
-  - heading: "Linux / macOS"
+  - heading: "RHEL-based Linux"
     pre: |
 
-      a. Extract the tarball you downloaded.
-      b. Install the programs within the ``bin/`` directory into a
+      a. Uninstall the previous version, if you have installed it.
+
+         .. cssclass:: copyable-code
+         .. code-block:: sh
+
+            sudo yum remove mongodb-bi*
+
+      b. Extract the ``.tar`` archive you downloaded.
+
+         .. cssclass:: copyable-code
+         .. code-block:: sh
+
+            tar -xvzf mongodb-bi-linux-{arch}-{platform}-{version}.tgz
+
+      c. Install the programs within the ``bin/`` directory into a
          directory listed in your system ``PATH``.
+
+         .. cssclass:: copyable-code
+         .. code-block:: sh
+
+            sudo install -m755 bin/mongo* /usr/local/bin/
+
+  - heading: "Debian-based Linux"
+    pre: |
+
+      a. Uninstall the previous version, if you have installed it.
+
+         .. cssclass:: copyable-code
+         .. code-block:: sh
+
+            sudo apt-get remove mongodb-bi*
+
+      b. Extract the ``.tar`` archive you downloaded.
+
+         .. cssclass:: copyable-code
+         .. code-block:: sh
+
+            tar -xvzf mongodb-bi-linux-{arch}-{platform}-{version}.tgz
+
+      c. Install the programs within the ``bin/`` directory into a
+         directory listed in your system ``PATH``.
+
+         .. cssclass:: copyable-code
+         .. code-block:: sh
+
+            sudo install -m755 bin/mongo* /usr/local/bin/
+
+  - heading: "macOS"
+    pre: |
+
+      a. Extract the ``.tar`` archive you downloaded.
+
+         .. cssclass:: copyable-code
+         .. code-block:: sh
+
+            tar -xvzf mongodb-bi-osx-x86_64-{version}.tgz
+
+      b. Install the programs within the ``bin/`` directory into a directory
+         listed in your system ``PATH``. If a prior version exists, overwrite
+         the binaries.
 
          .. cssclass:: copyable-code
          .. code-block:: sh
@@ -104,7 +103,7 @@ action:
     language: powershell
     copyable: true
     code: |
-      "C:\Program Files\MongoDB BI Connector\bin\mongodrdl.exe" --host {your.mongohost.com} -d dbname [-c collname] -o schema.drdl
+      "C:\Program Files\MongoDB\Connector for BI\2.2\bin\mongodrdl.exe" --host {your.mongohost.com} -d dbname [-c collname] -o schema.drdl
 post: |
   .. note::
      The :option:`--host` option only accepts a hostname. You cannot
@@ -132,12 +131,12 @@ action:
     copyable: true
     code: |
       mongosqld install --config {pathToConfigFile}/mongosqld.conf
-      service mongosql start
+      sudo service mongosql start
   - heading: "Windows using a configuration file"
     language: powershell
     copyable: true
     code: |
-      "C:\Program Files\MongoDB BI Connector\bin\mongosqld.exe" install --config {pathToConfigFile}\mongosqld.conf
+      "C:\Program Files\MongoDB\Connector for BI\2.2\bin\mongosqld.exe" install --config {pathToConfigFile}\mongosqld.conf
       net start mongosql
 
     post: |
