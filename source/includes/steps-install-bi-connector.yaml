@@ -129,6 +129,13 @@ post: |
 title: Start ``mongosqld``
 ref: start-mongosqld
 level: 4
+content: |
+  .. note::
+
+     The above examples demonstrate using |bi| with a
+     MongoDB instance running without authentication enabled. To
+     use :program:`mongosqld` with the ``--auth`` option, see
+     :ref:`Install the C Authentication Plugin <install-auth-c-plugin>`.
 action:
   - heading: "Linux / macOS"
     language: sh
