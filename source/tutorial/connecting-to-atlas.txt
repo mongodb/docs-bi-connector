@@ -15,8 +15,8 @@ running, monitoring, and maintaining MongoDB deployments, including the
 provisioning of dedicated servers for the MongoDB instances.
 
 Atlas uses TLS/SSL to encrypt connections and enforces authentication by
-default. This page explains how to connect to Atlas using
-:program:`mongodrdl` and :program:`mongosqld`.
+default. This page explains how to connect to Atlas using the
+`MongoDB Connector for BI <https://www.mongodb.com/download-center?jmp=tbl#bi-connector>`_.
 
 ``mongodrdl``
 -------------
@@ -28,6 +28,8 @@ following command format:
 .. code-block:: sh
 
    mongodrdl --host <domain0>.mongodb.net:27017,<domain1>.mongodb.net:27017,... -u <username> -p <password> --ssl --authenticationDatabase=admin -d <database>
+
+For more information, see :program:`mongodrdl`.
 
 ``mongosqld``
 -------------
