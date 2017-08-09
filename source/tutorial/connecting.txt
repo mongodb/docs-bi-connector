@@ -132,9 +132,14 @@ Connect with Tableau
 Connect from Tableau without Authentication or TLS/SSL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Click on the :guilabel:`MySQL` named connection in Tableau's left hand
-column. Enter the host and port on which :program:`mongosqld` is
-listening, and click :guilabel:`Sign In` to connect.
+To connect to the `MongoDB Connector for BI <https://www.mongodb.com/download-center?jmp=tbl#bi-connector>`_: 
+
+#. Click on the :guilabel:`MySQL` named connection in Tableau's left
+   hand column.
+
+#. Enter the host and port on which :program:`mongosqld` is listening.
+
+#. Click :guilabel:`Sign In` to connect.
 
 By default, :program:`mongosqld` binds to port ``3307``.
 
