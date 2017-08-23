@@ -30,7 +30,7 @@ system:
     - htaccess: ['htaccess.yaml']
 version:
   release: '2.2'
-  branch: 'master'
+  branch: 'v2.2'
 assets:
   - branch: master
     path: build/docs-tools
