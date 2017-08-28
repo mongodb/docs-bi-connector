@@ -55,6 +55,7 @@ rst_epilog = '\n'.join([
     '.. |ent-build| replace:: MongoDB Enterprise',
     '.. |hardlink| replace:: https://docs.mongodb.com/bi-connector/',
     '.. |bi| replace:: MongoDB Connector for BI',
+    '.. |bi-short| replace:: BI Connector',
 ])
 
 extlinks = {
