@@ -203,7 +203,6 @@ To create a :ref:`.drdl <drdl>` file from a
 enabled, use the following command format:
 
 .. example::
-
    .. class:: copyable-code
    .. code-block:: shell
 
