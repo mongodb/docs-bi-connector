@@ -82,8 +82,8 @@ Tableau configures the connection for you.
 Using Tableau 10.2 or Earlier
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Tableau versions 10.2 or earlier, you must configure Tableau to send
-passwords in clear text. To configure Tableau, you can either:
+With Tableau versions 10.2 or earlier, you must configure Tableau to
+send passwords in clear text. To configure Tableau, you can either:
 
 - Use a Tableau Datasource Connection (TDC) file, or
 - Set the ``LIBMYSQL_ENABLE_CLEARTEXT_PLUGIN`` environment variable.
