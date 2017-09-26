@@ -94,7 +94,7 @@ description: |
 
      Similarly, instead of enabling :urioption:`ssl` in the connection string,
      run {{program}} with :option:`--mongo-ssl`.
-  
+
   URI options not in the list above *nor* in the list of supported {{program}}
   :ref:`options <mongosqld-command-line-options>` are not supported.
 
@@ -172,43 +172,6 @@ replacement:
   ssl-option: ":option:`--mongo-ssl`"
 ---
 program: mongosqld
-name: sslMode
-directive: option
-args: <mode>
-description: |
-  .. versionadded:: 2.3
-
-  Enable or disable :abbr:`TLS (Transport Level Security)`/:abbr:`SSL
-  (Secure Sockets Layer)` for connections to :doc:`mongosqld
-  </reference/mongosqld>`. The argument to the ``sslMode`` option can
-  be one of the following:
-
-  .. list-table::
-     :header-rows: 1
-     :widths: 20 40
-
-     * - Value
-
-       - Description
-
-     * - ``disabled``
-
-       - :doc:`mongosqld </reference/mongosqld>` cannot accept
-         connections secured using TLS/SSL.
-
-     * - ``allowSSL``
-
-       - :doc:`mongosqld </reference/mongosqld>` can accept connections
-         secured using TLS/SSL.
-
-     * - ``requireSSL``
-
-       - :doc:`mongosqld </reference/mongosqld>` can only accept
-         connections secured using TLS/SSL.
-optional: true
-default: disabled
----
-program: mongosqld
 name: sslPEMKeyFile
 directive: option
 args: <filename>
@@ -282,15 +245,15 @@ description: |
   authentication mechanisms
   ``GSSAPI`` and ``PLAIN`` use the ``$external`` source, while
   ``SCRAM-SHA-1`` uses a MongoDB database as its source.
-  
+
   If no value is given for this option it defaults to the the
   MongoDB ``admin`` database.
-  
+
   The ``$external`` authentication source stores a reference
   to system users in a MongoDB database called ``$external``,
   but the credentials are stored in an external,
   non-MongoDB system, such as an LDAP server.
-  
+
   Any connection which uses the default value can omit the
   ``source`` parameter from its :ref:`MySQL <connect-mysql-auth>`
   or :ref:`Tableau <connect-tableau-auth>` username.
@@ -390,7 +353,7 @@ description: |
   .. versionadded:: 2.2
 
   Specifies the maximum length, in characters, for all varchar fields. If
-  {{program}} encounters a string that is longer than the maximum length, 
+  {{program}} encounters a string that is longer than the maximum length,
   {{program}} truncates it to the maximum length and logs a warning.
 optional: true
 ...
