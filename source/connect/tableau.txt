@@ -30,7 +30,7 @@ Connect from Tableau without Authentication or TLS/SSL
 1. In the left-side navigation under :guilabel:`To a server`, click on
    :guilabel:`More...` then click :guilabel:`MongoDB BI Connector`.
 
-2. In the connection dialog box:
+2. In the connection dialog box, provide values for these fields:
 
    .. list-table::
       :widths: 20 80
@@ -77,7 +77,11 @@ To connect Tableau to the |bi| using
 Using Tableau 10.3 or Later
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Tableau configures the connection for you.
+With Tableau versions 10.3 or later, Tableau sends passwords in clear
+text. To configure Tableau to use authentication and
+:abbr:`TLS (Transport Layer Security)`/:abbr:`SSL (Secure Sockets Layer)`:
+
+.. include:: /includes/steps/connect-tableau-103-authentication-tdc.rst
 
 Using Tableau 10.2 or Earlier
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -91,7 +95,7 @@ send passwords in clear text. To configure Tableau, you can either:
 Use a TDC File
 ++++++++++++++
 
-.. include:: /includes/steps/connect-tableau-authentication-tdc.rst
+.. include:: /includes/steps/connect-tableau-102-authentication-tdc.rst
 
 Set an Environment Variable
 +++++++++++++++++++++++++++

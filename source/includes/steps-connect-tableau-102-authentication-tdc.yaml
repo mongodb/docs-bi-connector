@@ -43,7 +43,7 @@ content: |
      on :guilabel:`More...` then click :guilabel:`MongoDB BI
      Connector`.
 
-  b. In the connection dialog box:
+  b. In the connection dialog box, provide values for these fields:
 
      .. list-table::
         :widths: 20 80
