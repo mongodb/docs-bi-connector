@@ -1,6 +1,6 @@
-====================
-Schema Configuration
-====================
+=================================
+Map Relational Schemas to MongoDB
+=================================
 
 .. default-domain:: mongodb
 
