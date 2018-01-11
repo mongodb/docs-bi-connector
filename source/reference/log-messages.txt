@@ -10,7 +10,7 @@ Log Messages
    :depth: 1
    :class: singlecol
 
-:program:`mongosqld` log messages have the form:
+:binary:`~bin.mongosqld` log messages have the form:
 
 .. code-block:: none
 
@@ -27,7 +27,7 @@ Timestamp
 
 Log messages use `iso8601 <https://www.ietf.org/rfc/rfc3339.txt>`_
 format for the timestamp, with a UTC offset set by the server on which
-:program:`mongosqld` is running.
+:binary:`~bin.mongosqld` is running.
 
 Severity Levels
 ---------------
@@ -93,7 +93,7 @@ Configure Log Verbosity Level
 -----------------------------
 
 You can configure the log verbosity level either by including
-a verbosity parameter when starting :program:`mongosqld` from
+a verbosity parameter when starting :binary:`~bin.mongosqld` from
 the command line, or by specifying ``systemLog.verbosity`` in
 a :ref:`configuration file <config-format>`.
 
@@ -108,7 +108,7 @@ to ``3``.
 
    mongosqld --schema schema.drdl --auth -vvv
 
-Alternatively, you can specify an integer value with the :option:`--verbose`
+Alternatively, you can specify an integer value with the :option:`--verbose <mongosqld --verbose>`
 option. The following invocation of ``mongosqld`` sets the log verbosity level
 to ``2``.
 

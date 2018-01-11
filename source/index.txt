@@ -29,7 +29,7 @@ presents a challenge when working with MongoDB's
 multi-dimensional documents.
 
 The |bi| acts as a layer that passes queries and
-data between a :program:`mongod` or :program:`mongos` instance and your
+data between a :binary:`~bin.mongod` or :binary:`~bin.mongos` instance and your
 reporting tool. The |bi| stores no data, and purely serves to bridge your
 MongoDB server with business intelligence tools.
 

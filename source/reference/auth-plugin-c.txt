@@ -186,7 +186,7 @@ Example Steps: Using the C Authentication Plugin
    :manual:`Authentication </core/authentication/>` for more
    information about starting ``mongod`` with security enabled.
 
-#. Start :program:`mongosqld` with the ``--auth`` option. See
+#. Start :binary:`~bin.mongosqld` with the ``--auth`` option. See
    :doc:`/installation` for more information about starting ``mongosqld``.
 
    .. cssclass:: copyable-code   
@@ -194,7 +194,7 @@ Example Steps: Using the C Authentication Plugin
    
       mongosqld --schema schema.drdl --auth
 
-#. Connect to :program:`mongosqld` with your client program, using the
+#. Connect to :binary:`~bin.mongosqld` with your client program, using the
    ``default-auth=mongosql_auth`` option. The connection command
    varies by client, but with the MySQL shell the command is as
    follows:

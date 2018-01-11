@@ -71,7 +71,7 @@ Release Notes for |bi|
 - Provides a new startup option to specify default
   :ref:`VARCHAR length <msqld-conf-schema-options>`
 
-- Provides :program:`mongosqld` status metrics with `SHOW STATUS
+- Provides :binary:`~bin.mongosqld` status metrics with `SHOW STATUS
   <https://dev.mysql.com/doc/refman/5.7/en/show-status.html>`_
 
   - Reports the following metrics reported:
@@ -104,7 +104,7 @@ Release Notes for |bi|
 
 .. note::
 
-   :program:`mongosqld` no longer offers the ``--fork`` option.
+   :binary:`~bin.mongosqld` no longer offers the ``--fork`` option.
 
    .. include:: /includes/fact-mongosqld-fork.rst
 
@@ -122,7 +122,7 @@ Release Notes for |bi|
 
 - Hides ``.pem`` key file passwords in logs.
 
-- :program:`mongodrdl` ignores binary fields when generating :doc:`DRDL
+- :binary:`~bin.mongodrdl` ignores binary fields when generating :doc:`DRDL
   </schema-configuration>` files.
 
 - Supports queries that ``SELECT`` variables prefixed with "``mongodb``".
@@ -181,7 +181,7 @@ relational business intelligence tools.
 *Released Jan 27, 2016*
 
 - Ignores collections prefixed with "system." when generating the
-  :ref:`DRDL <drdl>` file for a database with :program:`mongodrdl`.
+  :ref:`DRDL <drdl>` file for a database with :binary:`~bin.mongodrdl`.
 
 - Checks if file is writable before sampling when generating the
   :ref:`DRDL <drdl>` file with program:`mongodrdl`.

@@ -25,8 +25,8 @@ Description
 
 .. include:: /includes/fact-bi-enterprise.rst
 
-:program:`mongosqld` accepts incoming requests from a MySQL client, and
-proxies those requests to a :program:`mongod` or :program:`mongos`
+:binary:`~bin.mongosqld` accepts incoming requests from a MySQL client, and
+proxies those requests to a :binary:`~bin.mongod` or :binary:`~bin.mongos`
 instance.
 
 .. _mongosqld-command-line-options:
@@ -116,6 +116,15 @@ Client TLS/SSL Options
 
 .. include:: /includes/option/option-mongosqld-defaultAuthMechanism.rst
 
+Service Options
+~~~~~~~~~~~~~~~
+
+.. include:: /includes/option/option-mongosqld-serviceName.rst
+
+.. include:: /includes/option/option-mongosqld-serviceDisplayName.rst
+
+.. include:: /includes/option/option-mongosqld-serviceDescription.rst
+
 .. _msqld-socket-options:
 
 Socket Options
@@ -132,7 +141,7 @@ Socket Options
 Configuration File
 ------------------
 
-You may configure :program:`mongosqld` using a `YAML <http://yaml.org/>`_
+You may configure :binary:`~bin.mongosqld` using a `YAML <http://yaml.org/>`_
 configuration file. This file may contain the settings listed in the
 following sections.
 
@@ -342,43 +351,43 @@ MongoDB Host Options
 
    * - .. setting:: mongodb.versionCompatibility
      - string
-     - :option:`--mongo-versionCompatibility`
+     - :option:`--mongo-versionCompatibility <mongosqld --mongo-versionCompatibility>`
 
    * - .. setting:: mongodb.net.uri
      - string
-     - :option:`--mongo-uri`
+     - :option:`--mongo-uri <mongosqld --mongo-uri>`
 
    * - .. setting:: mongodb.net.ssl.enabled
      - boolean
-     - :option:`--mongo-ssl`
+     - :option:`--mongo-ssl <mongosqld --mongo-ssl>`
 
    * - .. setting:: mongodb.net.ssl.allowInvalidCertificates
      - boolean
-     - :option:`--mongo-sslAllowInvalidCertificates`
+     - :option:`--mongo-sslAllowInvalidCertificates <mongosqld --mongo-sslAllowInvalidCertificates>`
 
    * - .. setting:: mongodb.net.ssl.allowInvalidHostnames
      - boolean
-     - :option:`--mongo-sslAllowInvalidHostnames`
+     - :option:`--mongo-sslAllowInvalidHostnames <mongosqld --mongo-sslAllowInvalidHostnames>`
 
    * - .. setting:: mongodb.net.ssl.PEMKeyFile
      - string
-     - :option:`--mongo-sslPEMKeyFile`
+     - :option:`--mongo-sslPEMKeyFile <mongosqld --mongo-sslPEMKeyFile>`
 
    * - .. setting:: mongodb.net.ssl.PEMKeyPassword
      - string
-     - :option:`--mongo-sslPEMKeyPassword`
+     - :option:`--mongo-sslPEMKeyPassword <mongosqld --mongo-sslPEMKeyPassword>`
 
    * - .. setting:: mongodb.net.ssl.CAFile
      - string
-     - :option:`--mongo-sslCAFile`
+     - :option:`--mongo-sslCAFile <mongosqld --mongo-sslCAFile>`
 
    * - .. setting:: mongodb.net.ssl.CRLFile
      - string
-     - :option:`--mongo-sslCRLFile`
+     - :option:`--mongo-sslCRLFile <mongosqld --mongo-sslCRLFile>`
 
    * - .. setting:: mongodb.net.ssl.FIPSMode
      - boolean
-     - :option:`--mongo-sslFIPSMode`
+     - :option:`--mongo-sslFIPSMode <mongosqld --mongo-sslFIPSMode>`
 
 .. _msqld-conf-proc-options:
 
@@ -402,15 +411,16 @@ Process Management Options
 
    * - .. setting:: processManagement.service.name
      - string
-     - :option:`--serviceName`
+     - :option:`--serviceName <mongosqld --serviceName>`
 
    * - .. setting:: processManagement.service.displayName
      - string
-     - :option:`--serviceDisplayName`
+     - :option:`--serviceDisplayName <mongosqld --serviceDisplayName>`
 
    * - .. setting:: processManagement.service.description
      - string
-     - :option:`--serviceDescription`
+     - :option:`--serviceDescription <mongosqld --serviceDescription>`
+
 
 Example
 -------
@@ -431,7 +441,7 @@ you may save a file such as the following to ``/etc/mongosqld.conf``:
    schema:
      path: /var/schema.drdl
 
-You may then start :program:`mongosqld` with the :option:`--config`
+You may then start :binary:`~bin.mongosqld` with the :option:`--config <mongosqld --config>`
 option:
 
 .. code-block:: sh
@@ -461,10 +471,10 @@ default.
 
 To connect the
 `MongoDB Connector for BI <https://www.mongodb.com/download-center?jmp=tbl#bi-connector>`_
-to an Atlas cluster, you must provide :program:`mongosqld` with a
+to an Atlas cluster, you must provide :binary:`~bin.mongosqld` with a
 ``.pem`` key file.
 
-:program:`mongosqld` can use any valid TLS certificate issued by a
+:binary:`~bin.mongosqld` can use any valid TLS certificate issued by a
 certificate authority, or a self-signed certificate. If you use a
 self-signed certificate, although the communications channel will be
 encrypted, there will be no validation of server identity. Although
@@ -482,8 +492,8 @@ using the ``openssl`` tool:
    openssl req -nodes -newkey rsa:2048 -keyout test.key -out test.crt -x509 -days 365 -subj "/C=US/ST=test/L=test/O=test Security/OU=IT Department/CN=test.com"
    cat test.crt test.key > test.pem
 
-Start :program:`mongosqld` with the :option:`--auth` and
-:option:`--sslPEMKeyFile` options.
+Start :binary:`~bin.mongosqld` with the :option:`--auth <mongosqld --auth>` and
+:option:`--sslPEMKeyFile <mongosqld --sslPEMKeyFile>` options.
 
 If you named your key file ``test.pem`` as in the previous example, you
 can run the following, substituting your :ref:`schema file <drdl>` and
@@ -498,7 +508,7 @@ cluster URI:
    mongosqld --mongo-ssl --auth --sslPEMKeyFile test.pem --schema <schema.drdl> --mongo-uri <uri>
 
 Pass your username, password, and authentication database to your SQL
-client. For example, using ``mysql`` without verifying your :program:`mongosqld`
+client. For example, using ``mysql`` without verifying your :binary:`~bin.mongosqld`
 server certificate:
 
 .. class:: copyable-code

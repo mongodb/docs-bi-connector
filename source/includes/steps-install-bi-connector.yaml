@@ -91,10 +91,10 @@ level: 4
 pre: |
   Provide a MongoDB server hostname, replace ``dbname`` with the name of your
   database, and optionally replace ``collname`` with the name of a collection.
-  If you do not specify a collection, :program:`mongodrdl` will generate a
+  If you do not specify a collection, :binary:`~bin.mongodrdl` will generate a
   schema from all collections in ``dbname``.
 
-  To use :program:`mongodrdl` with :ref:`authentication
+  To use :binary:`~bin.mongodrdl` with :ref:`authentication
   <mongodrdl-auth-options>`, first install the
   :doc:`C Authentication Plugin </reference/auth-plugin-c>`.
 action:
@@ -138,7 +138,7 @@ action:
                   --authenticationDatabase {dbname}
 post: |
   .. note::
-     The :option:`--host` option only accepts a hostname. You cannot
+     The :option:`--host <mongodrdl --host>` option only accepts a hostname. You cannot
      provide a :ref:`MongoDB connection string <mongodb-uri>`.
 
   You can examine the generated ``schema.drdl`` file in a text editor
@@ -147,7 +147,7 @@ post: |
 
   .. seealso::
 
-     :program:`mongodrdl`
+     :binary:`~bin.mongodrdl`
 ---
 title: Edit your |bi-short| Configuration file.
 ref: start-mongosqld

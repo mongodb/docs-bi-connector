@@ -159,7 +159,7 @@ inherit:
   program: _shared
   file: options-shared.yaml
 replacement:
-  ssl-option: ":option:`--mongo-ssl`"
+  ssloption: ":option:`--mongo-ssl`"
 ---
 program: mongosqld
 name: mongo-sslCRLFile
@@ -355,5 +355,29 @@ description: |
   Specifies the maximum length, in characters, for all varchar fields. If
   {{program}} encounters a string that is longer than the maximum length,
   {{program}} truncates it to the maximum length and logs a warning.
+optional: true
+---
+program: mongosqld
+name: serviceName
+directive: option
+args: <service-name>
+description: |
+  Name of the system service which runs :binary:`~bin.mongosqld`.
+optional: true
+---
+program: mongosqld
+name: serviceDisplayName
+directive: option
+args: <service-name>
+description: |
+  Display name of the system service which runs :binary:`~bin.mongosqld`.
+optional: true
+---
+program: mongosqld
+name: serviceDescription
+directive: option
+args: <service-name>
+description: |
+  Description of the system service which runs :binary:`~bin.mongosqld`.
 optional: true
 ...
