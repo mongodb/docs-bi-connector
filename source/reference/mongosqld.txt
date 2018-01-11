@@ -25,8 +25,8 @@ Description
 
 .. include:: /includes/fact-bi-enterprise.rst
 
-:program:`mongosqld` accepts incoming requests from a MySQL client, and
-proxies those requests to a :program:`mongod` or :program:`mongos`
+:binary:`~bin.mongosqld` accepts incoming requests from a MySQL client, and
+proxies those requests to a :binary:`~bin.mongod` or :binary:`~bin.mongos`
 instance.
 
 Options

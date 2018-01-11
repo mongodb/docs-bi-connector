@@ -56,7 +56,7 @@ level: 4
 pre: |
   Provide a MongoDB server hostname, replace ``dbname`` with the name of your
   database, and optionally replace ``collname`` with the name of a collection.
-  If you do not specify a collection, :program:`mongodrdl` will generate a
+  If you do not specify a collection, :binary:`~bin.mongodrdl` will generate a
   schema from all collections in ``dbname``.
 action:
   language: sh
@@ -64,7 +64,7 @@ action:
     mongodrdl --host example.com -d dbname [-c collname] -o schema.drdl
 post: |
   .. note::
-     The :option:`--host` option only accepts a hostname. You cannot
+     The :option:`--host <mongodrdl --host>` option only accepts a hostname. You cannot
      provide a :ref:`MongoDB connection string <mongodb-uri>`.
 
   You can examine the generated ``schema.drdl`` file, and remove any fields or

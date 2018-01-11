@@ -29,15 +29,15 @@ following command format:
 
    mongodrdl --host <domain0>.mongodb.net:27017,<domain1>.mongodb.net:27017,... -u <username> -p <password> --ssl --authenticationDatabase=admin -d <database>
 
-For more information, see :program:`mongodrdl`.
+For more information, see :binary:`~bin.mongodrdl`.
 
 ``mongosqld``
 -------------
 
-To connect :program:`mongosqld` to an Atlas cluster, you must provide a
+To connect :binary:`~bin.mongosqld` to an Atlas cluster, you must provide a
 ``.pem`` key file.
 
-:program:`mongosqld` can use any valid TLS certificate issued by a
+:binary:`~bin.mongosqld` can use any valid TLS certificate issued by a
 certificate authority, or a self-signed certificate. If you use a
 self-signed certificate, although the communications channel will be
 encrypted, there will be no validation of server identity. Although
@@ -55,14 +55,14 @@ using the ``openssl`` tool:
    openssl req -nodes -newkey rsa:2048 -keyout test.key -out test.crt -x509 -days 365 -subj "/C=US/ST=test/L=test/O=test Security/OU=IT Department/CN=test.com"
    cat test.crt test.key > test.pem
 
-Start :program:`mongosqld` with the :option:`--auth` and
-:option:`--sslPEMKeyFile` options.
+Start :binary:`~bin.mongosqld` with the :option:`--auth <mongosqld --auth>` and
+:option:`--sslPEMKeyFile <mongosqld --sslPEMKeyFile>` options.
 
 If you named your key file ``test.pem`` as in the previous example, you
 can run the following, substituting your :ref:`schema file <drdl>` and
 cluster URI:
 
-.. note:: Do not specify a username and password in :option:`--mongo-uri`. The
+.. note:: Do not specify a username and password in :option:`--mongo-uri <mongosqld --mongo-uri>`. The
    connection string should only contain the list of servers.
 
 .. class:: copyable-code
@@ -71,7 +71,7 @@ cluster URI:
    mongosqld --mongo-ssl --auth --sslPEMKeyFile test.pem --schema <schema.drdl> --mongo-uri <uri>
 
 Pass your username, password, and authentication database to your SQL
-client. For example, using ``mysql`` without verifying your :program:`mongosqld`
+client. For example, using ``mysql`` without verifying your :binary:`~bin.mongosqld`
 server certificate:
 
 .. class:: copyable-code
