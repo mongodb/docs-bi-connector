@@ -15,7 +15,7 @@ Does the |bi| store any data?
 
 No. The |bi| is an interface into your MongoDB database. It stores only user
 information and :ref:`MongoDB connection string <mongodb-uri>` information
-imparted by :program:`mongobiuser`, and the schema defined by a
+imparted by :binary:`~bin.mongobiuser`, and the schema defined by a
 :ref:`DRDL <drdl>` file.
 
 In what order does query processing happen?
@@ -106,7 +106,7 @@ If the MongoDB instance you are connecting to uses
 the ``ssl=true`` option in the
 `PyMongo connection string <https://api.mongodb.org/python/current/examples/tls.html>`_.
 
-For example, when using :program:`mongobiuser`:
+For example, when using :binary:`~bin.mongobiuser`:
 
 .. code-block:: sh
 

@@ -27,7 +27,7 @@ default: |
   localhost:27017
 directive: option
 description: |
-  Specifies a resolvable hostname for the :program:`mongod` to which to
+  Specifies a resolvable hostname for the :binary:`~bin.mongod` to which to
   connect. By default, the {{program}} attempts to connect to a MongoDB
   instance running on the localhost on port number ``27017``.
 
@@ -113,7 +113,7 @@ default: SCRAM-SHA-1
 directive: option
 description: |
   Specifies the authentication mechanism the {{program}} instance uses to
-  authenticate to the :program:`mongod` or :program:`mongos`.
+  authenticate to the :binary:`~bin.mongod` or :binary:`~bin.mongos`.
 
   .. list-table::
      :header-rows: 1

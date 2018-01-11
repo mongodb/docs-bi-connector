@@ -25,13 +25,13 @@ Description
 
 .. include:: /includes/fact-bi-enterprise.rst
 
-:program:`mongobiuser` allows you to create, drop, and list users within
-a |bi|.  :program:`mongobiuser` must be run on the same host as |bi|.
+:binary:`~bin.mongobiuser` allows you to create, drop, and list users within
+a |bi|.  :binary:`~bin.mongobiuser` must be run on the same host as |bi|.
 
 There must be at least one user created in order for the |bi| to
 function.
 
-:program:`mongobiuser` has several subcommands that perform different actions:
+:binary:`~bin.mongobiuser` has several subcommands that perform different actions:
 
 .. list-table::
    :header-rows: 1

@@ -18,14 +18,14 @@ currently cannot use MongoDB as a native data source.
 To use MongoDB with a relational business intelligence tool such as Tableau,
 you must define a relational mapping for your MongoDB data.
 
-The schema generation tool :program:`mongodrdl` will output such a schema in the
+The schema generation tool :binary:`~bin.mongodrdl` will output such a schema in the
 :ref:`Document Relational Definition Language <drdl>` (DRDL) format, but you
 should verify that the schema it proposes matches your data requirements.
 Examine both the table structure and field types to ensure that you will be
 able to generate your desired reports.
 
 You may have to edit the schema definition files by hand to remove unneeded
-fields; add fields that :program:`mongodrdl` did not discover within the subset
+fields; add fields that :binary:`~bin.mongodrdl` did not discover within the subset
 of documents that it sampled; and modify erroneous field types.
 
 You may edit DRDL files in the following ways:
@@ -49,8 +49,8 @@ Document Relational Definition Language
 The Document Relational Definition Language (``DRDL``) defines a relational
 view of a MongoDB schema.
 
-:program:`mongodrdl` produces these files using one or more MongoDB collections
-as a guideline, and :program:`mongobischema` imports them into the Business
+:binary:`~bin.mongodrdl` produces these files using one or more MongoDB collections
+as a guideline, and :binary:`~bin.mongobischema` imports them into the Business
 Intelligence Connector.
 
 File Format
@@ -106,7 +106,7 @@ Geospatial
 .. _drdl-heterogeneous:
 
 Heterogeneous Fields
-  If a field can contain multiple types, :program:`mongodrdl` will pick the type
+  If a field can contain multiple types, :binary:`~bin.mongodrdl` will pick the type
   that appears most frequently. If a value does not match the type specified in
   the :ref:`DRDL <drdl>` schema, the |bi| will report an error. However, in the
   case where schema specifies a string, the |bi| can convert the value into a
@@ -329,7 +329,7 @@ For example, consider a simple document in the collection
    }
 
 
-:program:`mongodrdl` will generate a schema with the tables
+:binary:`~bin.mongodrdl` will generate a schema with the tables
 ``simpleFamilies`` and ``simpleFamilies_familyMembers``.
 
 The table ``simpleFamilies_familyMembers`` enumerates each family
@@ -369,7 +369,7 @@ For example, given the following collection:
        category : "Parks"
    })
 
-:program:`mongodrdl` will generate the following schema:
+:binary:`~bin.mongodrdl` will generate the following schema:
 
 .. code-block:: yaml
 

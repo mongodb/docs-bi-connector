@@ -24,7 +24,7 @@ with MongoDB's :manual:`flexible schema </data-modeling>` and rich,
 multi-dimensional, documents.
 
 The |bi| acts as a layer that passes queries and
-data between a :program:`mongod` or :program:`mongos` instance and your
+data between a :binary:`~bin.mongod` or :binary:`~bin.mongos` instance and your
 reporting tool. It uses a foreign data wrapper with PostgreSQL to
 provide a relational :term:`SQL` view into your MongoDB data.
 

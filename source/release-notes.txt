@@ -36,7 +36,7 @@ relational business intelligence tools.
 ~~~~~~~~~~~~~~~~~~~~~
 
 - Ignore collections prefixed with "system." when generating the
-  :ref:`DRDL <drdl>` file for a database with :program:`mongodrdl`.
+  :ref:`DRDL <drdl>` file for a database with :binary:`~bin.mongodrdl`.
 
 - Check if file is writable before sampling when generating the
   :ref:`DRDL <drdl>` file with program:`mongodrdl`.
