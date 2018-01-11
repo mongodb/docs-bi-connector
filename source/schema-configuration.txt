@@ -19,14 +19,14 @@ To use MongoDB with a relational business intelligence tool such as
 `Tableau <https://www.tableau.com/>`_, you must define a relational
 mapping for your MongoDB data.
 
-The schema generation tool :program:`mongodrdl` outputs such a schema in the
+The schema generation tool :binary:`~bin.mongodrdl` outputs such a schema in the
 :ref:`Document Relational Definition Language <drdl>` (DRDL) format, but you
 should verify that the schema it proposes matches your data requirements.
 Examine both the table structure and field types to ensure that you can
 generate your intended reports.
 
 You may have to manually edit the schema definition files to remove
-unneeded fields; add fields that :program:`mongodrdl` did not discover
+unneeded fields; add fields that :binary:`~bin.mongodrdl` did not discover
 within the subset of documents that it sampled; and modify erroneous
 field types.
 
@@ -49,8 +49,8 @@ Document Relational Definition Language
 The Document Relational Definition Language (``DRDL``) defines a
 relational view of a MongoDB schema.
 
-:program:`mongodrdl` samples documents from your MongoDB collections, and
-derives a ``DRDL`` file from those documents. :program:`mongosqld` then
+:binary:`~bin.mongodrdl` samples documents from your MongoDB collections, and
+derives a ``DRDL`` file from those documents. :binary:`~bin.mongosqld` then
 uses the schema defined in ``DRDL`` files to allow MySQL clients to
 query your MongoDB data.
 
@@ -169,7 +169,7 @@ Consider the following document:
        "members_since" : ISODate("2002-04-12T00:00:00Z")
    }
 
-Running :program:`mongodrdl` on a collection containing this document
+Running :binary:`~bin.mongodrdl` on a collection containing this document
 results in the following fields in the generated schema:
 
 .. list-table::
@@ -216,7 +216,7 @@ per array element.
 Example
 ```````
 
-If you run :program:`mongodrdl` on a collection ``families`` with the
+If you run :binary:`~bin.mongodrdl` on a collection ``families`` with the
 following document:
 
 .. code-block:: javascript
@@ -322,7 +322,7 @@ together with their family information using the following query:
 Pre-Joining
 ```````````
 
-If you provide the :option:`--preJoined` option to :program:`mongodrdl`,
+If you provide the :option:`--preJoined <mongodrdl --preJoined>` option to :binary:`~bin.mongodrdl`,
 then the |bi| adds the fields in the containing document to each
 array element's document, thus "pre-joining" the table.
 
@@ -438,7 +438,7 @@ For example, consider a simple document in the collection
    }
 
 
-:program:`mongodrdl` will generate a schema with the tables
+:binary:`~bin.mongodrdl` will generate a schema with the tables
 ``simpleFamilies`` and ``simpleFamilies_familyMembers``.
 
 The table ``simpleFamilies_familyMembers`` enumerates each family
@@ -481,7 +481,7 @@ Given the following collection:
        category : "Parks"
    })
 
-:program:`mongodrdl` generates the following schema:
+:binary:`~bin.mongodrdl` generates the following schema:
 
 .. code-block:: yaml
 

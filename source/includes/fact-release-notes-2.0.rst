@@ -21,20 +21,20 @@ Simplified Architecture
 The |bi| package is now trimmed down from four separate components to
 two:
 
-:program:`mongodrdl`
+:binary:`~bin.mongodrdl`
   This tool connects to a MongoDB instance and
   generates a :ref:`Document-Relational Definition Language (DRDL) <drdl>`
   file, which maps a given collection shape to relational schema.
 
-:program:`mongosqld`
+:binary:`~bin.mongosqld`
   Once installed and run as a daemon,
-  :program:`mongosqld` responds to SQL queries, requests for DB
+  :binary:`~bin.mongosqld` responds to SQL queries, requests for DB
   information, and schema from the requesting BI tool via the MySQL
   wire protocol.
 
-  :program:`mongosqld` requires at least one :ref:`DRDL` file to start.
+  :binary:`~bin.mongosqld` requires at least one :ref:`DRDL` file to start.
   You will need to have defined your schema with
-  :program:`mongodrdl` before starting :program:`mongosqld`.
+  :binary:`~bin.mongodrdl` before starting :binary:`~bin.mongosqld`.
 
 SQL Compatibility
 ~~~~~~~~~~~~~~~~~

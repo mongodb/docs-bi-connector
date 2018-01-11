@@ -37,7 +37,7 @@ Release Notes for |bi|
 
 .. note::
 
-   :program:`mongosqld` no longer offers the ``--fork`` option.
+   :binary:`~bin.mongosqld` no longer offers the ``--fork`` option.
 
    .. include:: /includes/fact-mongosqld-fork.rst
 
@@ -55,7 +55,7 @@ Release Notes for |bi|
 
 - Hide ``.pem`` key file passwords in logs.
 
-- :program:`mongodrdl` ignores binary fields when generating :doc:`DRDL
+- :binary:`~bin.mongodrdl` ignores binary fields when generating :doc:`DRDL
   </schema-configuration>` files.
 
 - Support queries that ``SELECT`` variables prefixed with "``mongodb``".
@@ -114,7 +114,7 @@ relational business intelligence tools.
 *Released Jan 27, 2016*
 
 - Ignore collections prefixed with "system." when generating the
-  :ref:`DRDL <drdl>` file for a database with :program:`mongodrdl`.
+  :ref:`DRDL <drdl>` file for a database with :binary:`~bin.mongodrdl`.
 
 - Check if file is writable before sampling when generating the
   :ref:`DRDL <drdl>` file with program:`mongodrdl`.
