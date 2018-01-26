@@ -34,5 +34,3 @@ Install the |bi-short|
 ----------------------
 
 .. include:: /includes/steps/install-bi-connector-rhel.rst
-
-.. include:: /includes/change-schema-file.rst
