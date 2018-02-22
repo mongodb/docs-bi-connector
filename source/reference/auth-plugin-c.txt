@@ -34,6 +34,8 @@ Installing the Plugin
 
 To install the plugin, see :ref:`install-auth-c-plugin`.
 
+.. _using-c-auth-plugin:
+
 Using the Plugin for Authentication
 -----------------------------------
 
