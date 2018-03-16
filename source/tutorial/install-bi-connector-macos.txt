@@ -1,5 +1,5 @@
 ==============================
-Install BI Connector on Mac OS
+Install BI Connector on macOS
 ==============================
 
 .. default-domain:: mongodb
@@ -25,7 +25,9 @@ To install OpenSSL via Homebrew, run the following command:
 
 .. code-block:: sh
 
-   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; brew update && brew install openssl
+   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   brew update
+   brew install openssl
 
 Install the |bi-short|
 ----------------------
