@@ -7,7 +7,7 @@ Map Relational Schemas to MongoDB
 .. contents:: On this page
    :local:
    :backlinks: none
-   :depth: 1
+   :depth: 2
    :class: singlecol
 
 Overview
@@ -43,8 +43,8 @@ database with the
 .. note::
 
    If you have :option:`authentication <mongosqld --auth>` enabled,
-   ensure that your MongoDB user has the correct permissions. See
-   :ref:`User Permissions <user-permissions-include>` below.
+   ensure that your MongoDB user has the required
+   :ref:`permissions for cached sampling <cached-sampling-user-permissions>`.
 
 You can configure :binary:`~bin.mongosqld` to automatically resample on a
 fixed schedule with the :option:`--sampleRefreshIntervalSecs
@@ -59,12 +59,47 @@ representation of your data, you can use a
 
 .. include:: /includes/sampling-ref-chart-link.rst
 
-.. _user-permissions-include:
+.. _cached-sampling-user-permissions:
 
 User Permissions for Cached Sampling
-------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /includes/user-permissions.rst
+If your MongoDB instance uses :manual:`authentication
+</core/authentication/>` and you wish to use cached sampling, your
+|bi-short| instance must also use authentication. The admin user that
+connects to MongoDB via the :binary:`~bin.mongosqld` program must
+have the following privileges:
+
+- :authaction:`listDatabases` on the cluster
+- :authaction:`listCollections` on each database in the cluster
+- :authaction:`find` on each database you wish to sample
+
+Alternatively, create a user with the built-in :manual:`readAnyDatabase
+</core/security-built-in-roles/>` role to grant all of the required
+privileges:
+
+.. code-block:: javascript
+
+   use admin
+
+   db.createUser(
+     {
+       user: "<username>",
+       pwd: "<password>",
+       roles: [
+               { "role": "readAnyDatabase", "db": "admin"  }
+              ]
+     }
+   )
+
+.. include:: /includes/fact-sampling-readAnyDatabase.rst
+
+To sample all namespaces, start :binary:`~bin.mongosqld` without the
+:option:`--sampleNamespaces <mongosqld --sampleNamespaces>` option.
+
+.. code-block:: sh
+
+   mongosqld --auth --mongo-username <username> --mongo-password <password>
 
 .. seealso::
 
@@ -101,7 +136,7 @@ to update the schema.
 .. include:: /includes/sampling-ref-chart-link.rst
 
 User Permissions for Persisted Schemas
---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When using a persisted schema, the required user permissions are
 similar to those for :ref:`cached sampling <bi-cached-sampling>`, with
