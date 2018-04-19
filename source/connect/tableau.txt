@@ -29,6 +29,12 @@ Connect from Tableau without Authentication or TLS/SSL
 Connect from Tableau with the C Authentication Plugin
 -----------------------------------------------------
 
+.. note::
+
+   If running this tutorial on macOS, you must have ``sudo`` access to
+   set appropriate permissions on the MySQL Configuration file in step
+   2.
+
 .. include:: /includes/steps/connect-tableau-mongosql-plugin.rst
 
 .. _connect-tableau-auth:

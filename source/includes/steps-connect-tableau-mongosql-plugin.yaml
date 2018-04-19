@@ -9,7 +9,7 @@ content: |
   then download the ``mongosql_auth`` plugin library.
 
   .. tabs-platforms::
-     
+
      tabs:
        - id: windows
          content: |
@@ -59,6 +59,12 @@ content: |
 
   b. Save the file to ``/etc/my.cnf``.
 
+  c. Set the permissions of the file to ``0644``:
+
+     .. code-block:: shell
+
+        sudo chmod 0644 /etc/my.cnf
+
 ---
 title: Create a `Tableau Datasource Connection <http://kb.tableau.com/articles/howto/using-a-tdc-file-with-tableau-server>`_ file.
 ref: create-tdc
@@ -78,7 +84,7 @@ content: |
                  :language: xml
                  :emphasize-lines: 6-8
                  :linenos:
-        
+
           - id: macos
             content: |
               .. class:: copyable-code
@@ -94,9 +100,9 @@ content: |
 
      .. note::
 
-        Your Tableau repository may be located somewhere other than the 
-        default path. To find the repository, go to the 
-        :guilabel:`File` menu and click 
+        Your Tableau repository may be located somewhere other than the
+        default path. To find the repository, go to the
+        :guilabel:`File` menu and click
         :guilabel:`Repository Location...`.
 
 ---
