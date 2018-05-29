@@ -49,7 +49,7 @@ content: |
       * - :guilabel:`TCP/IP Server`
         - Address of the server where your
           :binary:`~bin.mongosqld` process is running. If you have enabled
-          |bi-short| on `MongoDB Atlas
+          `{+atlas-bi-short+}
           <https://www.mongodb.com/cloud/atlas>`_, you can find the
           hostname of the server where :binary:`~bin.mongosqld` is running
           in the `connection information
@@ -63,7 +63,7 @@ content: |
       * - :guilabel:`User`
         - Required when running with :option:`--auth <mongosqld --auth>`
           enabled and when
-          connecting to an Atlas BI Connector instance.
+          connecting to an |atlas-bi-short| instance.
           Username of the :manual:`MongoDB user
           </core/security-users/>` who is authenticated to use your
           target database.

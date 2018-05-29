@@ -34,7 +34,8 @@ extensions = [
     'directives',
     'intermanual',
     'fasthtml',
-    'tabs'
+    'tabs',
+    'source_constants'
 ]
 
 templates_path = ['.templates']
@@ -58,7 +59,14 @@ rst_epilog = '\n'.join([
     '.. |hardlink| replace:: https://docs.mongodb.com/bi-connector/',
     '.. |bi| replace:: MongoDB Connector for BI',
     '.. |bi-short| replace:: BI Connector',
+    '.. |atlas-bi| replace:: MongoDB Connector for Business Intelligence for MongoDB Atlas',
+    '.. |atlas-bi-short| replace:: BI Connector for Atlas',
 ])
+
+source_constants = {
+    'atlas-bi-short': 'BI Connector for Atlas',
+    'bi-short': 'BI Connector'
+}
 
 extlinks = {
     'issue': ('https://jira.mongodb.org/browse/%s', '' ),

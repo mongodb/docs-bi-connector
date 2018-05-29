@@ -112,7 +112,7 @@ level: 4
 ref: connect-to-bi-server
 content: |
   Launch your business intelligence tool, and connect to the
-  BI Connector using
+  |bi-short| using
   a MySQL driver and the following settings:
 
   .. list-table::

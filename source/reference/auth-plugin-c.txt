@@ -30,7 +30,7 @@ Using the Plugin for Authentication
 Before you use the authentication plugin, you must set up authenticated
 users for MongoDB. For more information on creating authenticated users,
 see  :manual:`Enable Authentication </tutorial/enable-authentication/>`.
-If you are using the Atlas-hosted |bi-short|, see :ref:`mongodb-users`.
+If you are using the |atlas-bi-short|, see :ref:`mongodb-users`.
 
 The procedure for using the C Authentication plugin library varies
 depending on your SQL client. The C Authentication plugin can be used
