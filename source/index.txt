@@ -34,7 +34,7 @@ System Components
 A complete BI system includes the following components:
 
 - **MongoDB database:** Data storage.
-- **BI Connector:** Provides a relational schema and translates SQL
+- **{+bi-short+}:** Provides a relational schema and translates SQL
   queries between your BI tool and MongoDB.
 - **ODBC data source name (DSN):**
   Holds authentication and connection configuration data.
@@ -61,13 +61,19 @@ Hosted Database and |bi-short|
     with your preferred BI tools. `Create an Atlas cluster to get started
     <https://www.mongodb.com/cloud/atlas/lp/general?utm_source=bi-connector&utm_campaign=20-docs-in-20-days&utm_medium=docs>`_.
 
+`{+atlas-bi-short+} <https://www.mongodb.com/cloud/atlas>`_ provides a fully
+hosted solution for both MongoDB and |bi-short|. Atlas dedicated
+clusters (`size M10+
+<https://docs.atlas.mongodb.com/create-new-cluster/>`_)
+offer an `integrated {+bi-short+} instance
+<https://docs.atlas.mongodb.com/bi-connection>`_ as an option.
 In this scenario, the database and |bi-short|
 applications both run on Atlas, and you set up your
 :doc:`DSN </tutorial/create-system-dsn>` with connection information
 provided by Atlas.
 
 .. figure:: /images/bi-connector/cloud-bi-vert.png
-   :alt: Hosted DB and BI Connector
+   :alt: Hosted DB and {+bi-short+}
    :figwidth: 641px
    :align: center
 
@@ -79,11 +85,11 @@ If you have an Atlas deployment smaller than M10 (including the Atlas
 your MongoDB instance is not hosted on Atlas, you can run |bi-short|
 locally and specify a remote database address with the
 :option:`--mongo-uri <mongosqld --mongo-uri>` option when you start
-the BI Connector's
+the |bi-short|'s
 :doc:`mongosqld process </reference/mongosqld>`.
 
 .. figure:: /images/bi-connector/cloud-db-vert.png
-   :alt: On Premises DB and Local BI Connector
+   :alt: On Premises DB and Local {+bi-short+}
    :figwidth: 678px
    :align: center
 
@@ -96,7 +102,7 @@ elsewhere on your network, in which case you can set up your
 server address.
 
 .. figure:: /images/bi-connector/cloud-onprem-vert.png
-   :alt: On Premises DB and BI Connector
+   :alt: On Premises DB and {+bi-short+}
    :figwidth: 570px
    :align: center
 
@@ -118,7 +124,7 @@ in the :doc:`Quick Start Guide </local-quickstart>`.
 
       Quick Start Guide </local-quickstart>
       /atlas-bi-connector
-      Install BI Connector</installation>
+      Install {+bi-short+}</installation>
       /launch
       /tutorial/create-system-dsn
       Connect BI Tools </client-applications>

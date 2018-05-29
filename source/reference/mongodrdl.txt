@@ -242,7 +242,7 @@ the provisioning of dedicated servers for MongoDB instances.
 
    MongoDB Atlas now offers a hosted |bi-short| and does not
    require a :ref:`.drdl <drdl>` file. For more information on the
-   Atlas-hosted |bi-short|, see :ref:`bi-connection`.
+   |bi-atlas-short|, see :ref:`bi-connection`.
 
 If you are running the |bi-short| on premises and wish to create a
 :ref:`.drdl <drdl>` file from an Atlas database, use the

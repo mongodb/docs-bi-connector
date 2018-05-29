@@ -13,7 +13,7 @@ Create a System DSN
    :class: singlecol
 
 The following steps describe how to create a system Data Source
-Name (DSN) for the BI Connector's :binary:`~bin.mongosqld`
+Name (DSN) for the |bi-short|'s :binary:`~bin.mongosqld`
 process. A DSN is a saved configuration which
 describes a database connection to be
 used by an :abbr:`ODBC (Open Database Connectivity)` driver.

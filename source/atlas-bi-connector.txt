@@ -1,7 +1,7 @@
 :noprevnext:
 
 ============================
-Enable BI Connector in Atlas
+Enable {+bi-short+} in Atlas
 ============================
 
 .. default-domain:: mongodb
@@ -14,5 +14,5 @@ Enable BI Connector in Atlas
 
 .. include:: /includes/atlas-bi-connector.rst
 
-To install the MongoDB Connector for BI on premises, see the
+To install the |bi| on premises, see the
 :ref:`Installation Guides <installation-guides>`.
