@@ -1,8 +1,8 @@
 :noprevnext:
 
-===================
-Create a System DSN
-===================
+=====================
+Create a System |dsn|
+=====================
 
 .. default-domain:: mongodb
 
@@ -12,41 +12,161 @@ Create a System DSN
    :depth: 1
    :class: singlecol
 
-The following steps describe how to create a system Data Source
-Name (DSN) for the BI Connector's :binary:`~bin.mongosqld`
-process. A DSN is a saved configuration which
-describes a database connection to be
-used by an :abbr:`ODBC (Open Database Connectivity)` driver.
-Once the DSN is created for the |bi-short|, you can configure a wide
-range of SQL clients and BI tools to use the DSN and import
+.. _Create a keytab file: https://web.mit.edu/kerberos/krb5-latest/doc/admin/admin_commands/kadmin_local.html#ktadd
+.. _Kerberos Principals: https://web.mit.edu/kerberos/krb5-1.5/krb5-1.5.4/doc/krb5-user/What-is-a-Kerberos-Principal_003f.html
+.. _Heimdal: https://www.h5l.org
+.. _Heimdal configuration file: https://www.h5l.org/manual/HEAD/info/heimdal/Configuration-file.html#Configuration-file
+
+The following steps describe how to create a system |dsn| for the |bi-short|\'s :binary:`~bin.mongosqld`
+process. A |dsn| is a saved configuration which
+describes a database connection for an |odbc| driver to use.
+Once the |dsn| is created for the |bi-short|, you can configure a wide
+range of SQL clients and BI tools to use the |dsn| and import
 data from MongoDB.
-
-.. COMMENT This directive is just to render a tab strip for the prereqs
-.. tabs-platforms::
-
-   tabs:
-     - id: windows
-       content: |
-
-     - id: macos
-       content: |
 
 Prerequisites
 -------------
 
-Before creating a :abbr:`DSN (Data Source Name)`, you should:
+Before creating a |dsn|, you should:
+
+.. tabs::
+
+   tabs:
+     - id: uidpwd
+       name: Username and Password
+       content: |
+
+         - Configure your :binary:`~bin.mongod` and 
+           :binary:`~bin.mongos` instances to use 
+           :manual:`Challenge Response (SCRAM-SHA-1) authentication </core/security-scram>`.
+         - :manual:`Create a MongoDB database </core/databases-and-collections>` to which you want to connect 
+           using |bi-short|.
+
+     - id: ldap
+       name: LDAP
+       content: |
+
+         - Make sure your :binary:`~bin.mongod` and 
+           :binary:`~bin.mongos` instances are running 
+           `MongoDB Enterprise <http://www.mongodb.com/products/mongodb-enterprise?jmp=docs>`__. 
+         - Configure your :binary:`~bin.mongod` and 
+           :binary:`~bin.mongos` instances to use 
+           :manual:`LDAP (PLAIN) authentication </core/security-ldap>`.
+         - :manual:`Create a MongoDB database </core/databases-and-collections>` to which you want to connect 
+           using |bi-short|.
+
+     - id: kerberos
+       name: Kerberos
+       content: |
+
+         - Make sure your :binary:`~bin.mongod` and 
+           :binary:`~bin.mongos` instances are running 
+           `MongoDB Enterprise <http://www.mongodb.com/products/mongodb-enterprise?jmp=docs>`__. 
+         - Configure your :binary:`~bin.mongod` and 
+           :binary:`~bin.mongos` instances to use 
+           :manual:`Kerberos (GSSAPI) authentication </core/kerberos>`.
+         - :manual:`Create a MongoDB database </core/databases-and-collections>` to which you want to connect 
+           using |bi-short|.
+         - `Create a keytab file`_ on the |kdc| that has the needed 
+           Kerberos :ref:`service principals <kerberos-service-principal>` 
+           for ``mongosql`` and ``mongosql2``.
+
+           .. example::
+
+              .. code-block:: sh
+              
+                 mongosql/<fullHostnameOfBIConnector>@<KERBEROS_REALM>
+ 
+         - Copy the ``keytab`` file you created for your MongoDB 
+           deployment to the same host that serves the |bi-short|. 
+         - If your keytab does not use the default name 
+           (``krb5.keytab``), you must set the 
+           `KRB5_KTNAME <https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html>`_ system variable.
+
+           .. note::
+
+              The Kerberos implementation on macOS, `Heimdal`_, does
+              not support the ``default_keytab_name`` configuration 
+              setting, like MIT Kerberos does. You must set the 
+              ``KRB5_KTNAME`` system variable. 
+
+         - If your Kerberos configuration file does not use the 
+           default name (``krb5.conf``), you must set the
+           `KRB5_CONFIG <https://web.mit.edu/kerberos/krb5-devel/doc/admin/conf_files/krb5_conf.html>`_ 
+           system variable. (Heimdal also supports 
+           `this system variable <https://www.h5l.org/manual/HEAD/info/heimdal/Configuration-file.html#Configuration-file>`_.)
+
+         - If you are using a ``mongosqld`` configuration file, you
+           must add the following settings.
+
+           **MongoDB BI Connector Authentication**
+
+           - :setting:`security.enabled` ``: true``
+           - :setting:`security.defaultMechanism` ``: "GSSAPI"``
+           - :setting:`security.defaultSource` ``: "$external"``
+           - :setting:`security.gssapi.hostname` 
+             ``: <host running mongosqld>``
+           - :setting:`security.gssapi.serviceName` 
+             ``: <name of mongosqld service>``
+             (:setting:`security.gssapi.hostname` should match the value in :setting:`serviceName`.)
+
+           .. example::
+
+              .. code-block:: yaml
+   
+                 security
+                   enabled : true
+                   defaultMechanism : "GSSAPI"
+                   defaultSource : "$external"           
+                   gssapi
+                     hostname : <host running mongosqld>
+                     serviceName : <name of mongosqld service>
+
+           **MongoDB Authentication**
+
+           - :setting:`mongodb.net.uri` 
+             ``: "mongodb://<hostname and port of mongodb database>/"``
+           - :setting:`mongodb.net.auth.username` 
+             ``: <database username>``
+           - :setting:`mongodb.net.auth.password` 
+             ``: <database password>``
+           - :setting:`mongodb.net.auth.source` ``: "$external"``
+           - :setting:`mongodb.net.auth.mechanism` ``: "GSSAPI"``
+
+           .. example::
+
+              .. code-block:: yaml
+   
+                 mongodb:
+                  net:
+                    uri: "mongodb://<hostname and port of mongodb database>/"
+                    auth:
+                      username: <database username>
+                      password: <database password>
+                      source: "$external"
+                      mechanism: "GSSAPI"
+
+         .. topic:: Testing |bi-short| with Kerberos on ``localhost``
+
+            If you are testing Kerberos with a ``mongosqld`` running 
+            on a ``localhost``, you must set 
+            :setting:`net.unixDomainSocket.enabled` to 
+            ``true`` in the :doc:`mongosqld </reference/mongosqld>`
+            configuration file.
 
 .. tabs-platforms::
-
-   hidden: true
 
    tabs:
      - id: windows
        content: |
-         - Download and install `Visual C++ Redistributable for Visual Studio
-           2015 <https://www.microsoft.com/en-us/download/details.aspx?id=48145>`_
+         - Download and install `Visual C++ Redistributable for Visual 
+           Studio 2015 <https://www.microsoft.com/en-us/download/details.aspx?id=48145>`_
 
-- Download and install the |odbc-driver| for your platform.
+         - Download and install the |odbc-driver| for your platform.
+
+     - id: macos
+       content: |
+         - Download and install `ODBC Manager <http://www.odbcmanager.net>`_.
 
 .. _create-system-dsn:
 
@@ -62,25 +182,25 @@ Procedure
        content: |
          .. include:: /includes/steps/create-system-dsn.rst
 
-         Example
-         -------
+         .. example::
 
-         The following example configuration assumes the following:
-
-         - A :binary:`~bin.mongosqld` instance running on ``localhost`` port
-           ``3307`` with authentication enabled.
-         - A :manual:`mongod </reference/program/mongod/>` instance running with
-           :manual:`authentication </reference/program/mongod#cmdoption-auth>` enabled.
-         - A :manual:`MongoDB user </core/security-users/>` named
-           ``dbUser`` who authenticates against the ``admin`` database
-           and is authorized to use the ``test`` database.
-
-         The values you enter may be different.
-
-         .. figure:: /images/bi-connector/windows-odbc-dsn.png
-            :alt: Screenshot of the Windows ODBC Administrator application
-            :figwidth: 550px
-            :align: center
+            The following example configuration assumes the following:
+   
+            - A :binary:`~bin.mongosqld` instance running on 
+              ``localhost`` port ``3307`` with authentication enabled.
+            - A :manual:`mongod </reference/program/mongod/>` instance 
+              running with Username and Password (``SCRAM-SHA-1``)
+              :manual:`authentication </reference/program/mongod#cmdoption-auth>` enabled. 
+            - A :manual:`MongoDB user </core/security-users/>` named
+              ``dbUser`` who authenticates against the ``admin`` 
+              database and is authorized to use the ``test`` database.
+   
+            Your values will be different.
+   
+            .. figure:: /images/bi-connector/windows-odbc-dsn.png
+               :alt: Screenshot of the Windows ODBC Administrator    application
+               :figwidth: 550px
+               :align: center
 
      - id: macos
        content: |

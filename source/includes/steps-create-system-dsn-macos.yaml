@@ -1,4 +1,4 @@
-title: Launch ODBC Manager.
+title: Start the ODBC Manager application.
 ref: launch-odbc-manager-macos
 level: 4
 stepnum: 1
@@ -7,7 +7,7 @@ content: |
 
      ODBC Manager is included with the |odbc-driver-name|.
 ---
-title: Click :guilabel:`System DSN`, then click :guilabel:`Add`.
+title: Add a System DSN
 ref: click-system-dsn-macos
 level: 4
 stepnum: 2
@@ -15,59 +15,71 @@ content: |
   .. figure:: /images/bi-connector/odbc-manager.png
      :alt: ODBC Manager DSN configuration
      :align: center
+
+  a. Click :guilabel:`System DSN`.
+  b. Click :guilabel:`Add...`.
+  c. Click :guilabel:`MongoDB Unicode ODBC` 
+  d. Click :guilabel:`OK`.
+
 ---
-title: Select the :guilabel:`MongoDB Unicode ODBC` driver, then click :guilabel:`OK`.
-ref: select-driver-macos
-level: 4
-stepnum: 3
----
-title: Enter a :guilabel:`Data Source Name (DSN)`.
+title: Provide the DSN name and description.
 ref: enter-dsn-name-macos
 level: 4
-stepnum: 4
+stepnum: 3
 content: |
 
-  Optionally enter a :guilabel:`Description`.
+  Enter an explanation of the purpose of this 
+  |dsn| into the  
+  :guilabel:`Description` box.
 
   .. note::
 
      Do not close the setup window. Proceed to the next step.
 ---
-title: Add the necessary keywords.
+title: Provide the connection settings.
 ref: keywords-dsn-macos
 level: 4
-stepnum: 5
+stepnum: 4
 content: |
   .. include:: /includes/odbc-manager-keywords.rst
 
-  Using the procedure above, add the following keywords:
+  Using the procedure above, add the following keyword/value pairs:
 
   .. list-table::
-     :widths: 50 50
+     :widths: 20 80
      :header-rows: 1
+     :stub-columns: 1
   
      * - Keyword
        - Value
   
-     * - **SERVER**
-       - The hostname or IP address of the |bi| host.
-  
-     * - **PORT**
-       - The :abbr:`IANA (Internet Assigned Numbers Authority)`
-         `port number <https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml>`_
-         for the |bi|. The default is ``3307``.
+     * - SERVER
+       - Hostname or IP address of the |bi-short| host.
 
-     * - **DATABASE**
-       - Optional. The database to use after connecting.
+         .. admonition:: Kerberos authentication only
+            :class: note
+
+            This hostname must match the value set in the ``keytab`` 
+            created for the `mongosql` and `mongosql2` service 
+            principals.
+  
+     * - PORT
+       - |iana| `port number <https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml>`_
+         for the |bi|. The default is ``3306``.
+
+     * - DATABASE
+       - *Optional.* The database to use after connecting.
 
   .. include:: /includes/fact-odbc-parameters.rst
 
-  For example, your user DSN configuration should look similar to
-  the following:
+  .. example:: 
+
+     Your |dsn| configuration should resemble 
+     the following image:
   
-  .. figure:: /images/bi-connector/odbc-manager-dsn-config.png
-     :alt: ODBC Manager DSN configuration
-     :align: center
+     .. figure:: /images/bi-connector/odbc-manager-dsn-config.png
+        :alt: ODBC Manager DSN configuration
+        :align: center
 
   .. note::
 
@@ -76,108 +88,153 @@ content: |
 title: (Optional) If authentication is enabled, add the authentication keywords.
 ref: authentication-keywords-dsn-macos
 level: 4
-stepnum: 6
+stepnum: 5
 content: |
   .. include:: /includes/odbc-manager-keywords.rst
 
-  Using the procedure above, add the following keywords:
+  Using the procedure above, add the following keyword/value pairs:
 
   .. list-table::
-     :widths: 50 50
+     :widths: 20 80
      :header-rows: 1
-  
+     :stub-columns: 1
+
      * - Keyword
        - Value
   
-     * - **UID**
-       - The username for the user that can access the active
-         |bi| database.
+     * - UID
+       - The username for the user that can access the database currently connected to |bi-short|.
   
          Unless you specified a ``defaultMechanism`` in your
          |bi| :ref:`configuration file <config-format>`, you
          must append the authenticating database to the username.
+    
+         .. tabs::
+
+            hidden: true
+         
+            tabs:
+              - id: uidpwd
+                name: Username and Password
+                content: |
+         
+                  The expected and default authenticating database is 
+                  ``admin``.
+
+                  .. example::
+
+                     To authenticate the user ``myTestUser`` against
+                     the ``test`` database:
+
+                     ``myTestUser?source=test``
+         
+              - id: ldap
+                name: LDAP
+                content: |
+         
+                  The expected and default authenticating database is 
+                  ``$external``.
+
+                  .. example::
+
+                     To authenticate the LDAP user ``myTestUser`` 
+                     against the ``$external`` database:
+                     
+                     ``myTestUser?source=$external&mechanism=PLAIN``
+
+              - id: kerberos
+                name: Kerberos
+                content: |
+         
+                  The expected and default authenticating database is 
+                  ``$external``.
+
+                  .. example::
+
+                     To authenticate the Kerberos user principal
+                     ``myTestUser@MONGODB.EXAMPLE.COM`` against the 
+                     ``$external`` database:
+                     
+                     ``myTestUser?source=$external&mechanism=GSSAPI``
   
-         .. example::
   
-            The user ``myTestUser`` is authenticated against the
-            ``admin`` database:
-  
-            ``myTestUser?source=admin``
-  
-         - If you are using Username and Password (``SCRAM-SHA-1``)
-           authentication, the expected authenticating database is
-           ``admin``.
-  
-         - If you are using LDAP (``PLAIN``) authentication, the
-           expected authenticating database is ``$external``.
-  
-     * - **PWD**
+     * - PWD
        - The password associated with the :guilabel:`UID`.
 
   .. include:: /includes/fact-odbc-parameters.rst
 
-  For example, your user DSN configuration should look similar to
-  the following:
+  .. example::
+
+     Your |dsn| configuration should resemble 
+     the following image, if you are using Username and Password 
+     authentication:
   
-  .. figure:: /images/bi-connector/odbc-manager-dsn-config-auth.png
-     :alt: ODBC Manager DSN configuration
-     :align: center
+     .. figure:: /images/bi-connector/odbc-manager-dsn-config-auth.png
+        :alt: ODBC Manager DSN configuration
+        :align: center
 ---
-title: (Optional) If SSL is enabled, add the SSL keywords.
+title: (Optional) If |ssl| is enabled, add the |ssl| settings.
 ref: ssl-keywords-dsn-macos
 level: 4
-stepnum: 7
+stepnum: 6
 content: |
   .. include:: /includes/odbc-manager-keywords.rst
 
-  Using the procedure above, add the required keywords for your SSL
-  configuration:
+  Using the procedure above, add the following keyword/value pairs:
 
   .. list-table::
-     :widths: 50 50
+     :widths: 20 80
      :header-rows: 1
+     :stub-columns: 1
 
      * - Keyword
        - Value
 
-     * - **SSLKEY**
-       - The path to the .pem key file.
+     * - SSLKEY
+       - The absolute file path to the ``.pem`` key file on the
+         :doc:`mongosqld </reference/mongosqld>` host.
 
-     * - **SSLCERT**
-       - The path to the SSL certificate.
+     * - SSLCERT
+       - The absolute file path to path to the |ssl| certificate on the
+         :doc:`mongosqld </reference/mongosqld>` host.
 
-     * - **SSLMODE**
-       - Set to ``REQUIRED``.
+     * - SSLMODE
+       - The option to ignore, permit or require |ssl| for connections 
+         to :doc:`mongosqld </reference/mongosqld>`. Set to 
+         ``REQUIRED``.
 
   .. note::
 
-     Depending on your SSL implementation you may need to set some of
+     Depending on your |ssl| implementation you may need to set some of
      the following ODBC keywords:
 
      .. list-table::
-        :widths: 50 50
+        :widths: 20 80
         :header-rows: 1
 
         * - Keyword
           - Value
 
-        * - ``SSLCA``
-          - The path to the SSL certificate authority file.
+        * - SSLCA
+          - The absolute file path to the |ssl| certificate authority 
+            file.
 
-        * - ``ENABLE_CLEARTEXT_PLUGIN``
-          - Set to ``1`` to enable cleartext authentication.
+        * - ENABLE_CLEARTEXT_PLUGIN
+          - The option to permit authentication information to be sent in cleartext. Set to ``1`` to enable.
 
   .. include:: /includes/fact-odbc-parameters.rst
 
-  For example, your user DSN configuration should look similar to
-  the following:
+  .. example::
+
+     Your |dsn| configuration should resemble 
+     the following image:
   
-  .. figure:: /images/bi-connector/odbc-manager-dsn-config-auth-ssl.png
-     :alt: ODBC Manager DSN configuration
-     :align: center
+     .. figure:: /images/bi-connector/odbc-manager-dsn-config-auth-ssl.png
+        :alt: ODBC Manager DSN configuration
+        :align: center
 ---
 title: Click :guilabel:`OK` to finish creating the DSN.
 ref: finalize-user-dsn-macos
 level: 4
-stepnum: 8
+stepnum: 7
 ...
