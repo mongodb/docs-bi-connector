@@ -12,30 +12,23 @@ source:
   file: steps-create-system-dsn.yaml
   ref: select-tab
 ---
-ref: click-add-no-auth
-level: 4
-stepnum: 3
-source:
-  file: steps-create-system-dsn.yaml
-  ref: click-add
----
 ref: select-odbc-no-auth
 level: 4
-stepnum: 4
+stepnum: 3
 source:
   file: steps-create-system-dsn.yaml
   ref: select-odbc
 ---
 ref: form-fields-no-auth
 level: 4
-stepnum: 5
+stepnum: 4
 source:
   file: steps-create-system-dsn.yaml
   ref: form-fields
 ---
 ref: click-test-no-auth
 level: 4
-stepnum: 6
+stepnum: 5
 source:
   file: steps-create-system-dsn.yaml
   ref: click-test
