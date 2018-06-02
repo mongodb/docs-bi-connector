@@ -12,24 +12,10 @@ source:
   file: steps-create-system-dsn.yaml
   ref: select-tab
 ---
-ref: click-add-auth
-level: 4
-stepnum: 3
-source:
-  file: steps-create-system-dsn.yaml
-  ref: click-add
----
-ref: select-odbc-auth
-level: 4
-stepnum: 4
-source:
-  file: steps-create-system-dsn.yaml
-  ref: select-odbc
----
 title: Fill in the necessary form fields. 
 ref: form-fields-auth
 level: 4
-stepnum: 5
+stepnum: 3
 source:
   file: steps-create-system-dsn.yaml
   ref: form-fields
@@ -37,14 +23,14 @@ source:
 title: Fill in the authentication form fields. 
 ref: authentication-form-fields-auth
 level: 4
-stepnum: 6
+stepnum: 4
 source:
   file: steps-create-system-dsn.yaml
   ref: authentication-form-fields
 ---
 ref: click-test-auth
 level: 4
-stepnum: 7
+stepnum: 5
 source:
   file: steps-create-system-dsn.yaml
   ref: click-test

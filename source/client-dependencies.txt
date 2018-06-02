@@ -40,14 +40,84 @@ Authentication Options
 
 .. include:: /includes/auth-options.rst
 
-.. example::
+.. tabs::
 
-   To authenticate as user ``grace`` with the LDAP authentication
-   mechanism, use the following username:
+   tabs:
+     - id: uidpwd
+       name: Username and Password
+       content: |
 
-   .. code::
+         .. example::
 
-      grace?mechanism=PLAIN&source=$external
+            To authenticate as user ``grace`` with the SCRAM-SHA-1 
+            authentication mechanism, use the following username:
+
+            .. code:: shell
+
+               grace
+
+            You may omit ``mechanism`` and ``source`` because 
+            ``SCRAM-SHA-1`` is the default authentication mechanism. 
+            To enable ``SCRAM-SHA-1`` in your 
+            :doc:`mongosqld </reference/mongosqld>` configuration 
+            file.:
+
+            .. code-block:: yaml
+            
+               security:
+                 enabled: true
+
+     - id: ldap
+       name: LDAP
+       content: |
+
+         .. example::
+
+            To authenticate as user ``grace`` with the LDAP 
+            authentication mechanism, use the following username:
+
+            .. code:: shell
+
+               grace?mechanism=PLAIN&source=$external
+
+            You may omit ``mechanism`` and ``source`` if you set these
+            values in your :doc:`mongosqld </reference/mongosqld>`
+            configuration file:
+
+            .. code-block:: yaml
+            
+               security:
+                 enabled: true
+                 defaultMechanism: "PLAIN"
+                 defaultSource: "$external"
+
+     - id: kerberos
+       name: Kerberos
+       content: |
+
+         .. example::
+
+            To authenticate as user ``pat`` on the ``EXAMPLE.COM``
+            Kerberos realm with the Kerberos authentication mechanism, 
+            use the following username:
+
+            .. code:: shell
+
+               pat@EXAMPLE.COM?mechanism=GSSAPI&source=$external
+
+            You may omit ``mechanism`` and ``source`` if you set these
+            values in your :doc:`mongosqld </reference/mongosqld>`
+            configuration file:
+
+            .. code-block:: yaml
+            
+               security:
+                 enabled: true
+                 defaultMechanism: "GSSAPI"
+                 defaultSource: "$external"
+                 gssapi:
+                   hostname: <yourHostname>
+                   serviceName: "mongosql"
 
 .. class:: hidden
 
