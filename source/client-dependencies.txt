@@ -7,25 +7,32 @@ Authentication Plugins
 .. default-domain:: mongodb
 
 The |bi| offers authentication plugins allowing you to authenticate
-using either the ``SCRAM-SHA-1`` or ``PLAIN`` authentication
-mechanisms. Install either the C or JDBC authentication plugin
+using any of the following authentication mechanisms:
+
+- Challenge and Response (``SCRAM-SHA-1``)
+- |ldap| (``PLAIN``)
+- Kerberos (``GSSAPI``)
+
+Install either the C or |jdbc| authentication plugin
 depending on which is compatible with your BI Tool:
 
 .. include:: /includes/toc/dfn-list-client-dependencies.rst
 
-For more
-information on connecting BI Tools to the |bi-short|, see
+To learn about connecting BI Tools to the |bi-short|, see
 :doc:`client-applications`.
 
 .. important::
 
-   The use of TLS/SSL is recommended in addition to using an
+   The use of |tls-ssl| is recommended in addition to using an
    authentication plugin as:
 
-   - The ``SCRAM-SHA-1`` mechanism hashes the passwords in the
-     client plugin. However, all other data is in cleartext.
+   - Challenge and Response hashes the passwords in the
+     client plugin. All other data is in cleartext.
 
-   - The ``PLAIN`` mechanism sends the password in cleartext.
+   - |ldap| sends the password in cleartext.
+
+   - Kerberos sends tickets over the Kerberos protocol. All other data
+     is in cleartext.
 
 The |bi| requires authentication when running with
 :option:`--auth <mongosqld --auth>`.
@@ -40,6 +47,15 @@ Authentication Options
 
 .. include:: /includes/auth-options.rst
 
+``mongosqld`` Configuration File Authentication Examples
+--------------------------------------------------------
+
+A |bi-short| user, ``grace``, authenticates with her username and password. For Challenge and Response, |ldap|, and Kerberos, the following examples show:
+
+- How you would write the username to authenticate
+- Which options the ``mongosqld`` configuration file would need to
+  enable authentication 
+
 .. tabs-auth::
 
    tabs:
@@ -48,73 +64,126 @@ Authentication Options
 
          .. example::
 
-            To authenticate as user ``grace`` with the SCRAM-SHA-1 
-            authentication mechanism, use the following username:
+            To authenticate as user ``grace`` with the Challenge and 
+            Response (``SCRAM-SHA-1``) authentication mechanism, write 
+            the username in this format:
 
-            .. code:: shell
+            .. code-block:: shell
 
                grace
 
-            You may omit ``mechanism`` and ``source`` because 
-            ``SCRAM-SHA-1`` is the default authentication mechanism. 
-            To enable ``SCRAM-SHA-1`` in your 
-            :doc:`mongosqld </reference/mongosqld>` configuration 
-            file.:
+            To enable Challenge and Response (``SCRAM-SHA-1``) as your 
+            |bi-short| authentication mechanism, you must add 
+            :setting:`security.enabled` ``: true`` to your 
+            :doc:`mongosqld </reference/mongosqld>` configuration file:
 
             .. code-block:: yaml
 
                security:
                  enabled: true
+
+            .. note::
+
+               If :setting:`security.enabled` ``: true`` and no other 
+               :ref:`security <msqld-conf-security-options>` options 
+               are set, you can omit adding ``mechanism`` or ``source``
+               to the username. When :setting:`security.enabled` 
+               ``: true`` and no other 
+               :ref:`security <msqld-conf-security-options>`
+               options are set,``SCRAM-SHA-1`` is the default 
+               authentication mechanism.
 
      - id: ldap
        content: |
 
          .. example::
 
-            To authenticate as user ``grace`` with the LDAP 
-            authentication mechanism, use the following username:
+            To authenticate as user ``grace`` with the |ldap| 
+            (``PLAIN``) authentication mechanism, write the 
+            username in this format:
 
-            .. code:: shell
+            .. code-block:: shell
 
                grace?mechanism=PLAIN&source=$external
 
-            You may omit ``mechanism`` and ``source`` if you set these
-            values in your :doc:`mongosqld </reference/mongosqld>`
-            configuration file:
+            To enable |ldap| (``PLAIN``) as your 
+            |bi-short| authentication mechanism, you must add 
+            :setting:`security.enabled` ``: true`` to your 
+            :doc:`mongosqld </reference/mongosqld>` configuration file:
 
             .. code-block:: yaml
 
                security:
                  enabled: true
-                 defaultMechanism: "PLAIN"
-                 defaultSource: "$external"
+
+            .. note::
+
+               If you want to omit adding ``mechanism`` and ``source`` 
+               to the username, add and set these option/value pairs 
+               to your :doc:`mongosqld </reference/mongosqld>` 
+               configuration file:
+   
+               - :setting:`security.defaultMechanism` ``: PLAIN``
+               - :setting:`security.defaultSource` ``: $external``
+   
+               The resulting :ref:`security <msqld-conf-security-options>`
+               block in your :doc:`mongosqld </reference/mongosqld>` 
+               configuration file should look like this:
+   
+               .. code-block:: yaml
+   
+                  security:
+                    enabled: true
+                    defaultMechanism: "PLAIN"
+                    defaultSource: "$external"
 
      - id: kerberos
        content: |
 
          .. example::
 
-            To authenticate as user ``pat`` on the ``EXAMPLE.COM``
-            Kerberos realm with the Kerberos authentication mechanism,
-            use the following username:
+            To authenticate as user ``grace`` on the ``EXAMPLE.COM``
+            `Kerberos realm <https://web.mit.edu/kerberos/krb5-latest/doc/admin/realm_config.html>`__ 
+            with the Kerberos authentication mechanism, write the 
+            username in this format:
 
-            .. code:: shell
+            .. code-block:: shell
 
-               pat@EXAMPLE.COM?mechanism=GSSAPI&source=$external
+               grace@EXAMPLE.COM?mechanism=GSSAPI&source=$external
 
-            You may omit ``mechanism`` and ``source`` if you set these
-            values in your :doc:`mongosqld </reference/mongosqld>`
-            configuration file:
+            To enable Kerberos (``GSSAPI``) as your 
+            |bi-short| authentication mechanism, you must add 
+            :setting:`security.enabled` ``: true`` to your 
+            :doc:`mongosqld </reference/mongosqld>` configuration file:
 
             .. code-block:: yaml
 
                security:
                  enabled: true
-                 defaultMechanism: "GSSAPI"
-                 defaultSource: "$external"
-                 gssapi:
-                   hostname: <yourHostname>
-                   serviceName: "mongosql"
+
+            .. note::
+
+               If you want to omit adding ``mechanism`` and ``source`` 
+               to the username, add and set these option/value pairs 
+               to your :doc:`mongosqld </reference/mongosqld>` 
+               configuration file:
+   
+               - :setting:`security.defaultMechanism` ``: GSSAPI``
+               - :setting:`security.defaultSource` ``: $external``
+   
+               The resulting :ref:`security <msqld-conf-security-options>`
+               block in your :doc:`mongosqld </reference/mongosqld>` 
+               configuration file should look like this:
+   
+               .. code-block:: yaml
+
+                  security:
+                    enabled: true
+                    defaultMechanism: "GSSAPI"
+                    defaultSource: "$external"
+                    gssapi:
+                      hostname: "<yourHostname>"
+                      serviceName: "mongosql"
 
 .. class:: hidden
 
