@@ -26,7 +26,7 @@ content: |
 
   .. include:: /includes/fact-ansi-unicode-driver.rst
 ---
-title: Provide the DSN name and description.
+title: Provide the |dsn| name and description.
 ref: enter-dsn-name-macos
 level: 4
 stepnum: 4
@@ -39,7 +39,7 @@ content: |
 
      Do not close the setup window. Proceed to the next step.
 ---
-title: Provide the connection settings.
+title: Provide the connection keywords.
 ref: keywords-dsn-macos
 level: 4
 stepnum: 5
@@ -62,8 +62,8 @@ content: |
          .. important::
 
             Use ``127.0.0.1`` to connect via TCP to localhost.
-            Specifying a value other than an IP address, will attempt to
-            connect via Unix socket.
+            Specifying a value other than an IP address and the |odbc| 
+            driver attempts to connect via Unix socket.
 
          .. admonition:: Kerberos authentication only
             :class: note
@@ -136,9 +136,9 @@ content: |
                   .. example::
 
                      To authenticate the user ``myTestUser`` against
-                     the ``test`` database:
+                     the ``admin`` database:
 
-                     ``myTestUser?source=test``
+                     ``myTestUser?source=admin``
 
               - id: ldap
                 content: |
@@ -175,14 +175,14 @@ content: |
   .. example::
 
      Your |dsn| configuration should resemble
-     the following image, if you are using Username and Password
-     authentication:
+     the following image, if you are using Challenge and Response 
+     (``SCRAM-SHA-1``) authentication:
 
      .. figure:: /images/bi-connector/odbc-manager-dsn-config-auth.png
         :alt: ODBC Manager DSN configuration
         :align: center
 ---
-title: (Optional) If |ssl| is enabled, add the |ssl| settings.
+title: (Optional) If |ssl| is enabled, add the |ssl| |odbc| keywords.
 ref: ssl-keywords-dsn-macos
 level: 4
 stepnum: 7
@@ -247,7 +247,7 @@ content: |
         :alt: ODBC Manager DSN configuration
         :align: center
 ---
-title: Click :guilabel:`OK` to finish creating the DSN.
+title: Click :guilabel:`OK` to finish creating the |dsn|.
 ref: finalize-user-dsn-macos
 level: 4
 stepnum: 8

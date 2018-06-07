@@ -76,12 +76,14 @@ rst_epilog = '\n'.join([
     '.. |utc| replace:: :abbr:`UTC (Coordinated Universal Time)`',
     '.. |ldap| replace:: :abbr:`LDAP (Lightweight Directory Access Protocol)`',
     '.. |ldaps| replace:: :abbr:`LDAPS (Secure Lightweight Directory Access Protocol)`',
-    '.. |kmip| replace:: :abbr:`KMIP (Key Management Interoperability)`',
+    '.. |kmip| replace:: :abbr:`KMIP (Key Management Interoperability Protocol)`',
     '.. |url| replace:: :abbr:`URL (Uniform Resource Locator)`',
     '.. |dsn| replace:: :abbr:`DSN (Data Source Name)`',
     '.. |odbc| replace:: :abbr:`ODBC (Open Database Connectivity)`',
+    '.. |jdbc| replace:: :abbr:`JDBC (Java Database Connectivity)`',
     '.. |sql| replace:: :abbr:`SQL (Structured Query Language)`',
     '.. |kdc| replace:: :abbr:`KDC (Key Distribution Center)`',
+    '.. |sasl| replace:: :abbr:`SASL (Simple Authentication and Security Layer)`',
     '.. |iana| replace:: :abbr:`IANA (Internet Assigned Numbers Authority)`'
 ])
 

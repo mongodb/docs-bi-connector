@@ -34,5 +34,5 @@ source:
   ref: click-test
 content: |
    If the connection is successful, click :guilabel:`OK` to add the
-   :abbr:`DSN (Data Source Name)`.
+   |dsn|.
 ...
