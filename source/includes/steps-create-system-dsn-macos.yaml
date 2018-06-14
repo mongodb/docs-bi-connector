@@ -165,7 +165,7 @@ content: |
                      ``myTestUser@MONGODB.EXAMPLE.COM`` against the
                      ``$external`` database:
 
-                     ``myTestUser?source=$external&mechanism=GSSAPI``
+                     ``myTestUser@MONGODB.EXAMPLE.COM?source=$external&mechanism=GSSAPI``
 
      * - PWD
        - The password associated with the :guilabel:`UID`.
@@ -200,12 +200,10 @@ content: |
        - Value
 
      * - SSLKEY
-       - The absolute file path to the ``.pem`` key file on the
-         :doc:`mongosqld </reference/mongosqld>` host.
+       - The absolute file path to the ``.pem`` key file.
 
      * - SSLCERT
-       - The absolute file path to path to the |ssl| certificate on the
-         :doc:`mongosqld </reference/mongosqld>` host.
+       - The absolute file path to path to the |ssl| certificate.
 
      * - SSLMODE
        - The option to ignore, permit or require |ssl| for connections
