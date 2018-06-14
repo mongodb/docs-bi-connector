@@ -83,6 +83,8 @@ rst_epilog = '\n'.join([
     '.. |jdbc| replace:: :abbr:`JDBC (Java Database Connectivity)`',
     '.. |sql| replace:: :abbr:`SQL (Structured Query Language)`',
     '.. |kdc| replace:: :abbr:`KDC (Key Distribution Center)`',
+    '.. |adc| replace:: :abbr:`ADC (Active Directory Controller)`',
+    '.. |spn| replace:: :abbr:`SPN (Service Principal Name)`',
     '.. |sasl| replace:: :abbr:`SASL (Simple Authentication and Security Layer)`',
     '.. |iana| replace:: :abbr:`IANA (Internet Assigned Numbers Authority)`'
 ])
