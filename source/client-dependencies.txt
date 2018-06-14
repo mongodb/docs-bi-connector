@@ -47,14 +47,16 @@ Authentication Options
 
 .. include:: /includes/auth-options.rst
 
-``mongosqld`` Configuration File Authentication Examples
---------------------------------------------------------
+Configuration File Authentication Examples
+------------------------------------------
 
-A |bi-short| user, ``grace``, authenticates with her username and password. For Challenge and Response, |ldap|, and Kerberos, the following examples show:
+A |bi-short| user, ``grace``, authenticates with her username and
+password. For Challenge and Response, |ldap|, and Kerberos, the
+following examples show:
 
-- How you would write the username to authenticate
-- Which options the ``mongosqld`` configuration file would need to
-  enable authentication 
+- How you would format the username to authenticate
+- Which configuration file settings :binary:`~bin.mongosqld`
+  are required to enable authentication.
 
 .. tabs-auth::
 
@@ -64,13 +66,14 @@ A |bi-short| user, ``grace``, authenticates with her username and password. For 
 
          .. example::
 
-            To authenticate as user ``grace`` with the Challenge and 
+            To authenticate as user ``grace`` using the ``admin``
+            database and the Challenge and
             Response (``SCRAM-SHA-1``) authentication mechanism, write 
             the username in this format:
 
             .. code-block:: shell
 
-               grace
+               grace?source=admin
 
             To enable Challenge and Response (``SCRAM-SHA-1``) as your 
             |bi-short| authentication mechanism, you must add 
@@ -84,14 +87,18 @@ A |bi-short| user, ``grace``, authenticates with her username and password. For 
 
             .. note::
 
-               If :setting:`security.enabled` ``: true`` and no other 
-               :ref:`security <msqld-conf-security-options>` options 
-               are set, you can omit adding ``mechanism`` or ``source``
-               to the username. When :setting:`security.enabled` 
-               ``: true`` and no other 
-               :ref:`security <msqld-conf-security-options>`
-               options are set,``SCRAM-SHA-1`` is the default 
-               authentication mechanism.
+               ``SCRAM-SHA-1`` is the default authentication mechanism
+               when ``mechanism`` is not specified in the username and
+               security is enabled. If you want to omit ``source`` from
+               the username, add and set
+               :setting:`security.defaultSource` ``: <authenticationDatabase>``
+               in the configuration file:
+
+               .. code-block:: yaml
+
+                  security:
+                    enabled: true
+                    defaultSource: "admin"
 
      - id: ldap
        content: |
@@ -143,7 +150,7 @@ A |bi-short| user, ``grace``, authenticates with her username and password. For 
          .. example::
 
             To authenticate as user ``grace`` on the ``EXAMPLE.COM``
-            `Kerberos realm <https://web.mit.edu/kerberos/krb5-latest/doc/admin/realm_config.html>`__ 
+            `Kerberos realm <https://web.mit.edu/kerberos/krb5-latest/doc/admin/realm_config.html>`__
             with the Kerberos authentication mechanism, write the 
             username in this format:
 
