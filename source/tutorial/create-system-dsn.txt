@@ -40,8 +40,6 @@ Before creating a |dsn|, you should:
            :manual:`Challenge Response (SCRAM-SHA-1) authentication </core/security-scram>`.
          - :manual:`Create a MongoDB database </core/databases-and-collections>` to which you want to connect
            using |bi-short|.
-         - Configure your new MongoDB database to 
-           :manual:`use Kerberos authentication </tutorial/control-access-to-mongodb-windows-with-kerberos-authentication/>`.
 
      - id: ldap
        content: |
@@ -67,7 +65,7 @@ Before creating a |dsn|, you should:
                 content: |
 
                   These prerequisites apply when configuring a Windows 
-                  client host authenticate against Active Directory.
+                  client host to authenticate against Active Directory.
 
                   .. important::
 
@@ -113,10 +111,10 @@ Before creating a |dsn|, you should:
                      Set the ``mongosql`` user to delegate for the 
                      ``mongodb`` user from the ``BI.EXAMPLE.COM`` host.
 
-                  BI Connector Host
-                  ~~~~~~~~~~~~~~~~~
+                  BI Connector Host Prerequisites
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-                  - :ref:`Install MongoDB as a Service <manually-create-windows-service>`
+                  - :ref:`Install MongoDB as a service <manually-create-windows-service>`
                     - Set the following options in the :manual:`configuration file </reference/configuration-options>`:
 
                     - ``bind_ip : <fullHostnameOfBIConnector>``
@@ -127,20 +125,20 @@ Before creating a |dsn|, you should:
                   - :manual:`Create a user </reference/method/db.createUser>` on your MongoDB database with the 
                     :ref:`appropriate roles <cached-sampling-user-permissions>` 
                     to sample data.
-                  - Launch :ref:`MongoSQL as a Service <msqld-as-a-system-service>`.
-                  - Run ``mongosqld`` as the MongoSQL Windows user you 
+                  - Install the :ref:`BI Connector as a service <msqld-as-a-system-service>`.
+                  - Launch ``mongosqld`` as the MongoSQL Windows user you
                     created in Active Directory.
 
                   .. example::
 
                      - Your name is ``Grace Smith``.
-                     - Your Windows domain is named ``EXAMPLE.COM``. 
-                     - You are running your BI tool on a Windows host 
+                     - Your Windows domain is named ``EXAMPLE.COM``.
+                     - You are running your BI tool on a Windows host
                        named ``BI.EXAMPLE.COM``.
 
                      On ``BI.EXAMPLE.COM``:
 
-                     - Install MongoDB and |bi| as Services.
+                     - Install MongoDB and |bi| as services.
                      - Edit your ``mongod.cfg`` file to resemble:
 
                        .. code-block:: yaml
@@ -173,7 +171,7 @@ Before creating a |dsn|, you should:
                        .. code-block:: yaml
 
                           systemLog:
-                            path: c:\\data\\log\\mongosqld.log
+                            path: "c:\\data\\log\\mongosqld.log"
                             logAppend: true
                             logRotate: "reopen"
                             verbosity: 3
@@ -209,12 +207,14 @@ Before creating a |dsn|, you should:
                      - Set |bi| to 
                        :guilabel:`Log on as: This account:` 
                        ``mongosql@EXAMPLE.COM``
-                     - Launch MongoDB and |bi|.
+                     - Start the MongoDB and |bi| services.
  
                   .. seealso::
 
                      To learn how to configure Active Directory to 
-                     manage your MongoDB instance, see `Configure MongoDB with Kerberos Authentication and Active Directory Authorization <https://docs.mongodb.com/manual/tutorial/kerberos-auth-activedirectory-authz/>`
+                     manage your MongoDB instance, see
+                     :manual:`Configure MongoDB with Kerberos Authentication and Active Directory Authorization 
+                     </tutorial/kerberos-auth-activedirectory-authz/>`.
 
               - id: macos
                 content: |

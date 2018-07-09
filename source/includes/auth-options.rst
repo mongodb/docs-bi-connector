@@ -34,3 +34,10 @@ username as URI-style query parameters:
 
        .. note:: 
           x.509 certificates are supported.
+
+.. note::
+
+   The ``source`` or ``mechanism`` authentication options are not
+   required when you set the :setting:`mongodb.net.auth.source`
+   or :setting:`mongodb.net.auth.mechanism` respectively in the
+   |bi-short| configuration file.
