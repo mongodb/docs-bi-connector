@@ -22,7 +22,69 @@ Certified Partner Tools
 Connection Tutorials
 --------------------
 
-.. include:: /includes/toc/dfn-list-client-applications.rst
+You can connect to |bi-short| using any of these Business Intelligence
+tools.
+
+.. list-table::
+   :widths: 25 25 25 25
+
+   * - .. figure:: /images/bi-connector/icons/excel-logo.png
+          :alt: Microsoft Excel
+          :figwidth: 144px
+          :align: center
+          :target: connect/excel
+
+       :doc:`Microsoft Excel </connect/excel>`
+
+     - .. figure:: /images/bi-connector/icons/mysql-logo.png
+          :alt: MySQL
+          :figwidth: 144px
+          :align: center
+          :target: connect/mysql
+
+       :doc:`MySQL Client </connect/mysql>`
+
+     - .. figure:: /images/bi-connector/icons/tableau-logo.png
+          :alt: Tableau Desktop
+          :figwidth: 144px
+          :align: center
+          :target: connect/tableau
+
+       :doc:`Tableau Desktop </connect/tableau>`
+
+     - .. figure:: /images/bi-connector/icons/qliksense-logo.png
+          :alt: QlikSense
+          :figwidth: 144px
+          :align: center
+          :target: connect/qlik
+
+       :doc:`QlikSense </connect/qlik>`
+
+   * - .. figure:: /images/bi-connector/icons/microstrategy-logo.png
+          :alt: Microstrategy
+          :figwidth: 144px
+          :align: center
+          :target: connect/microstrategy
+
+       :doc:`Microstrategy </connect/microstrategy>`
+
+     - .. figure:: /images/bi-connector/icons/power-bi-logo.png
+          :alt: Microsoft PowerBI
+          :figwidth: 144px
+          :align: center
+          :target: connect/powerbi
+
+       :doc:`Microsoft PowerBI </connect/powerbi>`
+
+     - .. figure:: /images/bi-connector/icons/spotfire-logo.png
+          :alt: Spotfire Cloud
+          :figwidth: 144px
+          :align: center
+          :target: connect/spotfire-cloud
+
+       :doc:`Spotfire Cloud </connect/spotfire-cloud>`
+
+     - 
 
 .. class:: hidden
 
