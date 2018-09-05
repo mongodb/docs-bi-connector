@@ -1,8 +1,8 @@
 :noprevnext:
 
-==============================
-Configure SSL for BI Connector
-==============================
+============================
+Configure SSL for |bi-short|
+============================
 
 .. default-domain:: mongodb
 

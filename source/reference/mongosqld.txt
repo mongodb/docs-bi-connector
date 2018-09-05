@@ -716,7 +716,7 @@ Example Configuration File
      service:
        name: mongosqld
        displayName: mongosqld
-       description: "BI Connector SQL proxy server"
+       description: "|bi-short| SQL proxy server"
 
 .. _mongosqld-usage-examples:
 
@@ -952,7 +952,7 @@ default.
    tier constraints, see the `MongoDB Atlas manual   <https://docs.atlas.mongodb.com/create-new-cluster/#service-m0-free-tier-limitations>`_.
 
 To connect the
-`MongoDB Connector for BI <https://www.mongodb.com/download-center?jmp=tbl#bi-connector>`_
+`{+bi-short+} <https://www.mongodb.com/download-center?jmp=tbl#bi-connector>`_
 to an Atlas cluster, you must provide :binary:`~bin.mongosqld` with a
 ``.pem`` key file.
 

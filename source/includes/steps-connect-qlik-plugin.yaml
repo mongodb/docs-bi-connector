@@ -5,7 +5,7 @@ stepnum: 1
 content: |
   Start the Qlik Sense desktop application.
 ---
-title: Create a Connection to a MongoDB Database Using BI Connector
+title: Create a Connection to a MongoDB Database Using {+bi-short+}
 ref: connect
 level: 4
 stepnum: 2
