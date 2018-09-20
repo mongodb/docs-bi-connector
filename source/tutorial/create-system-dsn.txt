@@ -31,6 +31,10 @@ data from MongoDB.
      - id: macos
        content: |
 
+     - id: linux
+       name: Linux
+       content: |
+
 Prerequisites
 -------------
 
@@ -86,3 +90,11 @@ Procedure
        content: |
          .. include:: /includes/steps/create-system-dsn-macos.rst
 
+     - id: linux
+       name: Linux
+       content: |
+         The following procedure has been tested with Ubuntu and RHEL,
+         and should work in a similar fashion with other Linux
+         distributions.
+
+         .. include:: /includes/steps/create-system-dsn-linux.rst
