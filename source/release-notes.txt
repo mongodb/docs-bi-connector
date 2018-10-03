@@ -30,9 +30,6 @@ Release Notes for |bi|
 Features and Performance Improvements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Allow the use of the null safe equality operator ( ``<=>`` ) in join
-  pushdown
-
 - Collapse associative functions
 
 - Support the ``optimize_view_sampling`` global variable
@@ -46,7 +43,6 @@ Features and Performance Improvements
   in configuration parameters
 
 - Cache catalog columns for quicker lookup
-
 
 Bug Fixes
 ~~~~~~~~~
