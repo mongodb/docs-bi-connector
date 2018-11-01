@@ -111,6 +111,6 @@ content: |
 
   .. note::
 
-            Special characters may not display correctly on macOS due
-            to a known issue.
+            Excel for Mac may not properly display special characters,
+            such as letters with accent marks.
 ...
