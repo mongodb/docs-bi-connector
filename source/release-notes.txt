@@ -33,7 +33,7 @@ Features and Performance Improvements
 - Improvements to the |bi-short|’s :doc:`type system
   </reference/type-conversion/>` and the way it handles polymorphic
   data.
-- Support for :ref:`altering the type <admin-statements>` of a given
+- Users can :ref:`alter the type <admin-statements>` of a given
   column.
 - Users can access “dirty” datasets without query errors.
 - Support for pushdown of the GROUP_CONCAT aggregation function.
