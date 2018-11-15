@@ -120,7 +120,7 @@ description: |
          Salted Challenge Response Authentication Mechanism using the SHA1
          hash function.
 
-     * - :ref:`MONGODB-CR <authentication-mongodb-cr>`
+     * - `MONGODB-CR <https://docs.mongodb.com/v3.6/core/security-mongodb-cr/>`__
 
        - MongoDB challenge/response authentication.
 
