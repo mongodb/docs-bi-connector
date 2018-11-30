@@ -41,7 +41,10 @@ content: |
      SSLKEY      = </path/to/.pem-key-file>
      SSLCERT     = </path/to/ssl-certificate>
      SSLMODE     = DISABLE|ALLOW|PREFER|REQUIRE
+     SSLCA       = </path/to/ssl-ca-list-file>
+     SSLCAPATH   = </path/to/ssl-ca-file-directory>
 
+  .. include:: /includes/fact-odbc-parameters.rst
 ---
 title: Install unixODBC
 ref: install-unixodbc
