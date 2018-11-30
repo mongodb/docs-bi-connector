@@ -35,6 +35,13 @@ content: |
      USER        = <username>
      PASSWORD    = <password>
      DATABASE    = <dbname>
+
+     ; optional SSL configuration
+
+     SSLKEY      = </path/to/.pem-key-file>
+     SSLCERT     = </path/to/ssl-certificate>
+     SSLMODE     = DISABLE|ALLOW|PREFER|REQUIRE
+
 ---
 title: Install unixODBC
 ref: install-unixodbc
