@@ -71,7 +71,7 @@ Intelligence tools.
 
    - id: looker
      headline: Looker
-     image:
+     image: /images/bi-connector/cards/looker-card.png
      link: https://docs.mongodb.com/bi-connector/current/connect/looker
 
 
