@@ -22,9 +22,9 @@ Prerequisites
 Connecting the Looker BI Platform to the |bi-atlas| requires the
 following:
 
-- An M10+ Atlas cluster with the |bi-short| enabled
+- ``M10`` or larger Atlas cluster with the |bi-short| enabled
 
-- A `Looker <https://looker.com/product/business-intelligence>`_ account
+- `Looker <https://looker.com/product/business-intelligence>`_ account
 
 .. _connect-with-looker:
 

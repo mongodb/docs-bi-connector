@@ -23,11 +23,11 @@ content: |
 
          Select :guilabel:`MongoBI` from :guilabel:`Dialect`. You can find
          the other required settings in the Atlas :guilabel:`Connect` modal.
+         See `Connect via BI Connector for Atlas <https://docs.atlas.mongodb.com/bi-connection/>`_
+         for more information.
 
       See `Connecting Looker to Your Database <https://docs.looker.com/setup-and-management/connecting-to-db>`_
-      for more information.
-
-   
+      for more information. 
 
       For example:
 
