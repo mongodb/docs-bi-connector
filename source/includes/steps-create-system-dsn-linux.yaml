@@ -48,7 +48,11 @@ content: |
 
      All ``odbc.ini`` parameters are case-insensitive.
 
-  The following table describes the parameters used in the above DSN.
+  The previous example contains only one DSN, but it is possible to
+  include multiple DSNs in an ``odbc.ini`` file.
+
+  The following table describes the parameters used in the previous
+  example.
 
   .. list-table::
      :header-rows: 1
@@ -61,7 +65,7 @@ content: |
        - Optional. Text description of the DSN.
 
      * - Driver
-       - Path to ODBC driver file.
+       - Path to |odbc| driver file.
 
      * - Trace
        - ``On`` or ``Off``. Enable ODBC tracing.
@@ -92,7 +96,7 @@ content: |
        - Name of the MongoDB database to use.
 
      * - SSLKEY
-       - Path to an SSL key file to use for establishing a secure
+       - Full path to an SSL key file to use for establishing a secure
          connection. 
 
      * - SSLCERT
@@ -107,11 +111,11 @@ content: |
          - REQUIRED
 
      * - SSLCA
-       - Path to a file with a list of trust SSL Certificate
+       - Full path to a file with a list of trust SSL Certificate
          Authorities.
 
      * - SSLCAPATH
-       - Path to a directory that contains trusted SSL CA
+       - Full path to a directory that contains trusted SSL CA
          certificates in PEM format. 
 
   .. include:: /includes/fact-odbc-parameters.rst
@@ -148,7 +152,8 @@ content: |
   can use it to test your DSN.
 
   The following example uses ``iusql`` to connect to the
-  ``MongoDBODBC`` DSN:
+  ``MongoDBODBC`` DSN, then looks for tables in a database named
+  ``test``:
 
   .. code-block:: shell
 
