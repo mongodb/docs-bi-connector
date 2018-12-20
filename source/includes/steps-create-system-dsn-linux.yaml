@@ -104,7 +104,7 @@ content: |
          secure connection. 
 
      * - SSLMODE
-       - Allowable values are:
+       - Accepted values are:
 
          - DISABLED
          - PREFERRED
