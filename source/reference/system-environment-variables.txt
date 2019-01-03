@@ -1,0 +1,18 @@
+.. _system-environment-variables:
+
+----------------------------
+System Environment Variables
+----------------------------
+
+.. default-domain:: mongodb
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 1
+   :class: singlecol
+
+|bi-short| provides the following system environment variables when 
+installed on premises:
+
+.. include:: /includes/fact-system-env-vars.rst
