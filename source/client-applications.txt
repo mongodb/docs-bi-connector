@@ -37,37 +37,37 @@ Intelligence tools.
    - id: microstrategy
      headline: Microstrategy
      image: /images/bi-connector/cards/microstrategy-card.png
-     link: https://docs.mongodb.com/bi-connector/current/connect/microstrategy
+     link: https://docs.mongodb.com/bi-connector/v2.8/connect/microstrategy
 
    - id: tableau-desktop
      headline: Tableau Desktop
      image: /images/bi-connector/cards/tableau-card.png
-     link: https://docs.mongodb.com/bi-connector/current/connect/tableau
+     link: https://docs.mongodb.com/bi-connector/v2.8/connect/tableau
 
    - id: microsoft-powerbi
      headline: Microsoft PowerBI
      image: /images/bi-connector/cards/power-bi-card.png
-     link: https://docs.mongodb.com/bi-connector/current/connect/powerbi
+     link: https://docs.mongodb.com/bi-connector/v2.8/connect/powerbi
 
    - id: qliksense
      headline: QlikSense
      image: /images/bi-connector/cards/qliksense-card.png
-     link: https://docs.mongodb.com/bi-connector/current/connect/qlik
+     link: https://docs.mongodb.com/bi-connector/v2.8/connect/qlik
 
    - id: microsoft-excel
      headline: Microsoft Excel
      image: /images/bi-connector/cards/excel-card.png
-     link: https://docs.mongodb.com/bi-connector/current/connect/excel
+     link: https://docs.mongodb.com/bi-connector/v2.8/connect/excel
 
    - id: spotfire-cloud
      headline: Spotfire Cloud
      image: /images/bi-connector/cards/spotfire-card.png
-     link: https://docs.mongodb.com/bi-connector/current/connect/spotfire-cloud
+     link: https://docs.mongodb.com/bi-connector/v2.8/connect/spotfire-cloud
 
    - id: mysql-client
      headline: MySQL Client
      image: /images/bi-connector/cards/mysql-card.png
-     link: https://docs.mongodb.com/bi-connector/current/connect/mysql
+     link: https://docs.mongodb.com/bi-connector/v2.8/connect/mysql
 
    - id: looker
      headline: Looker
