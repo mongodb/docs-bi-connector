@@ -21,6 +21,17 @@
        * ``1``: Log only messages for ``mongosqld`` administrators.
        
      - ``0``
+   * - ``max_nested_table_depth``
+     - integer
+     - Specifies the maximum number of unique nested field paths that
+       ``mongosqld`` maps to a relational table for a collection when
+       using a non-json mapping heuristic.
+     - ``50``
+   * - ``max_num_columns_per_table``
+     - integer
+     - The maximum number of unique fields that ``mongosqld`` maps to
+       relational columns for a collection.
+     - ``1000``
    * - ``metrics_backend``
      - string
      - Specifies where |bi-short| stores query metrics:
