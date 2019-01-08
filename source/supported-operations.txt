@@ -484,7 +484,7 @@ Information Functions
    * - ``SUM()``
      - Return the sum
    * - ``GROUP_CONCAT()``
-     - Return a concatenated string, non-NULL values only
+     - Return a concatenated string, non-``NULL`` values only
 
 Utility Statements
 ------------------
