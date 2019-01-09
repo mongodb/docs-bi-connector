@@ -1,8 +1,8 @@
 .. _system-environment-variables:
 
-----------------------------
-System Environment Variables
-----------------------------
+---------------------
+Environment Variables
+---------------------
 
 .. default-domain:: mongodb
 
@@ -12,7 +12,26 @@ System Environment Variables
    :depth: 1
    :class: singlecol
 
-|bi-short| provides the following system environment variables when 
-installed on premises:
+Overview
+--------
+
+|bi-short| provides the following environment variables:
 
 .. include:: /includes/fact-system-env-vars.rst
+
+Setting Environment Variables
+-----------------------------
+
+You must have the :authrole:`Organization Owner` role to set environment
+variables on an Atlas-hosted |bi-short|. To set them for an on-premises
+|bi-short|, you must have the :authaction:`inprog` privilege on the
+MongoDB database to which you've connected the |bi-short|.
+
+Use any SQL client that is connected to |bi-short| to set these
+variables. The following example sets ``mongodb_max_varchar_length``
+to ``100``:
+
+.. code-block:: json
+   :copyable: false
+
+   SET GLOBAL mongodb_max_varchar_length = 100
