@@ -7,10 +7,6 @@
      - Data Type
      - Description
      - Default Value
-   * - ``enable_table_alterations``
-     - boolean
-     - Enables the server to process the ``ALTER_TABLE`` SQL statement.
-     - false
    * - ``log_level``
      - integer
      - Specifies the logging level for |bi-short|:
@@ -24,22 +20,13 @@
    * - ``max_nested_table_depth``
      - integer
      - Specifies the maximum number of unique nested field paths that
-       ``mongosqld`` maps to a relational table for a collection when
-       using a non-json mapping heuristic.
+       ``mongosqld`` maps to a relational table for a collection.
      - ``50``
    * - ``max_num_columns_per_table``
      - integer
      - The maximum number of unique fields that ``mongosqld`` maps to
        relational columns for a collection.
      - ``1000``
-   * - ``metrics_backend``
-     - string
-     - Specifies where |bi-short| stores query metrics:
-       
-       * ``off``: Do not store query metrics
-       * ``log``: Store query metrics in the |bi-short| log file
-       * ``stitch``: Store query metrics in MongoDB Stitch
-     - ``off``
    * - ``mongodb_max_varchar_length``
      - integer
      - Specifies the maximum string length returned for columns using
@@ -49,7 +36,7 @@
    * - ``full_pushdown_exec_mode``
      - boolean
      - Specifies whether a query error is returned for queries with
-       predicates that aren't fully pushed down. SQL query predicates
+       clauses that aren't fully pushed down. SQL query predicates
        usually appear in ``WHERE`` clauses and are used to filter data
        returned by the query.
      - ``false``
@@ -66,7 +53,7 @@
      - integer
      - Specifies how many documents |bi-short| samples when generating
        its schema. A value of ``0`` specifies that |bi-short| performs
-       a collection scan across all namespaces.
+       a collection scan across all collections.
 
        See :doc:`Cached Sampling </schema/cached-sampling>` for more
        information.
