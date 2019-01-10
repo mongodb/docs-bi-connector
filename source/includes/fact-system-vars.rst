@@ -3,7 +3,7 @@
    :stub-columns: 1
    :header-rows: 1
 
-   * - Environment Variable
+   * - System Variable
      - Data Type
      - Description
      - Default Value (Atlas-hosted)
@@ -12,13 +12,13 @@
      - integer
      - Specifies the logging level for |bi-short|:
 
-       * ``-1``: Do not log
+       * ``-1``: Do not log.
        * ``0``: Log only messages for database users, such as basic
          ``mongosqld`` events and state changes.
-       * ``1``: Log only messages for ``mongosqld`` administrators.
+       * ``1``: Log messages for database users and ``mongosqld`` administrators.
        * ``2``: For internal use only.
-     - ``0``
      - ``2``
+     - ``0``
    * - ``max_nested_table_depth``
      - integer
      - Specifies the maximum number of unique nested field paths that

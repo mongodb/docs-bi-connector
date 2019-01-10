@@ -1,8 +1,8 @@
 .. _system-environment-variables:
 
----------------------
-Environment Variables
----------------------
+----------------
+System Variables
+----------------
 
 .. default-domain:: mongodb
 
@@ -17,10 +17,10 @@ Overview
 
 |bi-short| provides the following environment variables:
 
-.. include:: /includes/fact-system-env-vars.rst
+.. include:: /includes/fact-system-vars.rst
 
-Setting Environment Variables
------------------------------
+Setting System Variables
+------------------------
 
 You must have the :authrole:`Organization Owner` role to set environment
 variables on an Atlas-hosted |bi-short|. To set them for an on-premises

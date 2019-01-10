@@ -22,8 +22,7 @@ description: |
   the |bi-short| uses for carrying out sensitive administrative
   commands.
 ---
-file: /reference/system-environment-variables
+file: /reference/system-variables
 description: |
-   Reference page describing the system variables available for |bi-short|
-   installed on premises.
+   Reference page describing the system variables available for |bi-short|.
 ...

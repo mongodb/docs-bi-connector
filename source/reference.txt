@@ -22,4 +22,4 @@ Reference
       /reference/log-messages
       /reference/type-conversion
       /reference/user-authorization
-      /reference/system-environment-variables
+      /reference/system-variables
