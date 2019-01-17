@@ -8,15 +8,23 @@
      - Description
      - Default Value (Atlas-hosted)
      - Default Value (On Premises)
+   * - ``full_pushdown_exec_mode``
+     - boolean
+     - Specifies whether a query error is returned for queries with
+       clauses that aren't fully pushed down. SQL query predicates
+       usually appear in ``WHERE`` clauses and are used to filter data
+       returned by the query.
+     - ``0``
+     - ``0``
    * - ``log_level``
      - integer
      - Specifies the logging level for |bi-short|:
 
-       * ``-1``: Do not log.
-       * ``0``: Log only messages for database users, such as basic
+       - ``-1``: Do not log.
+       - ``0``: Log only messages for database users, such as basic
          ``mongosqld`` events and state changes.
-       * ``1``: Log messages for database users and ``mongosqld`` administrators.
-       * ``2``: For internal use only.
+       - ``1``: Log messages for database users and ``mongosqld`` administrators.
+       - ``2``: For internal use only.
      - ``2``
      - ``0``
    * - ``max_nested_table_depth``
@@ -38,14 +46,25 @@
        no limit.
      - ``0``
      - ``0``
-   * - ``full_pushdown_exec_mode``
-     - boolean
-     - Specifies whether a query error is returned for queries with
-       clauses that aren't fully pushed down. SQL query predicates
-       usually appear in ``WHERE`` clauses and are used to filter data
-       returned by the query.
-     - ``0``
-     - ``0``
+   * - ``polymorphic_type_conversion_mode``
+     - string
+     - Determines how MongoDB evaluates document fields that are
+       specified with multiple data types. For example, ``count``
+       could be a number in one document and a string in another.
+
+       - ``off``:
+         Queries may fail if you do not explicitly cast
+         document fields that are specified with multiple data types.
+       - ``fast``:
+         |bi-short| casts document fields as appropriate
+         if MongoDB samples at least two documents during schema
+         generation that use different data types for the same field.
+         In the example, MongoDB would cast ``count`` as an integer.
+       - ``safe``:
+         |bi-short| automatically casts all document fields
+         that are specified with multiple data types.
+     -  ``off``
+     -  ``off``
    * - ``sample_refresh_interval_secs``
      - integer
      - Specifies how frequently, in seconds, that the |bi-short| schema
@@ -71,11 +90,19 @@
      - Specifies how the MongoDB schema is transformed into a relational
        schema:
 
-       * ``lattice``: See :doc:`Sampling Type Conflicts </schema/type-conflicts>`
+       - ``lattice``: See :doc:`Sampling Type Conflicts </schema/type-conflicts>`
          for more information. 
-       * ``majority``: |bi-short| assigns the most common data type for
+       - ``majority``: |bi-short| assigns the most common data type for
          a field occuring in a sample.
 
      - ``lattice``
      - ``lattice``
+   * - ``type_conversion_mode``
+     - string
+     - Specifies the semantics that |bi-short| uses for type conversions,
+       such as the ``CAST`` function.
 
+       - ``mysql``
+       - ``mongosql``
+     - ``mongosql``
+     - ``mongosql``
