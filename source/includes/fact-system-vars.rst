@@ -37,7 +37,7 @@
      - The maximum number of unique fields that ``mongosqld`` maps to
        relational columns for a collection.
      - ``1000``
-     - ``2000``
+     - ``1000``
    * - ``mongodb_max_varchar_length``
      - integer
      - Specifies the maximum string length returned for columns using
@@ -51,7 +51,7 @@
        specified with multiple data types. For example, ``count``
        could be a number in one document and a string in another.
        The data type that |bi-short| selects depends on the value
-       you assign to the ``schema_mapping_heuristic`` system variable.
+       you assign to the ``schema_mapping_mode`` system variable.
        A value of ``majority`` causes |bi-short| to select the type
        that appears in the majority of document fields, while a value
        of ``lattice`` would cause |bi-short| to select string as the
@@ -92,7 +92,7 @@
        information.
      - ``1000``
      - ``100``
-   * - ``schema_mapping_heuristic``
+   * - ``schema_mapping_mode``
      - string
      - Specifies how the MongoDB schema is transformed into a relational
        schema:
