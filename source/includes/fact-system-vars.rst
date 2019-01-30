@@ -11,11 +11,10 @@
    * - ``full_pushdown_exec_mode``
      - boolean
      - Specifies whether a query error is returned for queries with
-       clauses that aren't fully pushed down. SQL query predicates
-       usually appear in ``WHERE`` clauses and are used to filter data
-       returned by the query.
-     - ``0``
-     - ``0``
+       clauses that aren't fully translated to MongoDB semantics. SQL
+       query predicates are used to filter data returned by the query.
+     - ``0 (false)``
+     - ``0 (false)``
    * - ``log_level``
      - integer
      - Specifies the logging level for |bi-short|:
@@ -48,21 +47,29 @@
      - ``0``
    * - ``polymorphic_type_conversion_mode``
      - string
-     - Determines how MongoDB evaluates document fields that are
+     - Determines how |bi-short| evaluates document fields that are
        specified with multiple data types. For example, ``count``
        could be a number in one document and a string in another.
+       The data type that |bi-short| selects depends on the value
+       you assign to the ``schema_mapping_heuristic`` system variable.
+       A value of ``majority`` causes |bi-short| to select the type
+       that appears in the majority of document fields, while a value
+       of ``lattice`` would cause |bi-short| to select string as the
+       data type for ``count``.
+
+       Set ``polymorphic_type_conversion_mode`` to one of the following
+       values:
 
        - ``off``:
          Queries may fail if you do not explicitly cast
          document fields that are specified with multiple data types.
        - ``fast``:
-         |bi-short| casts document fields as appropriate
-         if MongoDB samples at least two documents during schema
-         generation that use different data types for the same field.
-         In the example, MongoDB would cast ``count`` as an integer.
+         |bi-short| converts only document fields that
+         appeared as multiple data types during sampling.
        - ``safe``:
-         |bi-short| automatically casts all document fields
-         that are specified with multiple data types.
+         |bi-short| converts all document fields to the data type
+         discovered during sampling, even if the fields do not appear
+         as multiple data types.
      -  ``off``
      -  ``off``
    * - ``sample_refresh_interval_secs``
@@ -74,7 +81,7 @@
        See :doc:`Cached Sampling </schema/cached-sampling>` for more
        information.
      - ``0``
-     - ``300``
+     - ``0``
    * - ``sample_size``
      - integer
      - Specifies how many documents |bi-short| samples when generating
