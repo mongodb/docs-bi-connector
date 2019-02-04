@@ -11,8 +11,8 @@
    * - ``full_pushdown_exec_mode``
      - boolean
      - Specifies whether a query error is returned for queries with
-       clauses that aren't fully translated to MongoDB semantics. SQL
-       query predicates are used to filter data returned by the query.
+       clauses that aren't fully translated to the MongoDB query language.
+       SQL query predicates are used to filter data returned by the query.
      - ``0 (false)``
      - ``0 (false)``
    * - ``log_level``
@@ -51,11 +51,12 @@
        specified with multiple data types. For example, ``count``
        could be a number in one document and a string in another.
        The data type that |bi-short| selects depends on the value
-       you assign to the ``schema_mapping_mode`` system variable.
-       A value of ``majority`` causes |bi-short| to select the type
+       of the ``schema_mapping_mode`` system variable. A value of
+       ``majority`` causes |bi-short| to select the type
        that appears in the majority of document fields, while a value
        of ``lattice`` would cause |bi-short| to select string as the
-       data type for ``count``.
+       data type for ``count``. See :doc:`Cached Sampling </schema/cached-sampling>`
+       for more information.
 
        Set ``polymorphic_type_conversion_mode`` to one of the following
        values:
@@ -86,7 +87,7 @@
      - integer
      - Specifies how many documents |bi-short| samples when generating
        its schema. A value of ``0`` specifies that |bi-short| performs
-       a collection scan across all collections.
+       a collection scan across all sample :option:`namespaces <mongosqld --sampleNamespaces>`.
 
        See :doc:`Cached Sampling </schema/cached-sampling>` for more
        information.

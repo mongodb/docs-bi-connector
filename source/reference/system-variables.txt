@@ -35,3 +35,6 @@ to ``100``:
    :copyable: false
 
    SET GLOBAL mongodb_max_varchar_length = 100
+
+You must start a new connection to the |bi-short| after setting a system
+variable. The connection you used to set the system variable is not affected.
