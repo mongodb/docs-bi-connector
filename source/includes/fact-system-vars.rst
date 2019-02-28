@@ -91,7 +91,7 @@
 
        See :doc:`Cached Sampling </schema/cached-sampling>` for more
        information.
-     - ``1000``
+     - ``100``
      - ``100``
    * - ``schema_mapping_mode``
      - string
