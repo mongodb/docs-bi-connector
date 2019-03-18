@@ -25,7 +25,7 @@ Release Notes for |bi|
 |bi| 2.10.0
 -----------
 
-*Released Mar 15, 2018*
+*Released Mar 15, 2019*
 
 Bug Fixes
 ~~~~~~~~~
