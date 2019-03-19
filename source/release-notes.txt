@@ -36,7 +36,7 @@ Bug Fixes
 - Fixes a bug where some invalid ``DUAL`` queries did not return an
   error.
 
-- Fix of a bug that prevented pushdown of some joins to derived tables
+- Fixes a bug that prevented pushdown of some joins to derived tables
   selecting from ``DUAL``.
 
 - Fixes some correctness bugs in the in-memory evaluation for 
@@ -79,7 +79,7 @@ This release resolves a number of inconsistencies in the |bi-short|'s
 date and timestamp semantics. Resolving these inconsistencies resulted
 in some changes to user-facing behavior:
 
-- Removed inconsistent support for partial dates.
+- Removes inconsistent support for partial dates.
 
   - MySQL can represent partial dates that are
     `missing month or day components <https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html>`__.
@@ -93,7 +93,7 @@ in some changes to user-facing behavior:
     Going forward, we cannot provide guarantees about the behavior of
     operations that attempt to construct incomplete dates.
 
-- Updated the ``DATE(a)`` and ``TIMESTAMP(a)`` scalar functions to be
+- Updates the ``DATE(a)`` and ``TIMESTAMP(a)`` scalar functions to be
   equivalent to ``CAST(a AS DATE)``, and ``CAST(a AS DATETIME)``,
   respectively.
 
