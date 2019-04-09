@@ -25,16 +25,16 @@ content: |
   .. code-block:: none
 
      [MongoDBODBC]
-     Description = ODBC for MongoDB BI Connector
-     Driver      = /usr/local/lib/libmdbodbcw.so
-     Trace       = Off
-     TraceFile   = stderr
-     ReadOnly    = yes
-     Server      = <server address>
-     Port        = <port number>
-     User        = <username>
-     Password    = <password>
-     Database    = <dbname>
+     DESCRIPTION = ODBC for MongoDB BI Connector
+     DRIVER      = /usr/local/lib/libmdbodbcw.so
+     TRACE       = Off
+     TRACEFILE   = stderr
+     READONLY    = yes
+     SERVER      = <server address>
+     PORT        = <port number>
+     USER        = <username>
+     PASSWORD    = <password>
+     DATABASE    = <dbname>
 
      ; optional SSL configuration
 
@@ -63,38 +63,38 @@ content: |
      * - Parameter
        - Description
 
-     * - ``Description``
+     * - ``DESCRIPTION``
        - Optional. Text description of the DSN.
 
-     * - ``Driver``
+     * - ``DRIVER``
        - Path to |odbc| driver file.
 
-     * - ``Trace``
+     * - ``TRACE``
        - ``On`` or ``Off``. Enable ODBC tracing.
 
-     * - ``Tracefile``
+     * - ``TRACEFILE``
        - If ODBC tracing is enabled, the path to the file in which to
          store the trace output.
 
-     * - ``ReadOnly``
+     * - ``READONLY``
        - ``yes`` or ``no``. Enforce a read-only ODBC session.
 
-     * - ``Server``
+     * - ``SERVER``
        - Address of the server where a |bi-short|
          :binary:`~bin.mongosqld` instance is running.
 
-     * - ``Port``
+     * - ``PORT``
        - Port number of the :binary:`~bin.mongosqld` instance.
 
-     * - ``User``
+     * - ``USER``
        - Username of the MongoDB user with permission to connect to
          the :binary:`~bin.mongosqld` instance.
 
-     * - ``Password``
+     * - ``PASSWORD``
        - Password of the MongoDB user with permission to connect to
          the :binary:`~bin.mongosqld` instance.
 
-     * - ``Database``
+     * - ``DATABASE``
        - Name of the MongoDB database to use.
 
      * - ``SSLKEY``

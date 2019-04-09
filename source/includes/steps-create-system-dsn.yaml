@@ -110,9 +110,9 @@ level: 4
 stepnum: 7
 content: |
   Access the TLS/SSL form fields by clicking :guilabel:`Details >>`,
-  then the :guilabel:`SSL` tab. Fill in the following parameters
-  depending on your :ref:`TLS/SSL <msqld-mongodb-tls-options>`
-  configuration:
+  then the :guilabel:`SSL` tab. The following parameters are available
+  and may be required, depending on your
+  :ref:`TLS/SSL <msqld-mongodb-tls-options>` configuration:
 
   .. list-table::
      :header-rows: 1
