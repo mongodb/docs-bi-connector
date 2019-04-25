@@ -1,0 +1,113 @@
+==================
+``mongotranslate``
+==================
+
+.. default-domain:: mongodb
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 1
+   :class: singlecol
+
+.. only:: html
+
+   .. meta::
+      :description: The mongotranslate reference page.
+      :keywords: mongotranslate, mongodb, man page
+
+Description
+-----------
+
+.. only:: (not man)
+
+   .. binary:: mongotranslate
+
+:binary:`~bin.mongotranslate` takes a specified SQL query and returns
+an equivalent MongoDB :manual:`aggregation pipeline </aggregation>`. It
+is designed to help users understand how |bi-short| translates
+SQL queries for use with MongoDB databases.
+:binary:`~bin.mongotranslate` is a standalone program and does not
+require :binary:`~bin.mongosqld` or :binary:`~bin.mongod` to be
+running.
+
+Usage
+-----
+
+:binary:`~bin.mongotranslate` has the following syntax:
+
+.. code-block:: javascript
+
+   mongotranslate [--query | --queryFile] <query | queryfile> [options]
+
+Command Line Options
+--------------------
+
+.. program:: mongotranslate
+
+.. include:: /includes/option/option-mongotranslate-query.rst
+
+.. include:: /includes/option/option-mongotranslate-queryFile.rst
+
+.. include:: /includes/option/option-mongotranslate-schema.rst
+
+.. include:: /includes/option/option-mongotranslate-format.rst
+
+.. include:: /includes/option/option-mongotranslate-explain.rst
+
+.. include:: /includes/option/option-mongotranslate-mongoversion.rst
+
+.. include:: /includes/option/option-mongotranslate-dbName.rst
+
+Examples
+--------
+
+The following example specifies an inline query for translation:
+
+.. code-block:: javascript
+
+   mongotranslate --query=“select a from foo where a = 1;” --schema=schema.drdl
+
+The above command returns the following results:
+
+.. code-block:: json
+   :copyable: false
+
+   [ 
+     { "$match": { "a": NumberLong('1') } },
+     { "$project": { "test_DOT_foo_DOT_a": "$a", "_id":0 } }
+   ]
+
+The following example specifies a query file and returns a one-line
+result:
+
+.. code-block:: javascript
+
+   mongotranslate --queryFile=query.txt --schema=schema.drdl --format=none
+
+The following example uses the :option:`--explain` option:
+
+.. code-block:: javascript
+
+   mongotranslate --query="select count(name) from restaurants;" --schema=schema.drdl --explain
+
+The above command returns the following results:
+
+.. code-block:: json
+   :copyable: false
+
+   [
+   	 {
+   	    "ID": 1,
+   	    "StageType": "MongoSourceStage",
+   	    "Columns": "[{name: 'count(name)', type: 'int'}]",
+   	    "Sources": null,
+   	    "Database": {},
+   	    "Tables": {},
+   	    "Aliases": {},
+   	    "Collections": {},
+   	    "Pipeline": {},
+   	    "PipelineExplain": {},
+   	    "PushdownFailures": null
+   	 }
+   ]
