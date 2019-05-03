@@ -23,18 +23,20 @@ Description
 
    .. binary:: mongotranslate
 
-:binary:`~bin.mongotranslate` takes a specified SQL query and returns
+``mongotranslate`` takes a specified SQL query and returns
 an equivalent MongoDB :manual:`aggregation pipeline </aggregation>`. It
 is designed to help users understand how |bi-short| translates
 SQL queries for use with MongoDB databases.
-:binary:`~bin.mongotranslate` is a standalone program and does not
+
+``mongotranslate`` is a standalone program. It requires
+a :doc:`drdl </reference/mongodrdl>` file, but does not
 require :binary:`~bin.mongosqld` or :binary:`~bin.mongod` to be
-running.
+running at the time of execution.
 
 Usage
 -----
 
-:binary:`~bin.mongotranslate` has the following syntax:
+``mongotranslate`` has the following syntax:
 
 .. code-block:: javascript
 
@@ -51,13 +53,13 @@ Command Line Options
 
 .. include:: /includes/option/option-mongotranslate-schema.rst
 
+.. include:: /includes/option/option-mongotranslate-dbName.rst
+
 .. include:: /includes/option/option-mongotranslate-format.rst
 
 .. include:: /includes/option/option-mongotranslate-explain.rst
 
 .. include:: /includes/option/option-mongotranslate-mongoversion.rst
-
-.. include:: /includes/option/option-mongotranslate-dbName.rst
 
 Examples
 --------
@@ -66,17 +68,22 @@ The following example specifies an inline query for translation:
 
 .. code-block:: javascript
 
-   mongotranslate --query=“select a from foo where a = 1;” --schema=schema.drdl
+   mongotranslate --query=“select name from restaurants where name like 'Brooklyn%'” --schema=schema.drdl
 
 The above command returns the following results:
 
 .. code-block:: json
    :copyable: false
 
-   [ 
-     { "$match": { "a": NumberLong('1') } },
-     { "$project": { "test_DOT_foo_DOT_a": "$a", "_id":0 } }
+   [
+     {"$match": {"name": {"$regex": "^Brooklyn.*$","$options": "i"}}},
+     {"$project": {"test_DOT_restaurants_DOT_name": "$name","_id": {"$numberInt":"0"}}},
    ]
+
+.. note::
+
+   If you need to quote a string inside the :option:`--query
+   <mongotranslate --query>` parameter, be sure to use single quotes.
 
 The following example specifies a query file and returns a one-line
 result:
