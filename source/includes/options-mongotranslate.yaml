@@ -91,12 +91,16 @@ default: |
   ``test``
 description: |
   The database name to use with table names in the SQL query if
-  no database is specified. For example:
+  no database is specified.
+
+  The following example uses a collection named ``fruit`` and the
+  ``--dbName`` option to specify that ``fruit`` is in the ``groceries``
+  database:
 
   .. code-block:: none
 
      mongotranslate "SELECT * FROM fruit WHERE _id > 100;" \
-     --schema schema.drdl --dbName groceries
+       --schema schema.drdl --dbName groceries
 
   If you do not use the ``--dbName`` option to specify a database,
   ``mongotranslate`` assumes that ``fruit`` is in the ``test``
@@ -108,7 +112,7 @@ description: |
   .. code-block:: sql
 
      mongotranslate "SELECT * FROM groceries.fruit WHERE _id > 100;" \
-     --schema schema.drdl
+       --schema schema.drdl
 
   If you specify a database with each table name in your SQL query, the
   ``--dbName`` option is ignored if it is used.
