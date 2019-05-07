@@ -90,8 +90,8 @@ directive: option
 default: |
   ``test``
 description: |
-  The database name to use with table names in the SQL query if
-  no database is specified.
+  The database name to use for unqualified table names in the SQL
+  query.
 
   The following example uses a collection named ``fruit`` and the
   ``--dbName`` option to specify that ``fruit`` is in the ``groceries``

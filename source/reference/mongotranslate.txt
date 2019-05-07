@@ -23,7 +23,7 @@ Description
 
    .. binary:: mongotranslate
 
-``mongotranslate`` takes a specified SQL query and returns
+``mongotranslate`` takes a SQL query and returns
 an equivalent MongoDB :manual:`aggregation pipeline </aggregation>`. It
 is designed to help users understand how |bi-short| translates
 SQL queries for use with MongoDB databases.
