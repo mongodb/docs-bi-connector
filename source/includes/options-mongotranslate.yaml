@@ -90,6 +90,26 @@ directive: option
 default: |
   ``test``
 description: |
-  Specifies a database name to use in the output. Defaults
-  to ``test``.
+  The database name to use with table names in the SQL query if
+  no database is specified. For example:
+
+  .. code-block:: none
+
+     mongotranslate "SELECT * FROM fruit WHERE _id > 100;" \
+     --schema schema.drdl --dbName groceries
+
+  If you do not use the ``--dbName`` option to specify a database,
+  ``mongotranslate`` assumes that ``fruit`` is in the ``test``
+  database. If it is not, ``mongotranslate`` returns an error.
+
+  The following example uses a fully-qualified table name, so it does
+  not need the ``--dbName`` option.
+
+  .. code-block:: sql
+
+     mongotranslate "SELECT * FROM groceries.fruit WHERE _id > 100;" \
+     --schema schema.drdl
+
+  If you specify a database with each table name in your SQL query, the
+  ``--dbName`` option is ignored if it is used.
 ...
