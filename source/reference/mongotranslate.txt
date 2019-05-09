@@ -56,9 +56,9 @@ Command Line Options
 
 .. include:: /includes/option/option-mongotranslate-dbName.rst
 
-.. include:: /includes/option/option-mongotranslate-format.rst
-
 .. include:: /includes/option/option-mongotranslate-explain.rst
+
+.. include:: /includes/option/option-mongotranslate-format.rst
 
 .. include:: /includes/option/option-mongotranslate-mongoversion.rst
 
@@ -86,6 +86,8 @@ The above command returns the following results:
 
    If you need to quote a string inside the :option:`--query
    <mongotranslate --query>` parameter, be sure to use single quotes.
+   If you must use double quotes or backticks in your query, use the
+   :option:`--queryFile <mongotranslate --query>` option.
 
 The following example specifies a query file and returns a one-line
 result:

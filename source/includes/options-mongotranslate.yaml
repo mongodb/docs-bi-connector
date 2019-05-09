@@ -63,9 +63,8 @@ program: mongotranslate
 name: explain
 directive: option
 description: |
-  *Optional.* Returns the :manual:`explain </reference/command/explain>`
-  output for the query plan instead of the translated aggregation
-  pipeline.
+  *Optional.* Returns the ``explain`` output for the query plan
+  instead of the translated aggregation pipeline.
 ---
 program: mongotranslate
 name: mongoversion
@@ -104,7 +103,9 @@ description: |
 
   If you do not use the ``--dbName`` option to specify a database,
   ``mongotranslate`` assumes that ``fruit`` is in the ``test``
-  database. If it is not, ``mongotranslate`` returns an error.
+  database. If the schema does not contain a database named ``test``,
+  or a table name ``fruit`` in the ``test`` database,
+  ``mongotranslate`` returns an error.
 
   The following example uses a fully-qualified table name, so it does
   not need the ``--dbName`` option.
