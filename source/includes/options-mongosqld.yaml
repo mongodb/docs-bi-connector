@@ -101,21 +101,55 @@ description: |
   ``admin`` and ``local`` databases.
 ---
 program: mongosqld
-name: sampleSource
+name: schemaSource
 directive: option
 args: <db-name>
 description: |
-  .. versionadded:: 2.3
+  .. versionchanged:: 2.11
 
-  Required when :option:`--sampleMode <mongosqld --sampleMode>` is set
-  to write.   Specifies a database to store schema information.
+     Renamed ``--sampleSource`` to ``-schemaSource``     
+
+  Required when :option:`--schemaMode <mongosqld --schemaMode>` is set
+  to ``auto``. Specifies a database to store schema information.
   
   .. note::
 
      If you do not specify either a schema file with the
      :option:`--schema` option or a database with the
-     ``--sampleSource`` option, :binary:`~bin.mongosqld` holds its
+     ``--schemaSource`` option, :binary:`~bin.mongosqld` holds its
      schema in memory.
+
+  .. include:: /includes/sampling-ref-chart-link.rst
+---
+program: mongosqld
+name: schemaName
+directive: option
+args: <db-name>
+default: "``defaultSchema``"
+description: |
+  .. versionadded:: 2.11    
+
+  Optional. The name of the schema to load from or write to
+  the :option:`--schemaSource <mongosqld --schemaSource>` database
+  depending on the value of :option:`--schemaMode <mongosqld --schemaMode>`:
+
+  .. list-table::
+     :widths: 10 90
+     :header-rows: 1
+
+     * - :option:`--schemaMode <mongosqld --schemaMode>` Value
+       - ``--schemaName`` Behavior
+
+     * - ``custom``
+       - The name of the schema to load from the database specified
+         by the :option:`--schemaSource <mongosqld --schemaSource>`
+         option.
+
+     * - ``auto``
+       - The name of the schema to write to the :option:`--schemaSource
+         <mongosqld --schemaSource>`
+
+  If not specified, defaults to ``defaultSchema``.
 
   .. include:: /includes/sampling-ref-chart-link.rst
 
@@ -139,35 +173,44 @@ description: |
 default: 1000  
 ---
 program: mongosqld
-name: sampleMode
+name: schemaMode
 directive: option
-args: <[read|write]>
+args: <[custom|auto]>
 description: |
-  .. versionadded:: 2.3
+  .. versionchanged:: 2.11
 
-  Specifies whether :binary:`~bin.mongosqld` writes schema information
-  to the MongoDB database named in the :option:`--sampleSource
-  <mongosqld --sampleSource>` option or only reads previously sampled
-  schema information from it.
+     Renamed ``--sampleMode`` to ``--schemaMode``
 
-  If you use the :option:`--sampleSource <mongosqld --sampleSource>`
-  option to specify a database to store schema information, set
-  :option:`--sampleMode <mongosqld --sampleMode>` to ``write`` to
-  allow :binary:`~bin.mongosqld` to persist data in the specified
-  database.
-  
+  Configures the :ref:`sampling mode <sampling-mode-chart>` of
+  :binary:`~bin.mongosqld` to either:
+
+  - Sample data from the MongoDB database to generate the
+    relational schema.
+
+  - Sample and write schema information to the MongoDB database
+    named in the :option:`--schemaSource <mongosqld --schemaSource>`
+    option.
+
+  - Read previously sampled schema information to the MongoDB
+    database named in the
+    :option:`--schemaSource <mongosqld --schemaSource>` option.
+
+  For more information on configuring the sample mode, see the
+  :ref:`sampling-mode-chart`.
+
   .. include:: /includes/fact-samplemode-write-permission.rst
 
-  .. include:: /includes/sampling-ref-chart-link.rst
-
-default: read
+default: "``custom``"
 ---
 program: mongosqld
-name: sampleRefreshIntervalSecs
+name: schemaRefreshIntervalSecs
 directive: option
 args: <number>
 description: |
-  .. versionadded:: 2.3
+  .. versionchanged:: 2.11
+
+     Renamed ``--sampleRefreshIntervalSecs`` to
+     ``--schemaRefreshIntervalSecs``
 
   The interval in seconds at which :binary:`~bin.mongosqld` re-samples
   data to create its schema. The default value is ``0``, which means
@@ -175,11 +218,11 @@ description: |
   duration of the connection. The specified value must be a positive
   integer.
 
-  If you specify a non-zero value for ``--sampleRefreshIntervalSecs``
-  and a schema database with the :option:`--sampleSource
-  <mongosqld --sampleSource>` option,
-  you must also set the :option:`--sampleMode <mongosqld --sampleMode>`
-  option to ``write``. Otherwise, :binary:`~bin.mongosqld` halts with
+  If you specify a non-zero value for ``--schemaRefreshIntervalSecs``
+  and a schema database with the :option:`--schemaSource
+  <mongosqld --schemaSource>` option,
+  you must also set the :option:`--schemaMode <mongosqld --schemaMode>`
+  option to ``auto``. Otherwise, :binary:`~bin.mongosqld` halts with
   an error.
 
   .. include:: /includes/fact-resample-schema-data.rst
