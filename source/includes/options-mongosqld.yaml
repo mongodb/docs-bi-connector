@@ -105,18 +105,17 @@ name: schemaSource
 directive: option
 args: <db-name>
 description: |
-  .. versionchanged:: 2.11
 
-     Renamed ``--sampleSource`` to ``--schemaSource``     
+  .. versionadded:: 2.11
 
-  Required when :option:`--schemaMode <mongosqld --schemaMode>` is set
-  to ``auto``. Specifies a database to store schema information.
+  Required whenever the :option:`--schemaMode <mongosqld --schemaMode>`
+  is set. Specifies the database where the schema information is stored.
   
   .. note::
 
-     If you do not specify either a schema file with the
-     :option:`--schema` option or a database with the
-     ``--schemaSource`` option, :binary:`~bin.mongosqld` holds its
+     If you do not specify any of the :option:`--schema`,
+     :option:`--schemaMode <mongosqld --schemaMode>`, and
+     ``--schemaSource`` options, :binary:`~bin.mongosqld` holds its
      schema in memory.
 
   .. include:: /includes/sampling-ref-chart-link.rst
@@ -181,22 +180,30 @@ name: schemaMode
 directive: option
 args: <[custom|auto]>
 description: |
-  .. versionchanged:: 2.11
-
-     Renamed ``--sampleMode`` to ``--schemaMode``
+  .. versionadded:: 2.11
 
   Configures the :ref:`sampling mode <sampling-mode-chart>` of
-  :binary:`~bin.mongosqld`.
-  
-  When ``--schemaMode`` is set to ``custom``,
-  :binary:`~bin.mongosqld` can either:
+  :binary:`~bin.mongosqld`. Must be used with the
+  :option:`--schemaSource <mongosqld --schemaSource>` option.
+  The following values determine the sampling behavior:
 
-  - Sample data from the MongoDB database to generate the
-    relational schema and hold the schema in memory.
+  .. list-table::
+     :widths: 30 70
+     :header-rows: 1
 
-  - Read a stored schema from the MongoDB
-    database named in the
-    :option:`--schemaSource <mongosqld --schemaSource>` option.
+     * - Value
+       - ``--schemaMode`` Behavior
+
+     * - ``custom``
+       - :binary:`~bin.mongosqld` reads a stored
+         schema from the MongoDB database specified by the
+         :option:`--schemaSource <mongosqld --schemaSource>` option.
+
+     * - ``auto``
+       - :binary:`~bin.mongosqld`
+         samples the schema and writes the schema data to the MongoDB
+         database specified by the
+         :option:`--schemaSource <mongosqld --schemaSource>` option.
 
   When ``--schemaMode`` is set to ``auto``, :binary:`~bin.mongosqld`
   samples the schema and writes the schema data to the MongoDB
@@ -225,13 +232,6 @@ description: |
   that after the initial sampling no re-sampling occurs for the
   duration of the connection. The specified value must be a positive
   integer.
-
-  If you specify a non-zero value for ``--schemaRefreshIntervalSecs``
-  and a schema database with the :option:`--schemaSource
-  <mongosqld --schemaSource>` option,
-  you must also set the :option:`--schemaMode <mongosqld --schemaMode>`
-  option to ``auto``. Otherwise, :binary:`~bin.mongosqld` halts with
-  an error.
 
   .. include:: /includes/fact-resample-schema-data.rst
 

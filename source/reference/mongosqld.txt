@@ -1032,11 +1032,10 @@ with each.
      - Behavior
 
    * - Standalone Schema
-     - - :option:`--schemaMode <mongosqld --schemaMode>` ``custom``
+     - - :option:`--schemaMode <mongosqld --schemaMode>` *not used*
        - :option:`--schemaSource <mongosqld --schemaSource>` *not used*
-     - :manual:`Standalone </reference/glossary/#term-standalone>`
-       :program:`mongod` instance. :binary:`~bin.mongosqld`
-       samples data upon startup. If :option:`--schemaRefreshIntervalSecs
+     - :binary:`~bin.mongosqld` samples data upon startup. If
+       :option:`--schemaRefreshIntervalSecs
        <mongosqld --schemaRefreshIntervalSecs>` > 0, resample
        at specified interval.
 
@@ -1044,7 +1043,7 @@ with each.
 
           .. code-block:: sh
 
-             mongosqld --schemaMode custom
+             mongosqld --schemaRefreshIntervalSecs 3600
 
        For more information, see :ref:`bi-cached-sampling`.
 
@@ -1052,11 +1051,8 @@ with each.
      - - :option:`--schemaMode <mongosqld --schemaMode>` ``custom``
        - :option:`--schemaSource <mongosqld --schemaSource>` <dbName>
        - :option:`--schemaRefreshIntervalSecs <mongosqld --schemaRefreshIntervalSecs>` *not used*
-     - In a :manual:`replica set </replication/>` or
-       :manual:`sharded cluster </sharding>`
-       environment, sample data only at startup. Read schema data
-       from specified schema database on the :manual:`primary
-       </core/replica-set-primary/>`.
+     - Read schema data from the database specified by
+       :option:`--schemaSource <mongosqld --schemaSource>`.
 
        .. example::
 
@@ -1069,7 +1065,7 @@ with each.
      - - :option:`--schemaMode <mongosqld --schemaMode>` ``auto``
        - :option:`--schemaSource <mongosqld --schemaSource>` <dbName>
        - :option:`--schemaRefreshIntervalSecs  <mongosqld --schemaRefreshIntervalSecs>` > 0
-     - Read and persist schema data in a user-specified schema
+     - Sample and persist schema data in a user-specified schema
        database.
 
        .. example::
