@@ -130,11 +130,14 @@ description: |
   .. versionadded:: 2.11    
 
   Optional. The name of the schema to load from or write to
-  the :option:`--schemaSource <mongosqld --schemaSource>` database
-  depending on the value of :option:`--schemaMode <mongosqld --schemaMode>`:
+  the :option:`--schemaSource <mongosqld --schemaSource>` database.
+  Specifying schema names allows you to store multiple schemas in
+  the :option:`--schemaSource <mongosqld --schemaSource>` database.
+  The behavior depends on on the value of
+  :option:`--schemaMode <mongosqld --schemaMode>`:
 
   .. list-table::
-     :widths: 10 90
+     :widths: 30 70
      :header-rows: 1
 
      * - :option:`--schemaMode <mongosqld --schemaMode>` Value
@@ -147,7 +150,8 @@ description: |
 
      * - ``auto``
        - The name of the schema to write to the :option:`--schemaSource
-         <mongosqld --schemaSource>`
+         <mongosqld --schemaSource>` database after the |bi-short|
+         samples the schema on startup.
 
   If not specified, defaults to ``defaultSchema``.
 
@@ -182,18 +186,22 @@ description: |
      Renamed ``--sampleMode`` to ``--schemaMode``
 
   Configures the :ref:`sampling mode <sampling-mode-chart>` of
-  :binary:`~bin.mongosqld` to either:
+  :binary:`~bin.mongosqld`.
+  
+  When ``--schemaMode`` is set to ``custom``,
+  :binary:`~bin.mongosqld` can either:
 
   - Sample data from the MongoDB database to generate the
-    relational schema.
+    relational schema and hold the schema in memory.
 
-  - Sample and write schema information to the MongoDB database
-    named in the :option:`--schemaSource <mongosqld --schemaSource>`
-    option.
-
-  - Read previously sampled schema information to the MongoDB
+  - Read previously sampled schema information from the MongoDB
     database named in the
     :option:`--schemaSource <mongosqld --schemaSource>` option.
+
+  When ``--schemaMode`` is set to ``auto``, :binary:`~bin.mongosqld`
+  samples the schema and writes the schema data to the MongoDB
+  database specified by the
+  :option:`--schemaSource <mongosqld --schemaSource>` option.
 
   For more information on configuring the sample mode, see the
   :ref:`sampling-mode-chart`.
