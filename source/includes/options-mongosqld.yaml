@@ -107,7 +107,7 @@ args: <db-name>
 description: |
   .. versionchanged:: 2.11
 
-     Renamed ``--sampleSource`` to ``-schemaSource``     
+     Renamed ``--sampleSource`` to ``--schemaSource``     
 
   Required when :option:`--schemaMode <mongosqld --schemaMode>` is set
   to ``auto``. Specifies a database to store schema information.
@@ -194,7 +194,7 @@ description: |
   - Sample data from the MongoDB database to generate the
     relational schema and hold the schema in memory.
 
-  - Read previously sampled schema information from the MongoDB
+  - Read a stored schema from the MongoDB
     database named in the
     :option:`--schemaSource <mongosqld --schemaSource>` option.
 
