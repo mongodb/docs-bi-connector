@@ -205,11 +205,6 @@ description: |
          database specified by the
          :option:`--schemaSource <mongosqld --schemaSource>` option.
 
-  When ``--schemaMode`` is set to ``auto``, :binary:`~bin.mongosqld`
-  samples the schema and writes the schema data to the MongoDB
-  database specified by the
-  :option:`--schemaSource <mongosqld --schemaSource>` option.
-
   For more information on configuring the sample mode, see the
   :ref:`sampling-mode-chart`.
 
