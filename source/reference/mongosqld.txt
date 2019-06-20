@@ -672,6 +672,31 @@ Process Management Options
      - string
      - :option:`--serviceDescription <mongosqld --serviceDescription>`
 
+Set Parameter Options
+~~~~~~~~~~~~~~~~~~~~~
+
+.. code::
+
+   setParameter:
+     polymorphic_type_conversion_mode: <string>
+     type_conversion_mode: <string>
+
+.. list-table::
+  :header-rows: 1
+
+  * - Name
+    - Type
+    - Corresponds to
+
+  * - .. setting:: setParameter.polymorphic_type_conversion_mode
+    - string
+    - :option:`--polymorphic_type_conversion_mode <mongosqld --setParameter>`
+
+  * - .. setting:: setParameter.type_conversion_mode
+    - string
+    - :option:`--type_conversion_mode <mongosqld --setParameter>`
+
+
 Example Configuration File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
