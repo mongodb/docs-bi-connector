@@ -276,7 +276,72 @@ You may configure :binary:`~bin.mongosqld` using a `YAML <http://yaml.org/>`_
 configuration file. This file may contain the settings listed in the
 following sections.
 
-.. _msqld-conf-data-sampling:
+.. _msqld-conf-log-options:
+
+Logging Options
+~~~~~~~~~~~~~~~
+
+.. code::
+
+   systemLog:
+     logAppend: <boolean>
+     logRotate: "rename"|"reopen"
+     path: <string>
+     quiet: <boolean>
+     verbosity: <integer>
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Type
+     - Corresponds to
+
+   * - .. setting:: systemLog.logAppend
+     - boolean
+     - :option:`--logAppend <mongosqld --logAppend>`
+
+   * - .. setting:: systemLog.logRotate
+     - string
+     - :option:`--logRotate <mongosqld --logRotate>`
+
+   * - .. setting:: systemLog.path
+     - string
+     - :option:`--logPath <mongosqld --logPath>`
+
+   * - .. setting:: systemLog.quiet
+     - boolean
+     - :option:`--quiet <mongosqld --quiet>`
+
+   * - .. setting:: systemLog.verbosity
+     - integer
+     - :option:`--verbose <mongosqld --verbose>`
+
+.. _msqld-conf-schema-options:
+
+Schema Options
+~~~~~~~~~~~~~~
+
+.. code::
+
+   schema:
+     path: <string>
+     maxVarcharLength: <integer>
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Type
+     - Corresponds to
+
+   * - .. setting:: schema.path
+     - string
+     - :option:`--schema`
+
+   * - .. setting:: schema.maxVarcharLength
+     - integer
+     - :option:`--maxVarcharLength`
 
 Data Sampling Options
 ~~~~~~~~~~~~~~~~~~~~~
@@ -328,19 +393,54 @@ Data Sampling Options
      - string
      - :option:`--uuidSubtype3Encoding <mongosqld --uuidSubtype3Encoding>`
 
-.. _msqld-conf-log-options:
+.. _msqld-conf-runtime-options:
 
-Logging Options
+Runtime Options
 ~~~~~~~~~~~~~~~
 
 .. code::
 
-   systemLog:
-     logAppend: <boolean>
-     logRotate: "rename"|"reopen"
-     path: <string>
-     quiet: <boolean>
-     verbosity: <integer>
+   runtime:
+     memory:
+       maxPerStage: <integer>
+       maxPerServer: <integer>
+       maxPerConnection: <integer>
+
+.. important::
+
+   |bi-short| provides the following options for controlling the amount
+   of system memory which the :binary:`~bin.mongosqld` process may use
+   for sending queries to MongoDB. These limits do not include the
+   memory which |bi-short| uses for other purposes, such as data
+   structure overhead, so the total amount of memory |bi-short|
+   uses will be higher than the limits set with these options.
+
+.. include:: /includes/option/setting-conf-runtime.memory.maxPerStage.rst
+
+.. include:: /includes/option/setting-conf-runtime.memory.maxPerServer.rst
+
+.. include:: /includes/option/setting-conf-runtime.memory.maxPerConnection.rst
+
+.. _msqld-conf-net-options:
+
+Network Options
+~~~~~~~~~~~~~~~
+
+.. code::
+
+   net:
+     bindIp: <string>
+     port: <integer>
+     unixDomainSocket:
+       enabled: <boolean>
+       pathPrefix: <string>
+       filePermissions: <string>
+     ssl:
+       mode: <string>
+       allowInvalidCertificates: <boolean>
+       PEMKeyFile: <string>
+       PEMKeyPassword: <string>
+       CAFile: <string>
 
 .. list-table::
    :header-rows: 1
@@ -349,25 +449,98 @@ Logging Options
      - Type
      - Corresponds to
 
-   * - .. setting:: systemLog.logAppend
-     - boolean
-     - :option:`--logAppend <mongosqld --logAppend>`
-
-   * - .. setting:: systemLog.logRotate
+   * - .. setting:: net.bindIp
      - string
-     - :option:`--logRotate <mongosqld --logRotate>`
+     - The hostname component of :option:`--addr`
 
-   * - .. setting:: systemLog.path
-     - string
-     - :option:`--logPath <mongosqld --logPath>`
+       .. versionchanged:: 2.2
+          To bind to multiple IP addresses, enter a list of comma separated values.
 
-   * - .. setting:: systemLog.quiet
-     - boolean
-     - :option:`--quiet <mongosqld --quiet>`
+       .. example::
 
-   * - .. setting:: systemLog.verbosity
+          "72.198.41.200,72.198.41.201,72.198.41.202"
+
+   * - .. setting:: net.port
      - integer
-     - :option:`--verbose <mongosqld --verbose>`
+     - The port component of :option:`--addr`
+
+   * - .. setting:: net.unixDomainSocket.enabled
+     - boolean
+     - Inverse of :option:`--noUnixSocket`
+
+   * - .. setting:: net.unixDomainSocket.pathPrefix
+     - string
+     - :option:`--unixSocketPrefix`
+
+   * - .. setting:: net.unixDomainSocket.filePermissions
+     - string
+     - :option:`--filePermissions`
+
+   * - .. setting:: net.ssl.allowInvalidCertificates
+     - boolean
+     - :option:`--sslAllowInvalidCertificates`
+
+   * - .. setting:: net.ssl.mode
+     - string
+     - :option:`--sslMode`
+
+   * - .. setting:: net.ssl.PEMKeyFile
+     - string
+     - :option:`--sslPEMKeyFile`
+
+   * - .. setting:: net.ssl.PEMKeyPassword
+     - string
+     - :option:`--sslPEMKeyPassword`
+
+   * - .. setting:: net.ssl.CAFile
+     - string
+     - :option:`--sslCAFile`
+
+   * - .. setting:: net.ssl.minimumTLSVersion
+     - string
+     - :option:`--minimumTLSVersion`
+
+.. _msqld-conf-security-options:
+
+Security Options
+~~~~~~~~~~~~~~~~
+
+.. code::
+
+   security:
+     enabled: <boolean>
+     defaultMechanism: <string>
+     defaultSource: <string>
+     gssapi:
+       hostname: <string>
+       serviceName: <string>
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Type
+     - Corresponds to
+
+   * - .. setting:: security.enabled
+     - boolean
+     - :option:`--auth`
+
+   * - .. setting:: security.defaultMechanism
+     - string
+     - :option:`--defaultAuthMechanism`
+
+   * - .. setting:: security.defaultSource
+     - string
+     - :option:`--defaultAuthSource`
+
+   * - .. setting:: security.gssapi.hostname
+     - string
+     - :option:`--gssapiHostname`
+
+   * - .. setting:: security.gssapi.serviceName
+     - string
+     - :option:`--gssapiServiceName`
 
 .. _msqld-conf-host-options:
 
@@ -467,85 +640,6 @@ MongoDB Host Options
      - string
      - :option:`--mongo-gssapiServiceName`
 
-.. _msqld-conf-net-options:
-
-Network Options
-~~~~~~~~~~~~~~~
-
-.. code::
-
-   net:
-     bindIp: <string>
-     port: <integer>
-     unixDomainSocket:
-       enabled: <boolean>
-       pathPrefix: <string>
-       filePermissions: <string>
-     ssl:
-       mode: <string>
-       allowInvalidCertificates: <boolean>
-       PEMKeyFile: <string>
-       PEMKeyPassword: <string>
-       CAFile: <string>
-
-.. list-table::
-   :header-rows: 1
-
-   * - Name
-     - Type
-     - Corresponds to
-
-   * - .. setting:: net.bindIp
-     - string
-     - The hostname component of :option:`--addr`
-
-       .. versionchanged:: 2.2
-          To bind to multiple IP addresses, enter a list of comma separated values.
-
-       .. example::
-
-          "72.198.41.200,72.198.41.201,72.198.41.202"
-
-   * - .. setting:: net.port
-     - integer
-     - The port component of :option:`--addr`
-
-   * - .. setting:: net.unixDomainSocket.enabled
-     - boolean
-     - Inverse of :option:`--noUnixSocket`
-
-   * - .. setting:: net.unixDomainSocket.pathPrefix
-     - string
-     - :option:`--unixSocketPrefix`
-
-   * - .. setting:: net.unixDomainSocket.filePermissions
-     - string
-     - :option:`--filePermissions`
-
-   * - .. setting:: net.ssl.allowInvalidCertificates
-     - boolean
-     - :option:`--sslAllowInvalidCertificates`
-
-   * - .. setting:: net.ssl.mode
-     - string
-     - :option:`--sslMode`
-
-   * - .. setting:: net.ssl.PEMKeyFile
-     - string
-     - :option:`--sslPEMKeyFile`
-
-   * - .. setting:: net.ssl.PEMKeyPassword
-     - string
-     - :option:`--sslPEMKeyPassword`
-
-   * - .. setting:: net.ssl.CAFile
-     - string
-     - :option:`--sslCAFile`
-
-   * - .. setting:: net.ssl.minimumTLSVersion
-     - string
-     - :option:`--minimumTLSVersion`
-
 .. _msqld-conf-proc-options:
 
 Process Management Options
@@ -578,106 +672,6 @@ Process Management Options
      - string
      - :option:`--serviceDescription <mongosqld --serviceDescription>`
 
-
-
-.. _msqld-conf-runtime-options:
-
-Runtime Options
-~~~~~~~~~~~~~~~
-
-.. code::
-
-   runtime:
-     memory:
-       maxPerStage: <integer>
-       maxPerServer: <integer>
-       maxPerConnection: <integer>
-
-.. important::
-
-   |bi-short| provides the following options for controlling the amount
-   of system memory which the :binary:`~bin.mongosqld` process may use
-   for sending queries to MongoDB. These limits do not include the
-   memory which |bi-short| uses for other purposes, such as data
-   structure overhead, so the total amount of memory |bi-short|
-   uses will be higher than the limits set with these options.
-
-.. include:: /includes/option/setting-conf-runtime.memory.maxPerStage.rst
-
-.. include:: /includes/option/setting-conf-runtime.memory.maxPerServer.rst
-
-.. include:: /includes/option/setting-conf-runtime.memory.maxPerConnection.rst
-
-.. _msqld-conf-schema-options:
-
-Schema Options
-~~~~~~~~~~~~~~
-
-.. code::
-
-   schema:
-     path: <string>
-     maxVarcharLength: <integer>
-
-.. list-table::
-   :header-rows: 1
-
-   * - Name
-     - Type
-     - Corresponds to
-
-   * - .. setting:: schema.path
-     - string
-     - :option:`--schema`
-
-   * - .. setting:: schema.maxVarcharLength
-     - integer
-     - :option:`--maxVarcharLength`
-
-.. _msqld-conf-security-options:
-
-Security Options
-~~~~~~~~~~~~~~~~
-
-.. code::
-
-   security:
-     enabled: <boolean>
-     defaultMechanism: <string>
-     defaultSource: <string>
-     gssapi:
-       hostname: <string>
-       serviceName: <string>
-
-.. list-table::
-   :header-rows: 1
-
-   * - Name
-     - Type
-     - Corresponds to
-
-   * - .. setting:: security.enabled
-     - boolean
-     - :option:`--auth`
-
-   * - .. setting:: security.defaultMechanism
-     - string
-     - :option:`--defaultAuthMechanism`
-
-   * - .. setting:: security.defaultSource
-     - string
-     - :option:`--defaultAuthSource`
-
-   * - .. setting:: security.gssapi.hostname
-     - string
-     - :option:`--gssapiHostname`
-
-   * - .. setting:: security.gssapi.serviceName
-     - string
-     - :option:`--gssapiServiceName`
-
-.. _msqld-conf-set-parameter-options:
-
 Set Parameter Options
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -687,7 +681,24 @@ Set Parameter Options
      polymorphic_type_conversion_mode: <string>
      type_conversion_mode: <string>
 
-.. include:: /includes/option/option-mongosqld-setParameter.rst
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Type
+     - Corresponds to
+
+   * - .. setting::`setParameter.polymorphic_type_conversion_mode`
+     - string
+     - Determines how :binary:`~bin.mongosqld` evaluates document fields that are specified with multiple data types.
+
+   * - .. setting::`setParameter.type_conversion_mode`
+     - string
+     - Specifies the semantics that :binary:`~bin.mongosqld` uses for type conversions, such as the CAST function.
+
+These configuration file options are also available as system variables. See 
+`System Variables <https://docs.mongodb.com/bi-connector/current/reference/system-variables/>`_
+for more information.
 
 Example Configuration File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
