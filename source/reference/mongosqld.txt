@@ -680,6 +680,40 @@ Process Management Options
      - string
      - :option:`--serviceDescription <mongosqld --serviceDescription>`
 
+Set Parameter Options
+~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: sh
+
+   setParameter:
+     polymorphic_type_conversion_mode: <string>
+     type_conversion_mode: <string>
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Type
+     - Corresponds to
+
+   * - .. setting:: setParameter.polymorphic_type_conversion_mode
+     - string
+     - Determines how :binary:`~bin.mongosqld` evaluates document fields
+       that are specified with multiple data types. For a list of
+       accepted values, see
+       :ref:`System Variables <system-environment-variables>`.
+
+   * - .. setting:: setParameter.type_conversion_mode
+     - string
+     - Specifies the semantics that :binary:`~bin.mongosqld` uses for
+       type conversions, such as the CAST function. For a list of
+       accepted values, see
+       :ref:`System Variables <system-environment-variables>`.
+
+These configuration file options are also available as system variables.
+For more information, see
+:ref:`System Variables <system-environment-variables>`.
+
 Example Configuration File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 

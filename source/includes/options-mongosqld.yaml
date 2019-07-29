@@ -874,4 +874,22 @@ description: |
      +------+------+--------+-------+
 
 optional: true
+---
+program: mongosqld
+name: setParameter
+directive: option
+args: <polymorphic_type_conversion_mode | type_conversion_mode>
+description: |
+  .. list-table::
+   :header-rows: 1
+   * - Name
+     - Type
+     - Corresponds to
+   * - ``polymorphic_type_conversion_mode``
+     - string
+     - Determines how :binary:`~bin.mongosqld` evaluates document fields that are specified with multiple data types.
+   * - ``type_conversion_mode``
+     - string
+     - Specifies the semantics that :binary:`~bin.mongosqld` uses for type conversions, such as the CAST function.
+optional: true
 ...
