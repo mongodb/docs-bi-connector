@@ -878,22 +878,31 @@ optional: true
 program: mongosqld
 name: setParameter
 directive: option
-args: <polymorphic_type_conversion_mode | type_conversion_mode>
+args: <parameter>
 description: |
   .. list-table::
    :header-rows: 1
-   * - Name
+   :widths: 50 10 40
+
+   * - Parameter
      - Type
      - Corresponds to
-   * - ``polymorphic_type_conversion_mode``
+
+   * - ``"polymorphic_type_conversion_mode=<value>"``
      - string
-     - Determines how :binary:`~bin.mongosqld` evaluates document
-       fields that are specified with multiple data types.
-   * - ``type_conversion_mode``
+     - .. include:: /includes/fact-polymorphic-type-conversion-mode.rst
+
+   * - ``"type_conversion_mode=<value>"``
      - string
-     - Specifies which mode the :binary:`~bin.mongosqld` uses to
-       :doc:`convert data types </reference/type-conversion>`.
-       |bi-short| uses its own mode (``mongosql``) by default. Accepted
-       values are ``mongosql`` and ``mysql``.
+     - .. include:: /includes/fact-type-conversion-mode.rst
+
+  The following example starts :binary:`~bin.mongosqld` and uses
+  the ``--setParameter`` option to specify the
+  :doc:`type conversion mode </reference/type-conversion>`:
+
+  .. code-block:: sh
+
+      mongosqld --setParameter "type_conversion_mode=mongosql"
+
 optional: true
 ...
