@@ -9,13 +9,6 @@
      - Default Value (Atlas-hosted)
      - Default Value (On Premises)
 
-   * - ``enable_table_alterations``
-     - boolean
-     - If enabled, the server will process any ``ALTER TABLE`` statements
-       issued.
-     - ``false``
-     - ``false``
-
    * - ``full_pushdown_exec_mode``
      - boolean
      - Specifies whether a query error is returned for queries with
@@ -56,21 +49,18 @@
  
        Valid values are:
 
-       - ``off``:
-         No metrics are stored.
+       - ``off``: No metrics are stored.
 
-       - ``log``:
-         Query metrics are written to the ``mongosqld``
+       - ``log``: Query metrics are written to the ``mongosqld``
          :doc:`log </reference/log-messages/>`.
 
-       - ``stitch``:
-         Query metrics are written to a `Stitch project
+       - ``stitch``: Query metrics are written to a `Stitch project
          <https://docs.mongodb.com/stitch/>`__.
 
      - ``off``
      - ``off``
 
-   * - ``mongodb_max_conection_size``
+   * - ``mongodb_max_connection_size``
      - integer
      - The maximum size of memory in bytes that may be allocated for
        evaluating any query on any given client connection. A value of
