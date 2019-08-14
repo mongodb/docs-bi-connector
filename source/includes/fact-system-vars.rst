@@ -71,7 +71,7 @@
    * - ``mongodb_max_server_size``
      - integer
      - The maximum size of memory in bytes that may be allocated for
-       evaluating any query on |bi-short|. A value of ``0`` specifies
+       evaluating all queries on |bi-short|. A value of ``0`` specifies
        no limit.
      - ``0``
      - ``0``
@@ -101,22 +101,19 @@
 
    * - ``mongodb_git_version``
      - string
-     - The git version of MongoDB the |bi-short| is connected to for
-       a given client connection.
+     - The git version of MongoDB the |bi-short| is connected to.
      - none
      - none
 
    * - ``mongodb_topology``
      - string
-     - The MongoDB cluster topology the |bi-short| is connected to for
-       a given client connection.
+     - The MongoDB cluster topology the |bi-short| is connected to.
      - none
      - none
 
    * - ``mongodb_version``
      - string
-     - The MongoDB version the |bi-short| is connected to for a given 
-       client connection.
+     - The MongoDB version the |bi-short| is connected to.
      - none
      - none
 
@@ -153,8 +150,9 @@
 
    * - ``optimize_self_joins``
      - boolean
-     - If enabled, when any non-json mapping mode (such as ``schema_mapping_mode``)
-       is used, parent/progeny join queries are evaluated more optimally.
+     - If enabled, attempt to translate joins between tables with the same
+       underlying MongoDB collection without :manual:`$lookup
+       </reference/operator/aggregation/lookup/>`.
      - ``true``
      - ``true``
 
