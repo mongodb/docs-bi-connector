@@ -43,23 +43,6 @@
      - ``1000``
      - ``1000``
 
-   * - ``metrics_backend``
-     - string
-     - Determines where |bi-short| stores query metrics.
- 
-       Valid values are:
-
-       - ``off``: No metrics are stored.
-
-       - ``log``: Query metrics are written to the ``mongosqld``
-         :doc:`log </reference/log-messages/>`.
-
-       - ``stitch``: Query metrics are written to a `Stitch project
-         <https://docs.mongodb.com/stitch/>`__.
-
-     - ``off``
-     - ``off``
-
    * - ``mongodb_max_connection_size``
      - integer
      - The maximum size of memory in bytes that may be allocated for
