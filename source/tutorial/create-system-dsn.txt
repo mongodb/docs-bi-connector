@@ -46,7 +46,8 @@ Before creating a :abbr:`DSN (Data Source Name)`, you should:
    tabs:
      - id: windows
        content: |
-         - :ref:`Install the BI Connector <install-bic-windows>` and configure it to connect to your replica set.
+         - :ref:`Install the BI Connector <install-bic-windows>` and
+           configure it to connect to your replica set.
 
          - Download and install `Visual C++ Redistributable for Visual Studio
            2015 <https://www.microsoft.com/en-us/download/details.aspx?id=48145>`__.
@@ -61,7 +62,10 @@ Before creating a :abbr:`DSN (Data Source Name)`, you should:
 
      - id: linux
        content: |
-         - Install the BI Connector for :ref:`Red Hat Enterprise-based Linux <install-bic-rhel>` or :ref:`Debian-based Linux <install-bic-debian>` and configure it to connect to your replica set.
+         - Install the BI Connector on 
+           :ref:`Red Hat Enterprise-based Linux <install-bic-rhel>` 
+           or :ref:`Debian-based Linux <install-bic-debian>` and
+           configure it to connect to your replica set.
 
          - Download and extract the {+odbc-driver+} for your platform.
 
