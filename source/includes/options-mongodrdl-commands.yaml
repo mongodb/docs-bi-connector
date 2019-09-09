@@ -1,0 +1,131 @@
+program: mongodrdl
+name: sample
+directive: commandoption
+description: |
+  Samples the namespaces specified by the
+  :option:`--db <mongodrdl --db>`, optional
+  :option:`--collection <mongodrdl --collection>`, and other
+  :ref:`command line options <mongodrdl-command-line-options>` to
+  output a :ref:`.drdl <drdl>` file. The ``sample`` command
+  encapsulates all of :binary:`~bin.mongodrdl` behavior prior to version
+  2.11.
+
+  .. code-block:: sh
+
+     mongodrdl sample --db <db-name> --collection <collection-name> --out <filename>.drdl
+---
+program: mongodrdl
+name: list-schema-ids
+directive: commandoption
+description: |
+  Lists the :ref:`ObjectId <document-bson-type-object-id>` of each
+  stored schema and the date it was created. 
+  
+  .. list-table::
+     :header-rows: 1
+     :widths: 60 40
+
+     * - Name
+       - Description
+
+     * - ``schemaSource``
+       - Specifies the database where the schema information is stored.
+  
+  Parameters:
+  - schemaSource
+
+  For example:
+
+  .. code-block:: sh
+
+     mongodrdl list-schema-ids --schemaSource <db-name>
+
+  The output resembles the following:
+
+  .. code-block:: sh
+     :copyable: false
+
+     5d72ad695c23a9e3e26e3c85 2019-09-06T15:03:05.556Z
+     5d72adea5c23a9e44882a1ad 2019-09-06T15:05:14.349Z
+
+---
+program: mongodrdl
+name: list-schema-names
+directive: commandoption
+description: |
+  Lists the name and :ref:`ObjectId <document-bson-type-object-id>` for
+  each stored schema that has a name.
+
+  .. include:: /includes/fact-mongodrdl-schema-name.rst
+  
+  Parameters:
+  
+  - schemaSource
+
+  The following command returns the name and ObjectId for each named
+  schema:
+
+  .. code-block:: sh
+
+     mongodrdl list-schema-names --schemaSource <db-name>
+
+  The output resembles the following:
+
+  .. code-block:: sh
+     :copyable: false
+
+     movies 5d72ad695c23a9e3e26e3c85
+     theaters 5d72adea5c23a9e44882a1ad
+---
+program: mongodrdl
+name: upload
+directive: commandoption
+description: |
+  TBD
+
+  By default, schemas are uploaded to the ``schemas`` collection within
+  the database specified by the
+  :option:`--schemaSource <mongodrdl --schemaSource>` option.
+  
+  Once your schema is uploaded, restart :binary:`~bin.mongosqld` with
+  the schema namespace specified by the
+  :option:`--schemaSource <mongosqld --schemaSource>` option:
+
+---
+program: mongodrdl
+name: download
+directive: commandoption
+description: |
+  TBD
+---
+program: mongodrdl
+name: delete
+directive: commandoption
+description: |
+  Deletes the specified schema by
+  :ref:`ObjectId <document-bson-type-object-id>` or schema name. 
+
+  Parameters:
+  - schema
+  - name
+  - chemaSource
+ 
+---
+program: mongodrdl
+name: name-schema
+directive: commandoption
+description: |
+  Creates a new name for a schema or updates a schema's existing name.
+
+  .. include:: /includes/fact-mongodrdl-schema-name.rst
+
+  Parameters:
+  - name
+  - schema
+  - schemaSource
+
+  .. code-block:: sh
+
+     mongodrdl name-schema --name metrics --schemaSource schemas --schema 5d72adea5c23a9e44882a1ad
+
+...
