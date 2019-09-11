@@ -25,8 +25,8 @@ Description
 
 .. include:: /includes/fact-bi-enterprise.rst
 
-:binary:`~bin.mongodrdl` is a relational schema management tool for the
-|bi|. The ``mongodrdl`` binary can:
+``mongodrdl`` is a relational schema management tool for the |bi|. The
+``mongodrdl`` binary can:
 
 - :commandoption:`Produce a schema <sample>` based on contents of one or
   more MongoDB :term:`collections <collection>` and write them out into
@@ -44,7 +44,7 @@ Description
 - :commandoption:`Name <name-schema>` stored schemas in your MongoDB
   deployment for easier management.
 
-Using a ``.drdl`` file with the |bi-short| allows fine-grained control
+The ``.drdl`` file can be edited, allowing finer-grained control
 over the |bi-short|'s schema. To learn more about the ``.drdl`` format
 and manually editing ``.drdl`` files, see :ref:`schema-with-drdl-file`.
 
@@ -79,8 +79,9 @@ Commands
 
 .. versionadded:: 2.11
 
-The behavior of :binary:`~bin.mongodrdl` is determined by the specified
-command:
+The behavior of ``mongodrdl`` is determined by one of the
+following commands. If no command is specified, ``mongodrdl``
+samples the specified namespace.
 
 .. include:: /includes/option/commandoption-mongodrdl-sample.rst
 
@@ -95,9 +96,6 @@ command:
 .. include:: /includes/option/commandoption-mongodrdl-delete.rst
 
 .. include:: /includes/option/commandoption-mongodrdl-name-schema.rst
-
-If no command is specified, :binary:`~bin.mongodrdl` samples the
-specified namespace
 
 .. _mongodrdl-command-line-options:
 
