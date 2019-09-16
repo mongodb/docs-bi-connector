@@ -28,9 +28,9 @@ Description
 ``mongodrdl`` is a relational schema management tool for the |bi|. The
 ``mongodrdl`` binary can:
 
-- :commandoption:`Produce a schema <sample>` based on contents of one or
-  more MongoDB :term:`collections <collection>` and write them out into
-  ``.drdl`` files used by :binary:`~bin.mongosqld`.
+- :commandoption:`Produce a schema <sample>` based on the contents of
+  one or more MongoDB :term:`collections <collection>` and write them
+  out into ``.drdl`` files used by :binary:`~bin.mongosqld`.
 
 - :commandoption:`Upload <upload>` a ``.drdl`` file's schema to the
   MongoDB deployment your |bi-short| is reading from.
@@ -44,9 +44,9 @@ Description
 - :commandoption:`Name <name-schema>` stored schemas in your MongoDB
   deployment for easier management.
 
-The ``.drdl`` file can be edited, allowing finer-grained control
-over the |bi-short|'s schema. To learn more about the ``.drdl`` format
-and manually editing ``.drdl`` files, see :ref:`schema-with-drdl-file`.
+You can edit a ``.drdl`` file manually to customize the |bi-short|'s
+schema. To learn more about the ``.drdl`` format and manually editing
+``.drdl`` files, see :ref:`schema-with-drdl-file`.
 
 To learn more about all |bi-short| schema management options,
 see :doc:`/schema-configuration`.

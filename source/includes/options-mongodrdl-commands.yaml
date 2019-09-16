@@ -7,8 +7,8 @@ description: |
   :option:`--collection <mongodrdl --collection>`, and other
   :ref:`command line options <mongodrdl-command-line-options>` to
   output a :ref:`.drdl <drdl>` file. The ``sample`` command
-  encapsulates all of :binary:`~bin.mongodrdl` behavior prior to version
-  2.11.
+  encapsulates all the :binary:`~bin.mongodrdl` behavior prior to
+  version 2.11.
 
   .. code-block:: sh
 
@@ -18,8 +18,9 @@ program: mongodrdl
 name: list-schema-ids
 directive: commandoption
 description: |
-  Lists the :ref:`ObjectId <document-bson-type-object-id>` of each
-  stored schema and the date it was created. 
+  Lists the string representation of the
+  :ref:`ObjectId <document-bson-type-object-id>` of each stored schema
+  and the date it was created.
 
   ``list-schema-ids`` requires the following option:
   
@@ -30,7 +31,7 @@ description: |
      * - Name
        - Description
 
-     * - ``--schemaSource``
+     * - :option:`--schemaSource <mongodrdl --schemaSource>`
        - *Required.* Specifies the database where the schema information
          is stored.
   
@@ -54,8 +55,9 @@ program: mongodrdl
 name: list-schema-names
 directive: commandoption
 description: |
-  Lists the name and :ref:`ObjectId <document-bson-type-object-id>` for
-  each stored schema that has a name.
+  Lists the name and string representation of the
+  :ref:`ObjectId <document-bson-type-object-id>` for each stored schema
+  that has a name.
 
   .. include:: /includes/fact-mongodrdl-schema-name.rst
   
@@ -68,7 +70,7 @@ description: |
      * - Name
        - Description
 
-     * - ``--schemaSource``
+     * - :option:`--schemaSource <mongodrdl --schemaSource>`
        - *Required.* Specifies the database where the schema information
          is stored.
 
@@ -93,8 +95,7 @@ directive: commandoption
 description: |
   Uploads the schema from the specified ``.drdl`` file to the database
   specified by the :option:`--schemaSource <mongodrdl --schemaSource>`
-  option. By default, schemas are uploaded to the ``schemas``
-  collection.
+  option. Schemas are uploaded to the ``schemas`` collection.
 
   ``upload`` requires the following options:
 
@@ -105,7 +106,7 @@ description: |
      * - Name
        - Description
 
-     * - ``--schemaSource``
+     * - :option:`--schemaSource <mongodrdl --schemaSource>`
        - *Required.* Specifies the database where the schema information
          is stored.
 
@@ -119,16 +120,17 @@ description: |
 
      mongodrdl upload --schemaSource schemas --drdl ./movies.drdl 
 
-  The :ref:`ObjectId <document-bson-type-object-id>` of the uploaded
-  schema is returned:
+  The string representation of the
+  :ref:`ObjectId <document-bson-type-object-id>` of the uploaded schema
+  is returned:
 
   .. code-block:: sh
      :copyable: false
 
      5d793f3f6a26a3ce66c304ea
 
-  To use the newly upload schema, restart :binary:`~bin.mongosqld` with
-  the schema database specified by the
+  To use the newly uploaded schema, restart :binary:`~bin.mongosqld`
+  with the schema database specified by the
   :option:`--schemaSource <mongosqld --schemaSource>` option and
   the :option:`--schemaMode <mongosqld --schemaMode>` set to ``custom``:
 
@@ -142,6 +144,7 @@ name: download
 directive: commandoption
 description: |
   Downloads a schema specified by its name or
+  string representation of the
   :ref:`ObjectId <document-bson-type-object-id>` and prints it to the
   console.
 
@@ -154,20 +157,20 @@ description: |
      * - Name
        - Description
 
-     * - ``--schemaSource``
+     * - :option:`--schemaSource <mongodrdl --schemaSource>`
        - *Required.* Specifies the database where the schema information
          is stored.
 
      * - ``--name``
        - The name of the schema. To learn more about naming schemas,
-         see the :commandoption:`name-schema <mongodrdl --name-schema>`
+         see the :commandoption:`name-schema <name-schema>`
          command.
 
          *Required* if ``--schema`` is not specified.
 
      * - ``--schema``
-       - The :ref:`ObjectId <document-bson-type-object-id>` of the
-         schema.
+       - The string representation of the
+         :ref:`ObjectId <document-bson-type-object-id>` of the schema.
 
          *Required* if ``--name`` is not specified.
   
@@ -178,8 +181,8 @@ description: |
 
      mongodrdl download --schemaSource schemas --name movies
   
-  To store the schema in a ``.drdl`` file, cat the output to the desired
-  ``.drdl`` file:
+  To store the schema in a ``.drdl`` file, direct the output to the
+  desired ``.drdl`` file:
 
   .. code-block:: sh
 
@@ -191,6 +194,7 @@ name: delete
 directive: commandoption
 description: |
   Deletes a schema specified by its name or
+  string representation of the
   :ref:`ObjectId <document-bson-type-object-id>`. 
 
   ``delete`` accepts the following options:
@@ -202,7 +206,7 @@ description: |
      * - Name
        - Description
 
-     * - ``--schemaSource``
+     * - :option:`--schemaSource <mongodrdl --schemaSource>`
        - *Required.* Specifies the database where the schema information
          is stored.
 
@@ -214,13 +218,13 @@ description: |
          *Required* if ``--schema`` is not specified.
 
      * - ``--schema``
-       - The :ref:`ObjectId <document-bson-type-object-id>` of the
-         schema.
+       - The string representation of the
+         :ref:`ObjectId <document-bson-type-object-id>` of the schema.
 
          *Required* if ``--name`` is not specified.
 
-  For example, the following command deletes the
-  ``5d7941dc6a26a3d0fc397284`` schema in the ``schemas`` database:
+  For example, the following command deletes the schema with id
+  ``5d7941dc6a26a3d0fc397284`` in the ``schemas`` database:
 
   .. code-block:: sh
 
@@ -243,16 +247,16 @@ description: |
      * - Name
        - Description
 
-     * - ``--schemaSource``
+     * - :option:`--schemaSource <mongodrdl --schemaSource>`
        - *Required.* Specifies the database where the schema information
          is stored.
 
      * - ``--name``
-       - *Required.* The name of the schema.
+       - *Required.* The new name of the schema.
 
      * - ``--schema``
-       - *Required* The :ref:`ObjectId <document-bson-type-object-id>` of the
-         schema.
+       - *Required* The string representation of the
+         :ref:`ObjectId <document-bson-type-object-id>` of the schema.
 
   For example, the following command names the
   ``5d72adea5c23a9e44882a1ad`` schema in the ``schemas`` database as
