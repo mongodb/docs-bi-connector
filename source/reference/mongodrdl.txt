@@ -60,7 +60,7 @@ Syntax
 
 .. code-block:: sh
 
-   mongodrdl [<command>] [<flags...>]
+   mongodrdl [<command>] [<options...>]
 
 
 Default Minimum TLS Version
