@@ -30,64 +30,54 @@ Release Notes for |bi|
 Bug Fixes
 ~~~~~~~~~
 
-- Fixes a bug that caused :binary:`~bin.mongosqld` to hang if an
-  election occurred during sampling.
+Fixes the following bugs:
 
-- Fixes a bug that caused some queries using :pipeline:`$lookup` to
-  fail.
+- :binary:`~bin.mongosqld` hangs if an election occurred during
+  sampling.
+
+- Some queries using :pipeline:`$lookup` fail.
   
-- Fixes a bug that caused panics while connecting when a
-  :ref:`DRDL <schema-with-drdl-file>` file excludes ``_id`` from a child
-  table.
+- Panics occur when connecting with a
+  :ref:`DRDL <schema-with-drdl-file>` file that excludes a child table's
+  ``_id``.
 
-- Fixes a bug that installed versions 2.10+ in the wrong directory on 
-  Windows.
+- Versions 2.10+ install to the wrong directory on Windows.
 
 - Fixes a bug in the ``div`` operator’s in-memory evaluation.
 
-- Fixes a bug that prevented mongosqld from correctly killing
-  long-running queries.
+- :binary:`~bin.mongosqld` incorrectly kills long-running queries.
 
-- Fixes a bug that prevented some queries on
-  :ref:`ObjectId <document-bson-type-object-id>` fields from pushing
-  down.
+- Some queries on :ref:`ObjectId <document-bson-type-object-id>` fields
+  do not push down.
 
-- Fixes a bug that prevented :binary:`~bin.mongodrdl` from parsing
-  replica set seedlists passed to the
-  :option:`--host <mongodrdl --host>` flag.
+- :binary:`~bin.mongodrdl` not parsing replica set seedlists passed to
+  the :option:`--host <mongodrdl --host>` flag.
 
-- Fixes a bug that caused ``timestampadd`` to fail with out-of-range
-  months.
+- ``timestampadd`` fails with out-of-range months.
 
-- Fixes a bug that allowed aggregate functions as grouping expressions.
+- Allows aggregate functions as grouping expressions.
 
-- Fixes a bug that caused ``datediff`` to fail to push down with
-  polymorphic arguments.
+- ``datediff`` fails to push down with polymorphic arguments.
 
-- Fixes a bug that caused us to display incorrect foreign key
-  constraints.
+- Displays incorrect foreign key constraints.
 
-- Fixes a bug that caused incorrect pushdown and
-  :ref:`type conversions <type-conversion-modes>` for dates/datetimes
-  that are too large/small.
+- Incorrect pushdown and :ref:`type conversions <type-conversion-modes>`
+  for ``date`` and ``datetime`` types that are too large or too small.
 
-- Fixes a bug that caused aliases for tables in ``information_schema``
-  to be ignored.
+- Aliases for tables in ``information_schema`` are ignored.
 
-- Fixes a bug that caused some queries with aggregate functions to fail
-  to push down.
+- Some queries with aggregate functions fail to push down.
 
-- Fixes a pipeline parsing error for unwind paths with numeric field
-  names.
+- Pipeline parsing error for unwind paths with numeric field names.
 
-- Fixes a bug that caused :binary:`~bin.mongodrdl` to ignore the
-  ``--gssapiHostName`` and ``--gssapiServiceName`` flags.
+- :binary:`~bin.mongodrdl` ignores the ``--gssapiHostName`` and
+  ``--gssapiServiceName`` flags.
 
-- Fixes a bug that allowed extra arguments to the ``current_timestamp``
-  and ``trim`` functions.
+- Allows extra arguments to the ``current_timestamp`` and ``trim``
+  functions.
 
-- Fixes a bug where ``str_to_date`` returned a ``date`` instead of a
-  ``datetime`` for some non-constant format-string arguments.
+- ``str_to_date`` returns a ``date`` instead of a ``datetime`` for some
+  non-constant format-string arguments.
 
 Improvements
 ~~~~~~~~~~~~
@@ -100,7 +90,7 @@ translations were improved and expanded pushdown coverage to more
 functions and query shapes.
 
 - Adds support for pushing down correlated subqueries to MongoDB
-  versions 3.6 or later.
+  versions 3.6 and later.
 
 - Adds pushdown support for ``ln``, ``ascii``, ``user``, ``database``,
   ``version``, ``connection_id``, and constant-valued time/date
@@ -117,7 +107,7 @@ functions and query shapes.
   subqueries.
 
 - Improves truncate pushdown coverage and updated the translation to use
-  :operator:`$trunc` with MongoDB versions 4.1.9 or later.
+  :operator:`$trunc` with MongoDB versions 4.1.9 and later.
 
 - Adds pushdown support for the ``char`` and ``str_to_date`` functions.
 
@@ -159,8 +149,8 @@ Behavioral Changes
   :ref:`DRDL <schema-with-drdl-file>`, or
   :ref:`custom schema mode <sampling-mode-chart>`. The variable/config
   parameter that enabled this feature, ``enable_table_alterations``, is
-  still supported, but doesn’t do anything in 2.12. It will be removed
-  in a future release.
+  still supported but doesn’t do anything in |bi-short| 2.12. It will be
+  removed in a future release.
 
 .. _bi-2-11-1:
 
