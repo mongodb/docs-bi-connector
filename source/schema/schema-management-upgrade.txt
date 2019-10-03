@@ -1,6 +1,8 @@
-=========================
-Schema Management Upgrade
-=========================
+.. _2.11-schema-management-changes:
+
+=================================
+Schema Management Changes in 2.11
+=================================
 
 .. default-domain:: mongodb
 
@@ -13,9 +15,15 @@ Schema Management Upgrade
 The |bi| version 2.11 release introduces significant improvements to
 stored schema management. The new stored-schema format is
 equivalent to :ref:`DRDL <schema-with-drdl-file>` files. These
-improvements introduce some backwards-breaking changes for certain
-|bi-short| configurations. The following sections outline the upgrade
-path for various |bi-short| configurations.
+improvements are incompatible with |bi-short| configurations from
+versions 2.10 and earlier. If you are running |bi-short| 2.10 or
+earlier, use the following sections to update your configuration to be
+compatible with version 2.11 or later.
+
+If you are already running version 2.11 or later, no further
+configuration changes are required. To learn more about the different
+schema management configurations introduced in version 2.11, see the
+:ref:`Sampling Mode Reference Chart <sampling-mode-chart>`.
 
 Standalone Reader Changes
 -------------------------
@@ -31,7 +39,7 @@ earlier Standalone Reader configuration to be compatible with version
 
    * - 
      - Version 2.10 and Earlier
-     - Version 2.11 and Later Upgrade Path
+     - Version 2.11 and Later
 
    * - Mode
      - Standalone Reader
@@ -56,7 +64,7 @@ earlier Standalone Reader configuration to be compatible with version
        continue using standalone mode.
 
        Any other standalone mode configurations that worked in earlier
-       releases will continue to work with version 2.11.below. 
+       releases will continue to work with version 2.11 and later.
 
    * - Example
      - The following example launches |bi-short| versions 2.10 and
@@ -89,7 +97,7 @@ earlier Clustered-Reader configuration to be compatible with the version
 
    * - 
      - Version 2.10 and Earlier
-     - Version 2.11 and Later Upgrade Path
+     - Version 2.11 and Later
 
    * - Mode
      - Clustered-Reader Mode
@@ -148,7 +156,7 @@ and later:
 
    * - 
      - Version 2.10 and Earlier
-     - Version 2.11 and Later Upgrade Path
+     - Version 2.11 and Later
 
    * - Mode
      - Clustered-Writer Mode
@@ -157,7 +165,7 @@ and later:
    * - Behavior
      - The |bi-short| obtains its schema by sampling, and persists
        information about the schema to the ``--sampleSource`` database.
-     - The |bi-short| obtain its schema by sampling and persists each
+     - The |bi-short| obtains its schema by sampling and persists each
        sampled schema to the
        :option:`--schemaSource <mongosqld --schemaSource>` database in
        the :ref:`DRDL <schema-with-drdl-file>` format.
@@ -202,5 +210,5 @@ favor of
 :option:`--schemaRefreshIntervalSecs <mongosqld --schemaRefreshIntervalSecs>`
 and :setting:`schema.refreshIntervalSecs`. The old command line option
 and configuration file setting will continue to work in the 2.11
-release, switching to the new command line option or configuration file
-setting is recommended.
+release, but switching to the new command line option or configuration
+file setting is recommended.
