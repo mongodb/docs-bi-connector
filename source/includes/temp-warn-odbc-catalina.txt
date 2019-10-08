@@ -1,0 +1,6 @@
+.. (DOCSP-7244) This is a temporary warning that will be removed with BI-2371
+
+.. warning::
+
+   The current edition of ODBC Manager is not compatible with macOS
+   Catalina.
