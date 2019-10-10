@@ -279,7 +279,23 @@ description: |
   .. versionadded:: 2.12
 
   MongoDB URI connection string.
-optional: true
+
+  .. important::
+   
+     The following command-line options cannot be used in conjunction
+     with :option:`--uri` option:
+   
+     - :option:`--host`
+     - :option:`--port`
+     - :option:`--db`
+     - :option:`--username`
+     - :option:`--password` (if the URI connection string also includes
+       the password)
+     - :option:`--authenticationDatabase`
+     - :option:`--authenticationMechanism`
+   
+     Instead, specify these options as part of your :option:`--uri` 
+     connection string.
 ---
 program: mongodrdl
 name: gssapiHostName
@@ -287,8 +303,6 @@ default: remote server's address
 directive: option
 args: <hostname>
 description: |
-  .. versionadded:: 2.12
-
   Hostname to use when authenticating using GSSAPI/Kerberos.
 optional: true
 ---
@@ -298,8 +312,6 @@ default: mongodb
 directive: option
 args: <service-name>
 description: |
-  .. versionadded:: 2.12
-
   Service name to use when authenticating using GSSAPI/Kerberos.
 optional: true
 ...
