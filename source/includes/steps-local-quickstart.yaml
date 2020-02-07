@@ -91,6 +91,7 @@ content: |
   .. figure:: /images/bi-connector/windows-odbc-dsn2.png
      :alt: Windows ODBC DSN
      :figwidth: 550px
+     :align: center
 
   When you press the :guilabel:`Test` button you should see the
   :guilabel:`Connection Successful` result.
