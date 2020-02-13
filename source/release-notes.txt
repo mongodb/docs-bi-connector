@@ -27,8 +27,11 @@ Release Notes for |bi|
 
 *Released February 12, 2020*
 
-Fixes bug in mapping that did not deep copy pipelines during table
-post-processing, leading to invalid SQL schemas.
+Bug Fixes
+~~~~~~~~~
+
+- Fixes bug in mapping that did not deep copy pipelines during table
+  post-processing, leading to invalid SQL schemas.
 
 .. _bi-2-13-3:
 
