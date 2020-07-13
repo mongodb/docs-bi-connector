@@ -27,11 +27,12 @@ Release Notes for |bi|
 
 *Released July 13, 2020*
 
-New Feature
-~~~~~~~~~~~
+New Features
+~~~~~~~~~~~~
 
 - :ref:`Database schemas <schema-configuration-ref>` are now
   case-sensitive.
+- Queries containing UNION can be fully pushed down.
 
 Bug Fix
 ~~~~~~~
