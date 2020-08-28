@@ -109,7 +109,7 @@ description: |
   .. include:: /includes/auth-mechanisms.rst
 
 # Per DOCS-2940, combine this with similar info in
-#   /includes/options-conf
+#   /includes/optionss-conf
 #   /reference/connection-string
 #   /reference/parameters
 #   /tutorial/control-access-to-mongodb-windows-with-kerberos-authentication
