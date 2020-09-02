@@ -32,6 +32,7 @@ business intelligence tools.
 .. figure:: /images/bi-connector/cloud-none-vert.png
    :figwidth: 536px
    :align: center
+   :alt: Diagram showing that other BI tools communicate with the DSN, which communicates with MongoDB's BI Connector, which in turn communicates with the MongoDB database.
 
 System Components
 -----------------

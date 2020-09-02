@@ -4,8 +4,8 @@ title = "MongoDB Connector for BI"
 intersphinx = ["https://docs.mongodb.com/manual/objects.inv", 
                "https://docs.atlas.mongodb.com/objects.inv"]
 
-toc_landing_pages = ["/installation", "/client-applications", "/connect/mysql", "/connect/tableau", 
-                     "/authentication", "/schema-configuration", "/components", "/reference", 
+toc_landing_pages = ["/installation", "/client-applications", "/connect/mysql", 
+                     "/authentication", "/schema-configuration", "/components", 
                      "/release-notes"]
 
 [constants]

@@ -10,18 +10,14 @@
    :depth: 1
    :class: singlecol
 
-.. only:: html
-
-   .. meta::
-      :description: The mongodrdl command man page.
-      :keywords: mongodrdl, mongodb, man page
+.. meta::
+   :description: The mongodrdl command man page.
+   :keywords: mongodrdl, mongodb, man page
 
 Description
 -----------
 
-.. only:: (not man)
-
-   .. binary:: mongodrdl
+.. binary:: mongodrdl
 
 .. include:: /includes/fact-bi-enterprise.rst
 

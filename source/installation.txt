@@ -23,7 +23,14 @@ the guide for your platform below to install the |bi-short|, or see
 Installation Guides
 -------------------
 
-.. include:: /includes/toc/dfn-list-install.rst
+:doc:`/tutorial/install-bi-connector-windows`
+    Instructions for installing the BI Connector on Windows systems.
+:doc:`/tutorial/install-bi-connector-macos`
+    Instructions for installing the BI Connector on macOS systems.
+:doc:`/tutorial/install-bi-connector-rhel`
+    Instructions for installing the BI Connector on RHEL-based systems.
+:doc:`/tutorial/install-bi-connector-debian`
+    Instructions for installing the BI Connector on debian-based systems. 
 
 Supported Platforms
 -------------------

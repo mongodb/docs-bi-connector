@@ -10,18 +10,14 @@
    :depth: 1
    :class: singlecol
 
-.. only:: html
-
-   .. meta::
-      :description: The mongosqld command man page.
-      :keywords: mongosqld, mongodb, man page
+.. meta::
+   :description: The mongosqld command man page.
+   :keywords: mongosqld, mongodb, man page
 
 Description
 -----------
 
-.. only:: (not man)
-
-   .. binary:: mongosqld
+.. binary:: mongosqld
 
 .. include:: /includes/fact-bi-enterprise.rst
 

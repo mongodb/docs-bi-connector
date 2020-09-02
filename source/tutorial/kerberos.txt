@@ -153,7 +153,7 @@ If you have another use case, please contact :website:`MongoDB Support </support
                 value in :setting:`serviceName`.
 
               - If you configured Active Directory to use
-                :ms-docs:`constrained delegation </windows-server/security/kerberos/kerberos-constrained-delegation-overview>`,
+                `constrained delegation <https://docs.microsoft.com/en-us/windows-server/security/kerberos/kerberos-constrained-delegation-overview>`__,
                 add :setting:`security.gssapi.constrainedDelegation`
                 ``: true`` to the ``mongosqld`` config file or authentication fails.
 
@@ -387,7 +387,7 @@ If you have another use case, please contact :website:`MongoDB Support </support
            - :setting:`mongodb.net.auth.source`
            - :setting:`mongodb.net.auth.mechanism`
 
-         .. topic:: Testing |bi-short| with Kerberos on ``localhost``
+         .. tip:: Testing |bi-short| with Kerberos on ``localhost``
 
             If you are testing Kerberos with a ``mongosqld`` running
             on a ``localhost``, you must set
