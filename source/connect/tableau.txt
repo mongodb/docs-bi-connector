@@ -17,11 +17,10 @@ Connect from Tableau Desktop
 .. versionadded:: 2.2
 
 .. include:: /includes/toc/dfn-list-tableau.rst
-.. class:: hidden
 
-   .. toctree::
-      :titlesonly:
+.. toctree::
+   :titlesonly:
 
-      /connect/tableau-no-auth
-      /connect/tableau-auth
-      /connect/tableau-auth-ssl
+   /connect/tableau-no-auth
+   /connect/tableau-auth
+   /connect/tableau-auth-ssl

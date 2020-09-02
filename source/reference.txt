@@ -12,15 +12,14 @@ Reference
 
 .. include:: /includes/toc/dfn-list-reference-landing.rst
 
-.. class:: hidden
 
-   .. toctree::
-      :titlesonly:
+.. toctree::
+   :titlesonly:
 
-      /tutorial/ssl-setup
-      /reference/drdl
-      /reference/log-messages
-      /reference/type-conversion
-      /reference/user-authorization
-      /reference/system-variables
-      /supported-operations
+   /tutorial/ssl-setup
+   /reference/drdl
+   /reference/log-messages
+   /reference/type-conversion
+   /reference/user-authorization
+   /reference/system-variables
+   /supported-operations

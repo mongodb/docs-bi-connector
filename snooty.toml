@@ -1,4 +1,12 @@
 name = "bi-connector"
+title = "MongoDB Connector for BI"
+
+intersphinx = ["https://docs.mongodb.com/manual/objects.inv", 
+               "https://docs.atlas.mongodb.com/objects.inv"]
+
+toc_landing_pages = ["/installation", "/client-applications", "/connect/mysql", "/connect/tableau", 
+                     "/authentication", "/schema-configuration", "/components", "/reference", 
+                     "/release-notes"]
 
 [constants]
 bi-atlas-short = "BI Connector for Atlas"
@@ -10,9 +18,6 @@ download-center-url = "https://www.mongodb.com/download-center/bi-connector"
 odbc-driver = "`MongoDB ODBC Driver for BI Connector <https://github.com/mongodb/mongo-odbc-driver/releases/>`__"
 
 [substitutions]
-branch = "``{0}``'.format(conf.git.branches.current)"
-copy = "unicode:: U+000A9',"
-year = "{0}'.format(datetime.date.today().year)"
 ent-build = "MongoDB Enterprise"
 hardlink = "https://docs.mongodb.com/bi-connector/"
 adc = ":abbr:`ADC (Active Directory Controller)`"

@@ -91,16 +91,15 @@ see the :binary:`~bin.mongosqld` reference documentation.
    on how the |bi-short| resolves these conflicts and displays data
    when conflicts are present.
 
-.. class:: hidden
 
-   .. toctree::
-      :titlesonly:
+.. toctree::
+   :titlesonly:
 
-      /schema/cached-sampling
-      /schema/persist-schema
-      /schema/use-views
-      /schema/load-schema-from-drdl
-      /schema/resample-schema
-      /schema/geospatial-data
-      /schema/type-conflicts
-      /schema/schema-management-changes
+   /schema/cached-sampling
+   /schema/persist-schema
+   /schema/use-views
+   /schema/load-schema-from-drdl
+   /schema/resample-schema
+   /schema/geospatial-data
+   /schema/type-conflicts
+   /schema/schema-management-changes
