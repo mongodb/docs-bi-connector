@@ -27,7 +27,7 @@ Installing the Plugin
 To download the plugin ``.jar`` file, choose one of the following
 options:
 
-Download from the :gh:`GitHub repository </mongodb/mongosql-auth-java/releases/>`
+Download from the :github:`GitHub repository </mongodb/mongosql-auth-java/releases/>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Select the ``.jar`` file from the download site.
