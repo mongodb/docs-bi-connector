@@ -2,8 +2,6 @@
 JDBC Authentication Plugin
 ==========================
 
-.. default-domain:: mongodb
-
 .. contents:: On this page
    :local:
    :backlinks: none
@@ -28,7 +26,7 @@ To download the plugin ``.jar`` file, choose one of the following
 options:
 
 Download from the :github:`GitHub repository </mongodb/mongosql-auth-java/releases/>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Select the ``.jar`` file from the download site.
 
@@ -37,7 +35,7 @@ Download from the :github:`GitHub repository </mongodb/mongosql-auth-java/releas
 Use `Maven <https://maven.apache.org/>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Include the `{+java-plugin+} <https://mvnrepository.com/artifact/org.mongodb/mongosql-auth>`__
+1. Include the `plugin <https://mvnrepository.com/artifact/org.mongodb/mongosql-auth>`__
    library in the ``CLASSPATH``. The Maven coordinates are:
 
    .. code-block:: xml
@@ -50,7 +48,7 @@ Use `Maven <https://maven.apache.org/>`__
 
    .. seealso::
       To learn more about Maven, refer to its `documentation site
-      <https://maven.apache.org/guides/index.html>`_.
+      <https://maven.apache.org/guides/index.html>`__.
 
 #. Include `MySQL Connector/J <https://mvnrepository.com/artifact/mysql/mysql-connector-java>`__
    in the ``CLASSPATH``. The Maven coordinates are:
