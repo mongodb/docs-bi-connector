@@ -51,8 +51,7 @@ types:
 .. figure:: /images/bi-connector/scalar-lattice.png
    :alt: Scalar-scalar type lattice
    :figwidth: 500px
-   :align: center
-
+   
 .. example::
 
    If a given field contains ``int``, ``double``, and ``string`` types,
