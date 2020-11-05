@@ -170,6 +170,8 @@ html_theme_options = {
     'nav_excluded': sconf.theme.nav_excluded,
     'version_selector': get_versions(conf),
     'is_upcoming': False,
+    'eol': True,
+    'eol_msg': 'This version is no longer supported.  <a href="https://docs.mongodb.com/bi-connector/current/installation/">Learn more</a> about upgrading your version the MongoDB BI Connector.',
 }
 
 html_sidebars = sconf.sidebars
