@@ -20,6 +20,24 @@ Release Notes for |bi|
 .. expect and we don't break the links on the downloads page.
 .. (DOCS-9670 for context)
 
+.. _bi-2-14-1:
+
+|bi| 2.14.1
+-----------
+
+*Released January 6, 2021*
+
+Improvements
+~~~~~~~~~~~~
+
+- Now built with Go 1.15.
+
+Bug Fixes
+~~~~~~~~~
+
+- Fixes an issue in which geospatial data did not map correctly.
+- Fixes an issue with regard to DRDL extended character encoding.
+
 .. _bi-2-14-0:
 
 |bi| 2.14.0
