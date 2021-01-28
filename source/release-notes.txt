@@ -30,10 +30,10 @@ Release Notes for |bi|
 New Features
 ~~~~~~~~~~~~
 
-- Added a ``--configExpand`` command line option that enables the usage 
-  of expansion directives.
+- Adds the ``--configExpand`` command line option that enables the 
+  usage of expansion directives.
 
-- Added support for ``__rest`` and ``__exec`` in 
+- Adds support for ``__rest`` and ``__exec`` in 
   `YAML <http://yaml.org/>`_ configurations.
 
 Bug Fix
