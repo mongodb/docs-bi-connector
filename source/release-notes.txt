@@ -20,6 +20,28 @@ Release Notes for |bi|
 .. expect and we don't break the links on the downloads page.
 .. (DOCS-9670 for context)
 
+.. _bi-2-14-2:
+
+|bi| 2.14.2
+-----------
+
+*Released January 27, 2021*
+
+New Features
+~~~~~~~~~~~~
+
+- Added a ``--configExpand`` command line option that enables the usage 
+  of expansion directives.
+
+- Added support for ``__rest`` and ``__exec`` in 
+  `YAML <http://yaml.org/>`_ configurations.
+
+Bug Fix
+~~~~~~~
+
+- Fixes an issue in which some queries took significantly longer to run 
+  on |bi| 2.14.
+
 .. _bi-2-14-1:
 
 |bi| 2.14.1
