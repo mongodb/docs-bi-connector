@@ -30,16 +30,13 @@ Release Notes for |bi|
 New Features
 ~~~~~~~~~~~~
 
-- Adds the ``--configExpand`` command line option that enables the 
-  usage of expansion directives.
-
-- Adds support for ``__rest`` and ``__exec`` in 
-  `YAML <http://yaml.org/>`_ configurations.
+- Detached signatures are now available for |bi| releases.
 
 Bug Fix
 ~~~~~~~
 
-- Fixes an issue that caused the |bi| to generate inefficient translations for ``in`` and ``or`` expressions.
+- Fixes an issue that caused the |bi| to generate inefficient 
+  translations for ``in`` and ``or`` expressions.
 
 .. _bi-2-14-1:
 
