@@ -39,8 +39,7 @@ New Features
 Bug Fix
 ~~~~~~~
 
-- Fixes an issue in which some queries took significantly longer to run 
-  on |bi| 2.14.
+- Fixes an issue that caused the |bi| to generate inefficient translations for ``in`` and ``or`` expressions.
 
 .. _bi-2-14-1:
 
