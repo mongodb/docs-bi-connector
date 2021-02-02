@@ -33,9 +33,9 @@ New Features
 - Detached signatures are now available for release archives.
 
 Bug Fixes
-~~~~~~~
+~~~~~~~~~
 
-- Fixes an issue that caused the |bi| to generate inefficient 
+- Fixes an issue that resulted in inefficient 
   translations for ``in`` and ``or`` expressions.
 
 .. _bi-2-14-1:
