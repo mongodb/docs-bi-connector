@@ -30,7 +30,7 @@ Release Notes for |bi|
 New Features
 ~~~~~~~~~~~~
 
-- Detached signatures are now available for |bi| releases.
+- Detached signatures are now available for release archives.
 
 Bug Fixes
 ~~~~~~~
