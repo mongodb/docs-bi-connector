@@ -32,7 +32,7 @@ New Features
 
 - Detached signatures are now available for |bi| releases.
 
-Bug Fix
+Bug Fixes
 ~~~~~~~
 
 - Fixes an issue that caused the |bi| to generate inefficient 
