@@ -36,6 +36,7 @@ raw: bi-connector/release-notes -> ${base}/master/release-notes/
 (v1.1-*]: bi-connector/${version}/reference/mongobiuser -> ${base}/${version}/components/
 (v1.1-*]: bi-connector/${version}/reference/mongobischema -> ${base}/${version}/components/
 (v2.1-*]: bi-connector/${version}/tutorial/connecting -> ${base}/${version}/client-applications/
+(v2.1-*]: bi-connector/${version}/tutorial/using-the-bi -> ${base}/${version}/client-applications/
 (v2.1-*]: bi-connector/${version}/tutorial/connecting-to-atlas -> ${base}/${version}/reference/mongosqld/
 (v2.4-*]: bi-connector/${version}/tutorial/install-auth-plugin-c/ -> ${base}/${version}/reference/auth-plugin-c/
 (v2.4-*]: bi-connector/${version}/tutorial/install-auth-plugin-jdbc/ -> ${base}/${version}/reference/auth-plugin-jdbc/
