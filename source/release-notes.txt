@@ -30,7 +30,8 @@ Release Notes for |bi|
 New Features
 ~~~~~~~~~~~~
 
-- Enables the use of externally sourced values in configuration files.
+- Enables the use of externally sourced values in .yaml configuration 
+  files.
 
 - Adds support for the following fields in .yaml configuration files:
 
@@ -42,7 +43,7 @@ New Features
 Bug Fixes
 ~~~~~~~~~
 
-- Fixes an issue where fields with ``null`` values were incorrectly 
+- Fixes an issue where documents with ``null`` values were incorrectly 
   returned from some queries.
 
 - Fixes an issue where some queries took longer to complete than in 
@@ -53,7 +54,7 @@ Improvements
 
 - Now built with Go 1.5.0.
 
-- Adds support for Amazon Linux 2 Arm64.
+- Adds the Amazon Linux 2 ARM 64 distribution to the download center.
 
 .. _bi-2-14-2:
 
