@@ -20,6 +20,41 @@ Release Notes for |bi|
 .. expect and we don't break the links on the downloads page.
 .. (DOCS-9670 for context)
 
+.. _bi-2-14-3:
+
+|bi| 2.14.3
+-----------
+
+*Released March 23, 2021*
+
+New Features
+~~~~~~~~~~~~
+
+- Enables the use of externally sourced values in configuration files.
+
+- Adds support for the following fields in .yaml configuration files:
+
+  - ``trim``
+  - ``type``
+  - ``digest``
+  - ``digest_key``
+
+Bug Fixes
+~~~~~~~~~
+
+- Fixes an issue where fields with ``null`` values were incorrectly 
+  returned from some queries.
+
+- Fixes an issue where some queries took longer to complete than in 
+  previous versions of |bi-short|. 
+
+Improvements
+~~~~~~~~~~~~
+
+- Now built with Go 1.5.0.
+
+- Adds support for Amazon Linux 2 Arm64.
+
 .. _bi-2-14-2:
 
 |bi| 2.14.2
