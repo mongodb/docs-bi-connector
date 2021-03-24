@@ -267,7 +267,7 @@ functions and query shapes.
   subqueries.
 
 - Improves truncate pushdown coverage and updated the translation to use
-  :operator:`$trunc` with MongoDB versions 4.1.9 and later.
+  ``$trunc`` with MongoDB versions 4.1.9 and later.
 
 - Adds pushdown support for the ``char`` and ``str_to_date`` functions.
 
