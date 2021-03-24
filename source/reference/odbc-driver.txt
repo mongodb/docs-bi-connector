@@ -62,5 +62,5 @@ Configure your system to use the ODBC driver by setting up a
 :doc:`DSN </tutorial/create-system-dsn>`. A DSN holds configuration
 information about your |bi-short| instance, including server address,
 port number, and login credentials. See
-:doc:`Create a System DSN</tutorial/create-system-dsn>` for
+:doc:`Create a System DSN </tutorial/create-system-dsn>` for
 instructions on setting up a DSN on your system.
