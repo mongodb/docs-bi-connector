@@ -74,10 +74,10 @@ with the following cases:
        SQL ``timestamp`` type.
 
    * - Timestamps
-     - |bi-short| ignores any field of type :bsontype:`data_timestamp`.
+     - |bi-short| ignores any field of type ``data_timestamp``.
 
    * - ObjectID
-     - |bi-short| treats any field of type :bsontype:`data_oid` as
+     - |bi-short| treats any field of type ``data_oid`` as
        the SQL type ``varchar``.
 
    * - UUID
