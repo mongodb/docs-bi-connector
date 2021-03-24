@@ -49,6 +49,10 @@ Bug Fixes
 - Fixes an issue where some queries took longer to complete than in 
   previous versions of |bi-short|. 
 
+- Fixes an issue where the ``listDatabases`` command returned an error 
+  when read preference was set to an analytics node in some sharded 
+  cluster configurations.
+
 Improvements
 ~~~~~~~~~~~~
 
