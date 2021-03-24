@@ -56,7 +56,7 @@ Bug Fixes
 Improvements
 ~~~~~~~~~~~~
 
-- Now built with Go 1.5.0.
+- Now built with Go 1.5.0. 
 
 - Adds the Amazon Linux 2 ARM 64 distribution to the download center.
 
