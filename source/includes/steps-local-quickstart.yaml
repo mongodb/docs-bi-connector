@@ -88,8 +88,8 @@ content: |
   fields blank, because :binary:`~bin.mongosqld` is running without the
   :option:`--auth <mongosqld --auth>` option.
 
-  .. figure:: /images/bi-connector/odbc-local-test.png
-     :alt: Screenshot of ODBC DSN dialog
+  .. figure:: /images/bi-connector/windows-odbc-dsn2.png
+     :alt: Windows ODBC DSN
      :figwidth: 550px
 
   When you press the :guilabel:`Test` button you should see the
