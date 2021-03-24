@@ -12,13 +12,13 @@ Configure SSL for {+bi-short+}
    :depth: 1
    :class: singlecol
 
-For |bi-short| to transmit data securely, you should enable Secure
-Socket Layer (SSL) encryption on your MongoDB instance, your
-:binary:`~bin.mongosqld` instance, and in your BI tool. A complete
-description of SSL configuration is outside the scope of this document,
-but this tutorial outlines the process for creating your own SSL
-certificates for testing purposes and starting the MongoDB components
-with SSL enabled.
+For |bi-short| to transmit data securely, you should enable Transport
+Layer Security (TLS) encryption on your MongoDB instance, your
+|mongosqld| instance, and in your BI tool. A complete description of
+|tls| configuration is outside the scope of this document, but this
+tutorial outlines the process for creating your own |tls| certificates
+for testing purposes and starting the MongoDB components with |tls|
+enabled.
 
 .. important::
 
