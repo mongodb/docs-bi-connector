@@ -116,9 +116,9 @@ If you have another use case, please contact :website:`MongoDB Support </support
                 authenticationMechanisms: "GSSAPI"
 
            For more information, see
-           :xml:`<mono><link target="https://docs.mongodb.com/manual/reference/configuration-options/#net.bindIp">net.bindIp</link></mono>`,
-           :xml:`<mono><link target="https://docs.mongodb.com/manual/reference/configuration-options/#setparameter-option">setParameter</link></mono>`,
-           and :xml:`<mono><link target="https://docs.mongodb.com/manual/reference/parameters/#param.authenticationMechanisms">authenticationMechanisms</link></mono>`.
+           `net.bindIp <https://docs.mongodb.com/manual/reference/configuration-options/#net.bindIp>`__,
+           `setParameter <https://docs.mongodb.com/manual/reference/configuration-options/#setparameter-option>`__,
+           and `authenticationMechanisms <https://docs.mongodb.com/manual/reference/parameters/#param.authenticationMechanisms>`__.
 
          - Run ``mongod`` as the MongoDB Windows user you
            created in Active Directory.
