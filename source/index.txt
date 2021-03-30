@@ -24,8 +24,8 @@ The |bi| acts as a layer that translates queries and data between a
 reporting tool. The |bi-short| stores no data, and purely serves to
 bridge your MongoDB cluster with business intelligence tools.
 
-.. figure:: /images/bi-connector/cloud-none-vert.png
-   :figwidth: 536px
+.. figure:: /images/bi-connector/components-all.jpg
+   :figwidth: 700px
    :align: center
    :alt: Diagram showing that other BI tools communicate with the DSN, which communicates with MongoDB's BI Connector, which in turn communicates with the MongoDB database.
 
@@ -67,9 +67,9 @@ applications both run on Atlas, and you set up your
 :doc:`DSN </tutorial/create-system-dsn>` with connection information
 provided by Atlas.
 
-.. figure:: /images/bi-connector/cloud-bi-vert.png
+.. figure:: /images/bi-connector/components-cloud.jpg
    :alt: Hosted DB and BI Connector
-   :figwidth: 641px
+   :figwidth: 700px
    :align: center
 
 Hosted Database and On Premises |bi-short|
@@ -83,9 +83,9 @@ locally and specify a remote database address with the
 the BI Connector's
 :doc:`mongosqld process </reference/mongosqld>`.
 
-.. figure:: /images/bi-connector/cloud-db-vert.png
+.. figure:: /images/bi-connector/components-onprem-bi-atlas.jpg
    :alt: On Premises DB and Local BI Connector
-   :figwidth: 678px
+   :figwidth: 700px
    :align: center
 
 On Premises Database and |bi-short|
@@ -96,9 +96,9 @@ elsewhere on your network, in which case you can set up your
 :doc:`DSN </tutorial/create-system-dsn>` to point to the |bi-short|
 server address.
 
-.. figure:: /images/bi-connector/cloud-onprem-vert.png
+.. figure:: /images/bi-connector/components-onprem.jpg
    :alt: On Premises DB and BI Connector
-   :figwidth: 570px
+   :figwidth: 700px
    :align: center
 
 Local Database and |bi-short|
