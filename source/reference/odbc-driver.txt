@@ -30,9 +30,9 @@ mechanisms.
    The {+odbc-driver+} connects the DSN to the BI Connector.
    
    .. figure:: /images/bi-connector/components-all.jpg
-      :figwidth: 700px
+      :figwidth: 500px
       :align: center
-      :alt: Diagram showing that other BI tools communicate with the DSN, which communicates with MongoDB's BI Connector, which in turn communicates with the MongoDB database.
+      :alt: Diagram showing that the DSN connects to the BI Connector.
 
 Compatibility
 -------------
