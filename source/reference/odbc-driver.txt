@@ -30,7 +30,7 @@ mechanisms.
    The {+odbc-driver+} connects the DSN to the BI Connector.
    
    .. figure:: /images/bi-connector/components-all.jpg
-      :figwidth: 500px
+      :figwidth: 700px
       :align: center
       :alt: Diagram showing that the DSN connects to the BI Connector.
 
