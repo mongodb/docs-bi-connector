@@ -285,8 +285,8 @@ following sections.
 
 .. note::
 
-   You may store sensitive values externally and load them into your 
-   configuration at startup time with an automatic |api| request or 
+   You may store sensitive values outside of your configuration file 
+   and load them at startup time with an automatic |api| request or 
    shell command. To learn more, see :manual:`Externally Sourced Configuration File Values </reference/expansion-directives/>` in the 
    MongoDB manual.
 
