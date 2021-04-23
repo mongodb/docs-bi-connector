@@ -283,6 +283,13 @@ You may configure :binary:`~bin.mongosqld` using a `YAML <http://yaml.org/>`_
 configuration file. This file may contain the settings listed in the
 following sections.
 
+.. note::
+
+   You may store sensitive values externally and load them into your 
+   configuration at startup time with an automatic |api| request or 
+   shell command. To learn more, see :manual:`Externally Sourced Configuration File Values </reference/expansion-directives/>` in the 
+   MongoDB manual.
+
 .. _msqld-conf-log-options:
 
 Logging Options
