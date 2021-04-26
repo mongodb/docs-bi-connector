@@ -7,7 +7,7 @@
 .. contents:: On this page
    :local:
    :backlinks: none
-   :depth: 1
+   :depth: 2
    :class: singlecol
 
 .. meta::
@@ -282,13 +282,6 @@ Configuration File
 You may configure :binary:`~bin.mongosqld` using a `YAML <http://yaml.org/>`_
 configuration file. This file may contain the settings listed in the
 following sections.
-
-.. note::
-
-   You may store sensitive values outside of your configuration file 
-   and load them at startup time with an automatic |api| request or 
-   shell command. To learn more, see :manual:`Externally Sourced Configuration File Values </reference/expansion-directives/>` in the 
-   MongoDB manual.
 
 .. _msqld-conf-log-options:
 
@@ -770,6 +763,17 @@ Example Configuration File
        name: mongosqld
        displayName: mongosqld
        description: "BI Connector SQL proxy server"
+
+Load External Configuration Values
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You may use expansion directives in your configuration file to load 
+externally-sourced configuration values. Expansion directives help 
+obscure confidential information like security certificates and 
+passwords.
+
+To learn more about using expansion directives, see :manual:`Externally Sourced Configuration File Values </reference/expansion-directives/>` 
+in the MongoDB manual.
 
 .. _mongosqld-usage-examples:
 
