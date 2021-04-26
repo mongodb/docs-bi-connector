@@ -718,6 +718,17 @@ These configuration file options are also available as system variables.
 For more information, see
 :ref:`System Variables <system-environment-variables>`.
 
+Load External Configuration Values
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You may use expansion directives in your configuration file to load 
+externally-sourced configuration values. Expansion directives help 
+obscure confidential information like security certificates and 
+passwords.
+
+To learn more about using expansion directives, see :manual:`Externally Sourced Configuration File Values </reference/expansion-directives/>` 
+in the MongoDB manual.
+
 Example Configuration File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -763,17 +774,6 @@ Example Configuration File
        name: mongosqld
        displayName: mongosqld
        description: "BI Connector SQL proxy server"
-
-Load External Configuration Values
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You may use expansion directives in your configuration file to load 
-externally-sourced configuration values. Expansion directives help 
-obscure confidential information like security certificates and 
-passwords.
-
-To learn more about using expansion directives, see :manual:`Externally Sourced Configuration File Values </reference/expansion-directives/>` 
-in the MongoDB manual.
 
 .. _mongosqld-usage-examples:
 
