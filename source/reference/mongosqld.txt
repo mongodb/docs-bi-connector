@@ -722,7 +722,7 @@ Load External Configuration Values
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You may use expansion directives in your configuration file to load 
-externally-sourced configuration values. Expansion directives help 
+externally sourced configuration values. Expansion directives help 
 obscure confidential information like security certificates and 
 passwords.
 
