@@ -283,6 +283,10 @@ You may configure :binary:`~bin.mongosqld` using a `YAML <http://yaml.org/>`_
 configuration file. This file may contain the settings listed in the
 following sections.
 
+.. note::
+
+   .. include:: /includes/config-file-expansion-directives.rst
+
 .. _msqld-conf-log-options:
 
 Logging Options
@@ -721,13 +725,7 @@ For more information, see
 Load External Configuration Values
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You may use expansion directives in your configuration file to load 
-externally sourced configuration values. Expansion directives help 
-obscure confidential information like security certificates and 
-passwords.
-
-To learn more about using expansion directives, see :manual:`Externally Sourced Configuration File Values </reference/expansion-directives/>` 
-in the MongoDB manual.
+.. include:: /includes/config-file-expansion-directives.rst
 
 Example Configuration File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
