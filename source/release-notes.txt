@@ -20,6 +20,25 @@ Release Notes for |bi|
 .. expect and we don't break the links on the downloads page.
 .. (DOCS-9670 for context)
 
+.. _bi-2-14-4:
+
+|bi| 2.14.4
+-----------
+
+*Released <PLEASE UPDATE>, 2021*
+
+Improvements
+~~~~~~~~~~~~
+
+MongoDB now supports only the latest RHEL distribution on IBM zSeries 
+platforms. These zSeries platforms are no longer supported:
+
+- ``rhel67-zseries-*``
+- ``suse12-zseries-*``
+- ``suse15-zseries-*``
+- ``ubuntu1604-zseries-*``
+- ``ubuntu1804-zseries-*``
+
 .. _bi-2-14-3:
 
 |bi| 2.14.3
