@@ -30,14 +30,14 @@ Release Notes for |bi|
 Improvements
 ~~~~~~~~~~~~
 
-MongoDB now supports only the latest RHEL distribution on IBM zSeries 
-platforms. These zSeries platforms are no longer supported:
+These zSeries platforms are no longer supported:
 
-- ``rhel67-zseries-*``
-- ``suse12-zseries-*``
-- ``suse15-zseries-*``
-- ``ubuntu1604-zseries-*``
-- ``ubuntu1804-zseries-*``
+- ``RHEL 6.7 s390x``
+- ``RHEL 7.2 s390x``
+- ``SUSE 12 s390x``
+- ``SUSE 15 s390x``
+- ``Ubuntu 16.04 s390x``
+- ``Ubuntu 18.04 s390x``
 
 .. _bi-2-14-3:
 
