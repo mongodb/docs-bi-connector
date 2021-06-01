@@ -20,6 +20,25 @@ Release Notes for |bi|
 .. expect and we don't break the links on the downloads page.
 .. (DOCS-9670 for context)
 
+.. _bi-2-14-4:
+
+|bi| 2.14.4
+-----------
+
+*Released <PLEASE UPDATE>, 2021*
+
+Improvements
+~~~~~~~~~~~~
+
+These zSeries platforms are no longer supported:
+
+- ``RHEL 6.7 s390x``
+- ``RHEL 7.2 s390x``
+- ``SUSE 12 s390x``
+- ``SUSE 15 s390x``
+- ``Ubuntu 16.04 s390x``
+- ``Ubuntu 18.04 s390x``
+
 .. _bi-2-14-3:
 
 |bi| 2.14.3
