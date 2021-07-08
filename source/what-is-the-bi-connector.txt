@@ -1,3 +1,5 @@
+:noprevnext:
+
 .. _bi-connector:
 
 ====================================
@@ -8,10 +10,14 @@ What is the MongoDB Connector for BI
 
 .. include:: /includes/fact-bi-enterprise.rst
 
-The MongoDB Connector for Business Intelligence (BI) allows users to
-create queries with |sql| and visualize, graph, and report on their
-MongoDB Enterprise data using existing relational business intelligence
-tools such as :doc:`Tableau </connect/tableau>`,
+Traditional business intelligence tools work with flat, tabular data.
+These tools aren't sophisticated enough to understand three-dimensional
+data stored in MongoDB databases.
+
+The MongoDB Connector for Business Intelligence (BI) allows you to
+create queries with |sql| to visualize, graph, and report on your
+three-dimensional MongoDB Enterprise data using relational 
+business intelligence tools such as :doc:`Tableau </connect/tableau>`,
 :doc:`MicroStrategy </connect/microstrategy>`, and
 :doc:`Qlik </connect/qlik>`.
 
@@ -116,20 +122,3 @@ data visualization with |bi-short|.
 
 Learn more about setting up a local |bi-short| test installation
 in the :doc:`Quick Start Guide </local-quickstart>`.
-
-
-.. toctree::
-   :titlesonly:
-
-   Quick Start Guide </local-quickstart>
-   /atlas-bi-connector
-   Install BI Connector</installation>
-   /launch
-   /tutorial/create-system-dsn
-   Connect BI Tools </client-applications>
-   /authentication
-   /schema-configuration
-   Components </components>
-   /reference
-   FAQ </faq>
-   Release Notes </release-notes>

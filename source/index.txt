@@ -138,6 +138,7 @@ Explore |bi|\'s advanced features.
    :titlesonly:
 
    Overview </index>
+   </what-is-the-bi-connector>
    Quick Start Guide </local-quickstart>
    /atlas-bi-connector
    Install BI Connector</installation>
