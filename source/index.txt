@@ -127,12 +127,12 @@ Explore |bi|\'s advanced features.
       Control data access with MongoDB Views
 
    .. card::
-      :cta: View Compass Docs
-      :url: https://docs.mongodb.com/compass/current/
+      :cta: View Charts Docs
+      :url: https://docs.mongodb.com/charts/saas/
       :icon: /images/charts-icon.svg
-      :icon-alt: MongoDB Compass icon
+      :icon-alt: MongoDB Charts icon
  
-      Control data access with MongoDB Views
+      Visually explore your data with MongoDB Charts.
 
 .. toctree::
    :titlesonly:
