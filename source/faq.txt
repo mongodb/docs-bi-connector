@@ -133,7 +133,7 @@ How does the |bi-short| process dates?
 --------------------------------------
 
 The |bi-short| will correctly process :ref:`BSON date <document-bson-type-date>` data
-by mapping it to the :term:`SQL` ``datetime`` type. For example:
+by mapping it to the SQL ``datetime`` type. For example:
 
 .. code-block:: javascript
 
