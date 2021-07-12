@@ -10,8 +10,8 @@ What is the MongoDB Connector for BI
 
    Traditional business intelligence tools are designed to work with
    tabular, row-and-column data. The MongoDB Connector for BI allows you
-   query MongoDB data with SQL using tools such as Tableau, Qlik, and 
-   Excel.
+   query MongoDB data with SQL using tools such as Tableau, Power BI, 
+   and Excel.
 
    .. button:: Download the MongoDB Connector for BI
       :uri: /local-quickstart
