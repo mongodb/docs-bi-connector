@@ -9,6 +9,8 @@ toc_landing_pages = ["/installation", "/client-applications", "/connect/mysql",
                      "/release-notes", "/connect/tableau"]
 
 [constants]
+atlas = "MongoDB Atlas"
+atlas-short = "Atlas"
 bi-atlas-short = "BI Connector for Atlas"
 bi-short = "BI Connector"
 download-center = "`MongoDB Download Center <https://www.mongodb.com/download-center/bi-connector>`__"
