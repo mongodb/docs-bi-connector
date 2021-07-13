@@ -12,6 +12,7 @@ toc_landing_pages = ["/installation", "/client-applications", "/connect/mysql",
 atlas = "MongoDB Atlas"
 atlas-short = "Atlas"
 bi-atlas-short = "BI Connector for Atlas"
+bi-full = "MongoDB Connector for Business Intelligence"
 bi-short = "BI Connector"
 download-center = "`MongoDB Download Center <https://www.mongodb.com/download-center/bi-connector>`__"
 download-center-bi = "`MongoDB Connector for BI <https://www.mongodb.com/download-center/bi-connector>`__"
