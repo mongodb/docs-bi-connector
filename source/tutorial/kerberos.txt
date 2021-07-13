@@ -147,7 +147,7 @@ If you have another use case, please contact :website:`MongoDB Support </support
 
            .. note::
 
-              :setting:`security.gssapi.hostname` should match the value in :setting:`serviceName`.
+              :setting:`security.gssapi.hostname` should match the value in :setting:`security.gssapi.serviceName`.
 
            For more information, see:
 
