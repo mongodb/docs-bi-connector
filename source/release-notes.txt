@@ -36,9 +36,6 @@ Improvements
 
 - Adds the RHEL8 ARM distribution to the download center.
 
-- Adds the containerized Ubuntu 18.04 distribution to the download 
-  center.
-
 Bug Fixes
 ~~~~~~~~~
 
