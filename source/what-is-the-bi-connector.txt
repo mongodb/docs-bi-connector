@@ -8,6 +8,12 @@ What is the MongoDB Connector for BI
 
 .. default-domain:: mongodb
 
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 2
+   :class: singlecol
+
 .. include:: /includes/fact-bi-enterprise.rst
 
 Traditional business intelligence tools work with flat, tabular data.
@@ -60,11 +66,14 @@ Your BI Tool and Driver typically run on your local machine. Your
 database and your |bi-short| instance can run on your local machine,
 in a data center, or hosted in the cloud.
 
+|bi-short| Configurations
+-------------------------
+
 The following sections describe possible configurations for a
-BI system.
+BI system:
 
 Hosted Database and |bi-short|
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -84,7 +93,7 @@ with connection information that {+atlas+} provides.
    :align: center
 
 Hosted Database and On Premises |bi-short|
-------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have an {+atlas+} deployment smaller than M10 (including the
 {+atlas+} :atlas:`free tier </getting-started/>`), or if your MongoDB
@@ -99,7 +108,7 @@ the BI Connector's :doc:`mongosqld process </reference/mongosqld>`.
    :align: center
 
 On Premises Database and |bi-short|
------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Your organization may have installations of both MongoDB and |bi-short|
 elsewhere on your network, in which case you can set up your
@@ -112,7 +121,7 @@ server address.
    :align: center
 
 Local Database and |bi-short|
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For testing and all-in-one-box local experimentation, you can run
 MongoDB and |bi-short| on your desktop. This is the simplest
