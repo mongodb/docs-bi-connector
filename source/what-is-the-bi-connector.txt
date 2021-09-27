@@ -35,34 +35,32 @@ The |bi| acts as a layer that translates queries and data between a
 stores no data, and purely serves to bridge your MongoDB cluster with
 business intelligence tools.
 
-.. figure:: /images/bi-connector/components-all.jpg
-   :figwidth: 700px
-   :align: center
-   :alt: Diagram showing that other BI tools communicate with the DSN, which communicates with MongoDB's BI Connector, which in turn communicates with the MongoDB database.
-
 System Components
 -----------------
 
 A complete BI system includes the following components:
 
-MongoDB database
-  Data storage.
-
-BI Connector
-  Provides a relational schema and translates |sql|
-  queries between your BI tool and MongoDB.
+BI Tool
+  Retrieve, visualize, and report on data from a database.
 
 |jdbc| or |odbc| drivers
   Provides a standard method to connect to the |bi-short| and MongoDB
   databases from a BI Tool. Depending on what your BI Tool supports, you
   can use |jdbc| and |odbc| drivers to connect to the |bi-short|.
 
-BI Tool
-  Retrieve, visualize, and report on data from a database.
+BI Connector
+  Provides a relational schema and translates |sql|
+  queries between your BI tool and MongoDB.
 
-Your BI Tool and Driver typically run on your local machine. Your
-database and your |bi-short| instance can run on your local machine,
-in a data center, or hosted in the cloud.
+MongoDB database
+  Data storage.
+
+.. figure:: /images/bi-connector/components-all.jpg
+   :figwidth: 700px
+   :align: center
+   :alt: Diagram showing that other BI tools communicate with the DSN, which communicates with MongoDB's BI Connector, which in turn communicates with the MongoDB database.
+
+Your **BI Tool** and **Driver** typically run on your local machine. Your **database** and your **{+bi-short+} instance** can run on your local machine, in a data center, or hosted in the cloud.
 
 |bi-short| Configurations
 -------------------------
