@@ -14,8 +14,6 @@ What is the MongoDB Connector for BI
    :depth: 2
    :class: singlecol
 
-.. include:: /includes/fact-bi-enterprise.rst
-
 Traditional business intelligence tools work with flat, tabular data.
 These tools aren't sophisticated enough to understand three-dimensional
 data stored in MongoDB databases.
@@ -76,9 +74,9 @@ Hosted Database and |bi-short|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this configuration, the database and |bi-short| applications both 
-run on |atlas-short|, MongoDB's fully-managed database-as-a-service. 
+run on {+atlas+}, MongoDB's fully-managed database-as-a-service. 
 Databases hosted on {+atlas+} natively support the |bi-short|. 
-|atlas-short| provides the connection information for your |jdbc| or 
+{+atlas+} provides the connection information for your |jdbc| or 
 |odbc| driver.
 
 .. figure:: /images/bi-connector/components-cloud.jpg
