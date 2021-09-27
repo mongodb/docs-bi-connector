@@ -54,7 +54,7 @@ BI Connector
   Provides a relational schema and translates |sql|
   queries between your BI tool and MongoDB.
 
-|jdbc| and |odbc| drivers
+|jdbc| or |odbc| drivers
   Provides a standard method to connect to the |bi-short| and MongoDB
   databases from a BI Tool. Depending on what your BI Tool supports, you
   can use |jdbc| and |odbc| drivers to connect to the |bi-short|.
@@ -75,24 +75,18 @@ BI system:
 Hosted Database and |bi-short|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-   If you don't want to install and manage the |bi-short|, you can use
-   {+atlas+}, our fully-managed database-as-a-service. Databases hosted
-   on {+atlas+} natively support the |bi| and make it easy to start
-   analyzing your data with your preferred BI tools. To get started,
-   :website:`create an {+atlas+} cluster </cloud/atlas/lp/general>`.
-
-In this scenario, the database and |bi-short| applications both run on
-{+atlas+}, and you set up your :doc:`DSN </tutorial/create-system-dsn>`
-with connection information that {+atlas+} provides.
+In this configuration, the database and |bi-short| applications both 
+run on |atlas-short|, MongoDB's fully-managed database-as-a-service. 
+Databases hosted on {+atlas+} natively support the |bi-short|. 
+|atlas-short| provides the connection information for your |jdbc| or 
+|odbc| driver.
 
 .. figure:: /images/bi-connector/components-cloud.jpg
    :alt: Hosted DB and BI Connector
    :figwidth: 700px
    :align: center
 
-Hosted Database and On Premises |bi-short|
+Hosted Database and On-Premises |bi-short|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have an {+atlas+} deployment smaller than M10 (including the
@@ -107,13 +101,12 @@ the BI Connector's :doc:`mongosqld process </reference/mongosqld>`.
    :figwidth: 700px
    :align: center
 
-On Premises Database and |bi-short|
+On-Premises Database and |bi-short|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Your organization may have installations of both MongoDB and |bi-short|
-elsewhere on your network, in which case you can set up your
-:doc:`DSN </tutorial/create-system-dsn>` to point to the |bi-short|
-server address.
+elsewhere on your network, in which case you can set up your |jdbc| or 
+|odbc| driver to connect to the |bi-short| server address.
 
 .. figure:: /images/bi-connector/components-onprem.jpg
    :alt: On Premises DB and BI Connector
