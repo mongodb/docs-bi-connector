@@ -40,10 +40,10 @@ System Components
 
 A complete BI system includes the following components:
 
-BI Tool
+BI tool
   Retrieve, visualize, and report on data from a database.
 
-|jdbc| or |odbc| drivers
+|jdbc| or |odbc| driver
   Provides a standard method to connect to the |bi-short| and MongoDB
   databases from a BI Tool. Depending on what your BI Tool supports, you
   can use |jdbc| or |odbc| drivers to connect to the |bi-short|.
@@ -60,7 +60,7 @@ MongoDB database
    :align: center
    :alt: Diagram showing that other BI tools communicate with the DSN, which communicates with MongoDB's BI Connector, which in turn communicates with the MongoDB database.
 
-Your **BI Tool** and **Driver** typically run on your local machine. 
+Your **BI tool** and **driver** typically run on your local machine. 
 Your **{+bi-short+} instance** and your **database** can run on your 
 local machine, in a data center, or hosted in the cloud.
 
@@ -87,7 +87,7 @@ Databases hosted on {+atlas+} natively support the |bi-short|.
 Hosted Database and On-Premises |bi-short|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have an {+atlas+} deployment smaller than M10 (including the
+If you have a {+atlas+} deployment smaller than M10 (including the
 {+atlas+} :atlas:`free tier </getting-started/>`), or if your MongoDB
 instance is not hosted on {+atlas+}, you can run |bi-short| locally and
 specify a remote database address with the
@@ -102,9 +102,9 @@ the BI Connector's :doc:`mongosqld process </reference/mongosqld>`.
 On-Premises Database and |bi-short|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your organization may have installations of both MongoDB and |bi-short|
-elsewhere on your network, in which case you can set up your |jdbc| or 
-|odbc| driver to connect to the |bi-short| server address.
+Your organization might have installations of both MongoDB and 
+|bi-short| elsewhere on your network, in which case you can set up your 
+|jdbc| or |odbc| driver to connect to the |bi-short| server address.
 
 .. figure:: /images/bi-connector/components-onprem.jpg
    :alt: On Premises DB and BI Connector
