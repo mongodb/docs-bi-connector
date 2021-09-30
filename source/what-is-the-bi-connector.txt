@@ -76,10 +76,14 @@ The following table outlines the supported configurations for the
    :widths: 40 30 30
 
    * - |bi-short| configuration
-     - {+atlas-short+} database (Hosted)
-     - On-premises database
+     - {+atlas-short+} database support
+
+       *Cloud hosted*
+     - On-premises database support
   
-   * - {+atlas-short+} |bi-short| (Hosted)
+   * - {+atlas-short+} |bi-short|
+
+       *Cloud hosted*
      - :icon:`check`
 
        *Clusters M10 and greater only*
