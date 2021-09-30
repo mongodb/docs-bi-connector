@@ -68,7 +68,7 @@ local machine, in a data center, or hosted in the cloud.
 -------------------------
 
 The following table outlines the supported configurations for the 
-|bi-short| and MongoDB database:
+|bi-short| and MongoDB database deployment:
 
 .. list-table::
    :header-rows: 1
@@ -76,14 +76,10 @@ The following table outlines the supported configurations for the
    :widths: 40 30 30
 
    * - |bi-short| configuration
-     - {+atlas-short+} database support
-
-       *Cloud hosted*
-     - On-premises database support
+     - {+atlas-short+} database (hosted)
+     - On-premises database
   
-   * - {+atlas-short+} |bi-short|
-
-       *Cloud hosted*
+   * - {+atlas-short+} |bi-short| (hosted)
      - :icon:`check`
 
        *Clusters M10 and greater only*
