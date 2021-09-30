@@ -148,7 +148,7 @@ Local Database and |bi-short|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For testing and all-in-one-box local experimentation, you can run
-MongoDB and |bi-short| on your desktop. This configuration might be 
+MongoDB and the |bi-short| on your desktop. This configuration might be 
 helpful for proofs of concept or as a way to explore the possibilities 
 of data visualization with the |bi-short|.
 
