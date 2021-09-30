@@ -106,8 +106,9 @@ the |bi-short|.
    You must have an M10 or higher {+atlas+} cluster to enable the 
    built-in |bi-short|.
 
-After :ref:`enabling the BI Connector <enable-bi-atlas>`, {+atlas+} 
-provides the connection information for your |jdbc| or |odbc| driver.
+:ref:`Enable the BI Connector <enable-bi-atlas>` for {+atlas+}, then 
+use the connection information that {+atlas-short+} provides to 
+configure your |jdbc| or |odbc| driver.
 
 .. figure:: /images/bi-connector/components-cloud.jpg
    :alt: Hosted DB and BI Connector
