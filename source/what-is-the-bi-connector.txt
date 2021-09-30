@@ -67,17 +67,42 @@ local machine, in a data center, or hosted in the cloud.
 |bi-short| Configurations
 -------------------------
 
+.. list-table::
+   :header-rows: 1
+   :stub-columns: 1
+   :widths: 40 30 30
+
+   * - 
+     - |service| database (Hosted)
+     - On-premises database
+  
+   * - |service| |bi-short| (Hosted)
+     - Supported for clusters M20 and greater
+     - Not supported
+
+   * - On-premises |bi-short|
+     - Supported
+     - Supported
+
+
 The following sections describe possible configurations for a
 BI system:
 
 Hosted Database and |bi-short|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this configuration, the database and |bi-short| applications both 
-run on {+atlas+}, MongoDB's fully-managed database-as-a-service. 
-Databases hosted on {+atlas+} natively support the |bi-short|. 
-{+atlas+} provides the connection information for your |jdbc| or 
-|odbc| driver.
+In this configuration, your database and |bi-short| 
+applications both run on {+atlas+}, MongoDB's fully-managed 
+database-as-a-service. Databases hosted on {+atlas+} natively support 
+the |bi-short|.
+
+.. note::
+
+   You must have an M10 or higher {+atlas+} cluster to enable the 
+   built-in |bi-short|.
+
+After :ref:`enabling the BI Connector <enable-bi-atlas>`, {+atlas+} 
+provides the connection information for your |jdbc| or |odbc| driver.
 
 .. figure:: /images/bi-connector/components-cloud.jpg
    :alt: Hosted DB and BI Connector
@@ -87,12 +112,13 @@ Databases hosted on {+atlas+} natively support the |bi-short|.
 Hosted Database and On-Premises |bi-short|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have a {+atlas+} deployment smaller than M10 (including the
-{+atlas+} :atlas:`free tier </getting-started/>`), or if your MongoDB
-instance is not hosted on {+atlas+}, you can run |bi-short| locally and
-specify a remote database address with the
-:option:`--mongo-uri <mongosqld --mongo-uri>` option when you start
-the BI Connector's :doc:`mongosqld process </reference/mongosqld>`.
+In this configuration, your MongoDB database runs on any 
+internet-accessible host, including any tier of {+atlas+} cluster, and 
+your |bi-short| runs locally.
+
+:ref:`Install <installation-guides>` and :ref:`launch <launch>` the 
+|bi-short|, specifying a remote database address, then configure your 
+|jdbc| or |odbc| driver to connect to the |bi-short|.
 
 .. figure:: /images/bi-connector/components-onprem-bi-atlas.jpg
    :alt: On Premises DB and Local BI Connector
@@ -102,9 +128,12 @@ the BI Connector's :doc:`mongosqld process </reference/mongosqld>`.
 On-Premises Database and |bi-short|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your organization might have installations of both MongoDB and 
-|bi-short| elsewhere on your network, in which case you can set up your 
-|jdbc| or |odbc| driver to connect to the |bi-short| server address.
+In this configuration, the database and |bi-short| applications both 
+run on-premises, either locally or on your network. 
+
+:ref:`Install <installation-guides>` and :ref:`launch <launch>` the 
+|bi-short|, then configure your |jdbc| or |odbc| driver to connect to 
+the |bi-short| server address.
 
 .. figure:: /images/bi-connector/components-onprem.jpg
    :alt: On Premises DB and BI Connector
