@@ -72,17 +72,18 @@ local machine, in a data center, or hosted in the cloud.
    :stub-columns: 1
    :widths: 40 30 30
 
-   * - 
-     - |service| database (Hosted)
+   * - |bic-short| configuration
+     - {+atlas-short+} database (Hosted)
      - On-premises database
   
-   * - |service| |bi-short| (Hosted)
-     - Supported for clusters M20 and greater
-     - Not supported
+   * - {+atlas-short+} |bi-short| (Hosted)
+     - :icon:`check`
+       *for clusters M10 and greater
+     -
 
    * - On-premises |bi-short|
-     - Supported
-     - Supported
+     - :icon:`check`
+     - :icon:`check`
 
 
 The following sections describe possible configurations for a
