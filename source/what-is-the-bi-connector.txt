@@ -68,7 +68,7 @@ local machine, in a data center, or hosted in the cloud.
 -------------------------
 
 The following table outlines the supported configurations for the 
-|bi-short| and MongoDB database deployment:
+|bi-short| and MongoDB database deployments:
 
 .. list-table::
    :header-rows: 1
@@ -148,9 +148,9 @@ Local Database and |bi-short|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For testing and all-in-one-box local experimentation, you can run
-MongoDB and |bi-short| on your desktop. This is the simplest
-configuration, perfect for quickly looking over the possibilities for
-data visualization with |bi-short|.
+MongoDB and |bi-short| on your desktop. This configuration might be 
+helpful for proofs of concept or as a way to explore the possibilities 
+of data visualization with the |bi-short|.
 
 Learn more about setting up a local |bi-short| test installation
 in the :doc:`Quick Start Guide </local-quickstart>`.
