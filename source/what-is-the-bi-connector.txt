@@ -89,9 +89,7 @@ The following table outlines the supported configurations for the
      - :icon:`check`
      - :icon:`check`
 
-
-The following sections describe possible configurations for a
-BI system:
+The following sections describe these configurations:
 
 Hosted Database and |bi-short|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
