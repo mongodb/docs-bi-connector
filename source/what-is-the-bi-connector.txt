@@ -126,7 +126,7 @@ network.
 |jdbc| or |odbc| driver to connect to the |bi-short|.
 
 .. figure:: /images/bi-connector/components-onprem-bi-atlas.jpg
-   :alt: On Premises DB and Local BI Connector
+   :alt: Hosted DB and Self Managed BI Connector
    :figwidth: 700px
    :align: center
 
@@ -141,7 +141,7 @@ In this configuration, you install and manage both the database and
 the |bi-short| server address.
 
 .. figure:: /images/bi-connector/components-onprem.jpg
-   :alt: On Premises DB and BI Connector
+   :alt: Self Managed DB and BI Connector
    :figwidth: 700px
    :align: center
 
