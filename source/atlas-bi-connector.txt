@@ -22,7 +22,7 @@ Enable BI Connector in Atlas
 
 .. note::
 
-   To install the {+bi-full+} on premises instead, see the
+   To install the {+bi-full+} locally instead, see the
    :ref:`Installation Guides <installation-guides>`.
 
    You can also deploy the {+bi-full+} to
