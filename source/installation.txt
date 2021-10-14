@@ -37,7 +37,7 @@ Update {+bi-short+}
 
 To update your {+bi-short+}, use the installation guides above to 
 install the latest version of {+bi-short+} for your platform, 
-replacing your existing binaries.
+replacing your existing installation.
 
 .. toctree::
    :titlesonly:
