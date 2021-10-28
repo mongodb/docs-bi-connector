@@ -1,0 +1,36 @@
+:noprevnext:
+
+====================================
+Drivers for {+bi-short+}
+====================================
+
+.. default-domain:: mongodb
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 1
+   :class: singlecol
+
+.. _odbc-driver:
+
+Overview
+--------
+
+You must use a driver to connect the BI connector to your BI tools. You can use either the MongoDB ODBC Driver or the JDBC driver.
+
+MongoDB ODBC Driver
+-------------------
+
+MongoDB offers a tailored {+odbc-driver+} to connect your BI instance to your DSN, which then connects to your BI tools.
+
+JDBC Driver
+-----------
+
+The JDBC driver is a Java language-specific driver that connects your BI instance to your BI tools.
+
+.. toctree::
+   :titlesonly:
+
+   /reference/odbc-driver
+   /reference/jdbc-driver
