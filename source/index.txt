@@ -144,11 +144,10 @@ Explore |bi|\'s advanced features.
    /atlas-bi-connector
    Install BI Connector</installation>
    /launch
-   /tutorial/create-system-dsn
    Connect BI Tools </client-applications>
    /authentication
    /schema-configuration
-   Components </components>
+   Connector Components </components>
    /reference
    FAQ </faq>
    Release Notes </release-notes>

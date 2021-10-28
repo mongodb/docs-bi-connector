@@ -73,3 +73,8 @@ information about your |bi-short| instance, including server address,
 port number, and login credentials. See
 :doc:`Create a System DSN</tutorial/create-system-dsn>` for
 instructions on setting up a DSN on your system.
+
+.. toctree::
+   :titlesonly:
+
+   /tutorial/create-system-dsn
