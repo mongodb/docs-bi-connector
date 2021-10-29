@@ -22,12 +22,12 @@ You must use a driver to connect the BI connector to your BI tools. You can use 
 MongoDB ODBC Driver
 -------------------
 
-MongoDB offers a tailored {+odbc-driver+} to connect your BI instance to your DSN, which then connects to your BI tools.
+MongoDB offers a tailored :ref:`{+odbc-driver+} <odbc-driver>` to connect your BI instance to your DSN, which then connects to your BI tools.
 
 JDBC Driver
 -----------
 
-The JDBC driver is a Java language-specific driver that connects your BI instance to your BI tools.
+The :ref:`JDBC driver <jdbc-driver>` is a Java language-specific driver that connects your BI instance to your BI tools.
 
 .. toctree::
    :titlesonly:
