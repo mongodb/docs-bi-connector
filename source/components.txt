@@ -44,7 +44,5 @@ The following tools are available for use with the |bi|:
    /reference/mongosqld
    /reference/mongodrdl
    /reference/mongotranslate
-   /drivers
-
-.. ODBC Driver </reference/odbc-driver>
+   ODBC Driver </reference/odbc-driver>
    /reference/jdbc-driver

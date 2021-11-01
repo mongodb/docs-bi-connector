@@ -7,7 +7,6 @@ Reference
 .. toctree::
    :titlesonly:
 
-   /tutorial/create-system-dsn
    /tutorial/ssl-setup
    /reference/drdl
    /reference/log-messages
