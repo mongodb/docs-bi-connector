@@ -39,6 +39,45 @@ The following tools are available for use with the |bi|:
   facilitate secure transmission of authentication credentials between
   :binary:`~bin.mongosqld` and a MySQL client.
 
+Choosing a Driver
+-----------------
+
+Depending on your BI tool, you may need to connect to the |bi-short| 
+with the :ref:`MongoDB ODBC driver <odbc-driver>` or a 
+:ref:`JDBC Driver <jdbc-driver>`. The following table lists some common 
+BI tools and their compatible drivers:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 50 25 25
+
+   * - BI Tool
+     - ODBC
+     - JDBC
+
+   * - Tableau
+     - :icon:`check`
+     - :icon:`check`
+
+   * - Microsoft Power BI
+     - :icon:`check`
+     - 
+
+   * - Microsoft Excel
+     - :icon:`check`
+     - 
+
+   * - MicroStrategy
+     - :icon:`check`
+     - :icon:`check`
+
+   * - MySQL Workbench
+     - 
+     - :icon:`check`
+
+   * - DBeaver
+     - 
+     - :icon:`check`
 
 .. toctree::
    :titlesonly:
