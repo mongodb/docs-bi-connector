@@ -42,10 +42,10 @@ The following tools are available for use with the |bi|:
 Choosing a Driver
 -----------------
 
-Depending on your BI tool of choice, you may need to connect to the 
-|bi-short| with the :ref:`MongoDB ODBC driver <odbc-driver>` or a 
-:ref:`JDBC Driver <jdbc-driver>`. The following table lists some common 
-BI tools and their compatible drivers:
+Depending on your BI tool of choice, you connect to the 
+|bi-short| with the :ref:`MongoDB ODBC driver <odbc-driver>` or with 
+the :ref:`JDBC Driver <jdbc-driver>`. The following table lists some 
+common BI tools and their compatible drivers:
 
 .. list-table::
    :header-rows: 1
