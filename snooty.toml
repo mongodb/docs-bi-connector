@@ -9,7 +9,7 @@ toc_landing_pages = ["/installation", "/client-applications",
                      "/authentication", "/schema-configuration", 
                      "/components", 
                      "/release-notes", "/connect/tableau", 
-                     "/drivers"]
+                     "/reference/odbc-driver"]
 
 [constants]
 atlas = "MongoDB Atlas"

@@ -32,6 +32,8 @@ The following tools are available for use with the |bi|:
   MongoDB :manual:`aggregation pipeline </aggregation>`.
 - The :ref:`MongoDB ODBC driver <odbc-driver>` provides connectivity
   between SQL clients and the |bi|.
+- The :ref:`JDBC Driver <jdbc-driver>` provides an alternative 
+  connection method for some SQL clients and the |bi|.
 - The :ref:`C Authentication Plugin <install-auth-c-plugin>` and
   :ref:`JDBC Authentication Plugin <install-auth-jdbc-plugin>`
   facilitate secure transmission of authentication credentials between
