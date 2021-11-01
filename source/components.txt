@@ -42,8 +42,8 @@ The following tools are available for use with the |bi|:
 Choosing a Driver
 -----------------
 
-Depending on your BI tool, you may need to connect to the |bi-short| 
-with the :ref:`MongoDB ODBC driver <odbc-driver>` or a 
+Depending on your BI tool of choice, you may need to connect to the 
+|bi-short| with the :ref:`MongoDB ODBC driver <odbc-driver>` or a 
 :ref:`JDBC Driver <jdbc-driver>`. The following table lists some common 
 BI tools and their compatible drivers:
 
@@ -59,6 +59,10 @@ BI tools and their compatible drivers:
      - :icon:`check`
      - :icon:`check`
 
+   * - MicroStrategy
+     - :icon:`check`
+     - :icon:`check`
+
    * - Microsoft Power BI
      - :icon:`check`
      - 
@@ -66,10 +70,6 @@ BI tools and their compatible drivers:
    * - Microsoft Excel
      - :icon:`check`
      - 
-
-   * - MicroStrategy
-     - :icon:`check`
-     - :icon:`check`
 
    * - MySQL Workbench
      - 
