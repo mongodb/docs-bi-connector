@@ -21,3 +21,4 @@ You must use a MySQL Connector/J version from the 5.1.x series with the
 
    You can't use MySQL Connector/J versions 6.x, 8.x, or later
    with the |bi-short|.
+
