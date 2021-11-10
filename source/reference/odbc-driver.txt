@@ -1,8 +1,8 @@
 :noprevnext:
 
-===============
-{+odbc-driver+}
-===============
+====================
+{+odbc-driver-name+}
+====================
 
 .. default-domain:: mongodb
 

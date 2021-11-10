@@ -85,5 +85,5 @@ some common BI tools and their compatible drivers:
    /reference/mongosqld
    /reference/mongodrdl
    /reference/mongotranslate
-   {+odbc-driver+} </reference/odbc-driver>
+   {+odbc-driver-name+} </reference/odbc-driver>
    /reference/jdbc-driver
