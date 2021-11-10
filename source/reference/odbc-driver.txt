@@ -18,7 +18,7 @@ Overview
 --------
 
 The {+odbc-driver+} provides connectivity between a SQL client
-and the |bi|. The {+odbc-driver+} enables users to create a
+and the |bi|. The {+odbc-driver-name+} enables users to create a
 :doc:`Data Source Name (DSN) </tutorial/create-system-dsn>` and connect
 a variety of :doc:`BI tools </client-applications>` to the |bi-short|. It includes
 the |bi-short| :doc:`authentication plugin </reference/auth-plugin-c>`,
@@ -64,8 +64,8 @@ The {+odbc-driver+} is available for:
 - Ubuntu 14.04 and 16.04
 - RHEL 7
 
-Using the {+odbc-driver+}
--------------------------
+Using the {+odbc-driver-name+}
+------------------------------
 
 Configure your system to use the {+odbc-driver+} by setting up a
 :doc:`DSN </tutorial/create-system-dsn>`. A DSN holds configuration
