@@ -7,16 +7,12 @@ PRODUCTION_BUCKET=docs-bi-connector-prod
 PROJECT=bi-connector
 PREFIX=bi-connector
 STGPREFIX=bi-connector
-
-
-ifeq ($(ENV), 'dotcom')
-	STAGING_URL="https://mongodbcom-cdn.website.staging.corp.mongodb.com"
-	STAGING_BUCKET=docs-mongodb-org-dotcomstg
-	PRODUCTION_URL="https://mongodb.com"
-	PRODUCTION_BUCKET=docs-mongodb-org-dotcomprd
-	PREFIX=docs-qa/bi-connector
-	STGPREFIX=docs/bi-connector
-endif
+DOTCOM_STAGING_URL="https://mongodbcom-cdn.website.staging.corp.mongodb.com"
+DOTCOM_STAGING_BUCKET=docs-mongodb-org-dotcomstg
+DOTCOM_PRODUCTION_URL="https://mongodb.com"
+DOTCOM_PRODUCTION_BUCKET=docs-mongodb-org-dotcomprd
+DOTCOM_PREFIX=docs-qa/bi-connector
+DOTCOM_STGPREFIX=docs/bi-connector
 
 # Parse our published-branches configuration file to get the name of
 # the current "stable" branch. This is weird and dumb, yes.
@@ -41,10 +37,20 @@ stage: ## Host online for review
 	mut-publish build/${GIT_BRANCH}/html ${STAGING_BUCKET} --prefix=${STGPREFIX} --stage ${ARGS}
 	@echo "Hosted at ${STAGING_URL}/${STGPREFIX}/${USER}/${GIT_BRANCH}/index.html"
 
+	mut-publish build/${GIT_BRANCH}/html ${DOTCOM_STAGING_BUCKET} --prefix=${DOTCOM_STGPREFIX} --stage ${ARGS}
+	@echo "Hosted at ${DOTCOM_STAGING_URL}/${DOTCOM_STGPREFIX}/${USER}/${GIT_BRANCH}/index.html"
+
+	
+
 deploy: build/public ## Deploy to the production bucket
-	mut-publish build/public ${PRODUCTION_BUCKET} --prefix=${STGPREFIX} --deploy --redirect-prefix='bi-connector' ${ARGS}
+	mut-publish build/public ${PRODUCTION_BUCKET} --prefix=${PREFIX} --deploy --redirect-prefix='bi-connector' ${ARGS}
 
 	@echo "Hosted at ${PRODUCTION_URL}/${STGPREFIX}/index.html"
+
+	mut-publish build/public ${DOTCOM_PRODUCTION_BUCKET} --prefix=${DOTCOM_PREFIX} --deploy --redirect-prefix='bi-connector' ${ARGS}
+
+	@echo "Hosted at ${DOTCOM_PRODUCTION_URL}/${DOTCOM_PREFIX}/index.html"
+
 
 	$(MAKE) deploy-search-index
 
