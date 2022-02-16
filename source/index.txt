@@ -13,10 +13,11 @@ What is the MongoDB Connector for BI
    query MongoDB data with SQL using tools such as Tableau, Power BI, 
    and Excel.
 
-   .. button:: Download the MongoDB Connector for BI
-      :uri: /local-quickstart
+   .. button:: Enable BI Connector in Atlas
+      :uri: /enable-bi-atlas
 
-   :doc:`Get Started </local-quickstart>`
+   .. button:: Install Self-Managed BI Connector
+      :uri: /install-bi-onprem
 
 .. image:: /images/hero.png
    :alt: MongoDB Connector for BI homepage hero image
