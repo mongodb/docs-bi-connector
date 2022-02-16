@@ -30,7 +30,7 @@ The following tools are available for use with the |bi|:
   and a MongoDB server.
 - :binary:`~bin.mongotranslate` translates a given SQL query into a
   MongoDB :manual:`aggregation pipeline </aggregation>`.
-- The :ref:`{+odbc-driver+} <odbc-driver>` provides connectivity
+- The :ref:`{+odbc-driver-name+} <odbc-driver>` provides connectivity
   between SQL clients and the |bi|.
 - The :ref:`{+jdbc-driver+} <jdbc-driver>` provides an alternative 
   connection method for some SQL clients and the |bi|.
@@ -43,7 +43,7 @@ Choosing a Driver
 -----------------
 
 Depending on your BI tool of choice, you connect to the 
-|bi-short| with the :ref:`{+odbc-driver+} <odbc-driver>` or with 
+|bi-short| with the :ref:`{+odbc-driver-name+} <odbc-driver>` or with 
 the :ref:`{+jdbc-driver+} <jdbc-driver>`. The following table lists 
 some common BI tools and their compatible drivers:
 
@@ -52,7 +52,7 @@ some common BI tools and their compatible drivers:
    :widths: 50 25 25
 
    * - BI Tool
-     - {+odbc-driver+}
+     - {+odbc-driver-name+}
      - {+jdbc-driver+}
 
    * - Tableau
