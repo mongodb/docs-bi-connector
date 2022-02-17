@@ -1,5 +1,7 @@
 :noprevnext:
 
+.. _enable-bi-atlas:
+
 ============================
 Enable BI Connector in Atlas
 ============================
@@ -14,5 +16,11 @@ Enable BI Connector in Atlas
 
 .. include:: /includes/atlas-bi-connector.rst
 
-To install the MongoDB Connector for BI on premises, see the
-:ref:`Installation Guides <installation-guides>`.
+.. note::
+
+   To install the {+bi-full+} locally instead, see the
+   :ref:`Installation Guides <installation-guides>`.
+
+   You can also deploy the {+bi-full+} to
+   :cloudmgr:`{+cm-full+} </tutorial/deploy-bi-connector/>` or
+   :opsmgr:`{+om-full+} </tutorial/deploy-bi-connector/>`.

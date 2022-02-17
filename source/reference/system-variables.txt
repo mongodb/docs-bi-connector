@@ -45,6 +45,7 @@ Overview
          ``mongosqld`` events and state changes.
        - ``1``: Log messages for database users and ``mongosqld`` administrators.
        - ``2``: For internal use only.
+<<<<<<< HEAD
      - ``2``
      - ``0``
 
@@ -55,6 +56,9 @@ Overview
      - ``0``
      - ``0``
 
+=======
+     - ``2 (Atlas-hosted) and 0 (self-managed)``
+>>>>>>> 34b0c93 (2021 bic docs improvements (#355))
    * - ``max_nested_table_depth``
      - integer
      - Specifies the maximum number of unique nested field paths that
@@ -257,8 +261,13 @@ Overview
 Setting System Variables
 ------------------------
 
+<<<<<<< HEAD
 You must have the :authrole:`Organization Owner` role to set environment
 variables on an Atlas-hosted |bi-short|. To set them for an on-premises
+=======
+You must have the :atlas:`atlasAdmin </security-add-mongodb-users/#database-user-privileges>` database role to set environment
+variables on an Atlas-hosted |bi-short|. To set them for a self-managed
+>>>>>>> 34b0c93 (2021 bic docs improvements (#355))
 |bi-short|, you must have the :authaction:`inprog` privilege on the
 MongoDB database to which you've connected the |bi-short|.
 
