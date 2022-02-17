@@ -1,5 +1,7 @@
 :noprevnext:
 
+.. _install-bi-onprem:
+
 ================================
 Install {+bi-short+} On Premises
 ================================
