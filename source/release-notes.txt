@@ -685,7 +685,7 @@ Bug Fixes
   be reported as ANSI
 
 Released version 1.2.0 of the
-`{+odbc-driver+} <https://github.com/mongodb/mongo-odbc-driver/releases/tag/v1.2.0>`__.
+`{+odbc-driver-name+} <https://github.com/mongodb/mongo-odbc-driver/releases/tag/v1.2.0>`__.
 
 .. _bi-2-6-1:
 
@@ -739,13 +739,13 @@ We encourage :doc:`Tableau <connect/tableau>` users running BIC 2.6.0 to upgrade
   - :option:`mongodrdl --authenticationMechanism` command line
     option.
 
-  - :doc:`{+odbc-driver+} <reference/odbc-driver>`
+  - :doc:`{+odbc-driver-name+} <reference/odbc-driver>`
 
   - :doc:`C Authentication Plugin <reference/auth-plugin-c>`
 
   - Java Authentication Plugin
 
-- Released the :doc:`{+odbc-driver+} <reference/odbc-driver>` for
+- Released the :doc:`{+odbc-driver-name+} <reference/odbc-driver>` for
   Linux.
 
 - Added the :option:`mongosqld --prejoin` command line option for
