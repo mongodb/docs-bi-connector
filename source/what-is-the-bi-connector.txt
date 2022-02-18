@@ -52,22 +52,6 @@ BI Connector
   Provides a relational schema and translates |sql|
   queries between your BI tool and MongoDB.
 
-<<<<<<< HEAD
-ODBC data source name (DSN)
-  Holds authentication and connection configuration data.
-
-BI Tool Data visualization and analysis.
-
-Most BI tools can import data from a
-:doc:`DSN </tutorial/create-system-dsn>`. Configure a |dsn| to
-point to your |bi-short| instance. This provides you a wide range of
-BI tools and |sql| clients with a single data source configuration.
-
-Your BI tool and your |dsn| always run on your local desktop, but your
-database and your |bi-short| instance may be local, on premises, or
-hosted. The following sections describe possible configurations for a
-BI system.
-=======
 MongoDB database
   MongoDB database deployment, either a self-managed MongoDB server 
   or hosted {+atlas+} cluster.
@@ -107,7 +91,6 @@ The following table outlines the supported configurations for the
      - :icon:`check`
 
 The following sections describe these configurations:
->>>>>>> 34b0c93 (2021 bic docs improvements (#355))
 
 Hosted Database and |bi-short|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -119,16 +102,8 @@ the |bi-short|.
 
 .. note::
 
-<<<<<<< HEAD
-   If you don’t want to install and manage the |bi-short|, you can use
-   {+atlas+}, our fully-managed database-as-a-service. Databases hosted
-   on {+atlas+} natively support the |bi| and make it easy to start
-   analyzing your data with your preferred BI tools. To get started,
-   :website:`create an {+atlas+} cluster </cloud/atlas/lp/general>`.
-=======
    You must have an M10 or higher {+atlas+} cluster to enable the 
    built-in |bi-short|.
->>>>>>> 34b0c93 (2021 bic docs improvements (#355))
 
 :ref:`Enable the BI Connector <enable-bi-atlas>` for {+atlas+}, then 
 use the connection information that {+atlas-short+} provides to 
