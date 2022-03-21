@@ -58,7 +58,7 @@ rst_epilog = '\n'.join([
     '.. |copy| unicode:: U+000A9',
     '.. |year| replace:: {0}'.format(datetime.date.today().year),
     '.. |ent-build| replace:: MongoDB Enterprise',
-    '.. |hardlink| replace:: https://docs.mongodb.com/bi-connector/',
+    '.. |hardlink| replace:: https://www.mongodb.com/docs/bi-connector/',
     '.. |bi| replace:: MongoDB Connector for BI',
     '.. |bi-short| replace:: BI Connector',
     '.. |bi-atlas| replace:: MongoDB Connector for Business Intelligence for MongoDB Atlas',
@@ -105,7 +105,7 @@ source_constants = {
 extlinks = {
     'issue': ('https://jira.mongodb.org/browse/%s', '' ),
     'manual': ('http://docs.mongodb.com/manual%s', ''),
-    'v3.6': ('https://docs.mongodb.com/v3.6%s', '')
+    'v3.6': ('https://www.mongodb.com/docs/v3.6%s', '')
 }
 
 intersphinx_mapping = {}
@@ -171,7 +171,7 @@ html_theme_options = {
     'version_selector': get_versions(conf),
     'is_upcoming': False,
     'eol': True,
-    'eol_msg': 'This version is no longer supported.  <a href="https://docs.mongodb.com/bi-connector/current/installation/">Learn more</a> about upgrading your version the MongoDB BI Connector.',
+    'eol_msg': 'This version is no longer supported.  <a href="https://www.mongodb.com/docs/bi-connector/current/installation/">Learn more</a> about upgrading your version the MongoDB BI Connector.',
 }
 
 html_sidebars = sconf.sidebars
