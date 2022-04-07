@@ -58,7 +58,12 @@ rst_epilog = '\n'.join([
     '.. |copy| unicode:: U+000A9',
     '.. |year| replace:: {0}'.format(datetime.date.today().year),
     '.. |ent-build| replace:: MongoDB Enterprise',
-    '.. |hardlink| replace:: https://docs.mongodb.com/bi-connector/',
+    '.. |hardlink| replace:: https://www.mongodb.com/docs/bi-connector/',
+    '.. |adc| replace:: :abbr:`ADC (Active Directory Controller)`',
+    '.. |bi-atlas-short-link| replace:: :doc:`BI Connector for Atlas </atlas-bi-connector>`',
+    '.. |bi-atlas-short| replace:: BI Connector for Atlas',
+    '.. |bi-atlas| replace:: MongoDB Connector for Business Intelligence for MongoDB Atlas',
+    '.. |bi-short| replace:: BI Connector',
     '.. |bi| replace:: MongoDB Connector for BI',
     '.. |bi-short| replace:: BI Connector',
     '.. |bi-atlas| replace:: MongoDB Connector for Business Intelligence for MongoDB Atlas',
@@ -105,8 +110,16 @@ source_constants = {
 
 extlinks = {
     'issue': ('https://jira.mongodb.org/browse/%s', '' ),
+<<<<<<< HEAD
     'manual': ('http://docs.mongodb.com/manual%s', ''),
     'v3.6': ('https://docs.mongodb.com/v3.6%s', ''),
+=======
+    'manual': ('http://www.mongodb.com/docs/manual%s', ''),
+    'ms-docs': ('https://docs.microsoft.com/en-us%s',''),
+    'mvn' : ('https://mvnrepository.com/artifact%s',''),
+    'v2.10': ('https://www.mongodb.com/docs/bi-connector/v2.10%s',''),
+    'v3.6': ('https://www.mongodb.com/docs/v3.6%s', ''),
+>>>>>>> 5c28e35 (DOCSP-20358: BI Connector subdomain consolidation (#363))
     'website': ('https://www.mongodb.com%s?jmp=docs', ''),
     'ms-docs': ('https://docs.microsoft.com/en-us%s',''),
     'v2.10': ('https://docs.mongodb.com/bi-connector/v2.10%s','')
