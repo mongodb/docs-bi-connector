@@ -30,7 +30,7 @@ Release Notes for |bi|
 Improvements
 ~~~~~~~~~~~~
 
-- Now built with Go 1.19.0
+- Now built with Go 1.19.0.
 
 .. _bi-2-14-5:
 
