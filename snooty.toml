@@ -17,10 +17,18 @@ atlas-short = "Atlas"
 bi-atlas-short = "BI Connector for Atlas"
 bi-full = "MongoDB Connector for Business Intelligence"
 bi-short = "BI Connector"
+<<<<<<< HEAD
 download-center = "`MongoDB Download Center <https://www.mongodb.com/download-center/bi-connector>`__"
 download-center-bi = "`MongoDB Connector for BI <https://www.mongodb.com/download-center/bi-connector>`__"
 download-center-tableau = "`MongoDB Connector for BI <https://www.mongodb.com/download-center/bi-connector?jmp=tbl>`__"
 download-center-url = "https://www.mongodb.com/download-center/bi-connector"
+=======
+cm-full = "MongoDB Cloud Manager"
+download-center = "`MongoDB Download Center <https://www.mongodb.com/try/download/bi-connector>`__"
+download-center-bi = "`MongoDB Connector for BI <https://www.mongodb.com/try/download/bi-connector>`__"
+download-center-tableau = "`MongoDB Connector for BI <https://www.mongodb.com/try/download/bi-connector?jmp=tbl>`__"
+download-center-url = "https://www.mongodb.com/try/download/bi-connector"
+>>>>>>> 6a7ba3b ((DOCSP-30289) Update download center link (#392))
 java-plugin = "MongoSQL Authentication Plugin for MySQL Connector/J"
 odbc-driver-name = "MongoDB BI Connector ODBC Driver"
 odbc-driver = "`MongoDB BI Connector ODBC Driver <https://github.com/mongodb/mongo-bi-connector-odbc-driver/releases/>`__"
