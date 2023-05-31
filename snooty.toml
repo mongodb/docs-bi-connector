@@ -72,3 +72,4 @@ mongorestore = ":binary:`~bin.mongorestore`"
 mongosqld = ":binary:`~bin.mongosqld`"
 mongos = ":binary:`~bin.mongos`"
 mongo = ":binary:`~bin.mongo`"
+
