@@ -32,6 +32,9 @@ Improvements
 
 - Now built with Go 1.19.0.
 
+Bug Fixes
+~~~~~~~~~
+
 - Fixes an issue where setting the schema mode to ``auto`` would 
   always trigger initial sampling even when a preexisting stored schema
   was available.
