@@ -32,6 +32,10 @@ Improvements
 
 - Now built with Go 1.19.0.
 
+- Fixes an issue where setting the schema mode to ``auto`` would 
+  always trigger initial sampling even when a preexisting stored schema
+  was available.
+
 .. _bi-2-14-5:
 
 |bi| 2.14.5
