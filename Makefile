@@ -7,12 +7,12 @@ PRODUCTION_BUCKET=docs-mongodb-org-prd
 PROJECT=bi-connector
 
 STGPREFIX=bi-connector
-DOTCOM_STAGING_URL="https://mongodbcom-cdn.website.staging.corp.mongodb.com"
-DOTCOM_STAGING_BUCKET=docs-mongodb-org-dotcomstg
+DOTCOM_STAGING_URL="https://docs-mongodborg-staging.corp.mongodb.com"
+DOTCOM_STAGING_BUCKET=docs-mongodb-org-prd-staging
 DOTCOM_PRODUCTION_URL="https://mongodb.com"
 DOTCOM_PRODUCTION_BUCKET=docs-mongodb-org-dotcomprd
 DOTCOM_PREFIX=docs/bi-connector
-DOTCOM_STGPREFIX=docs/bi-connector
+DOTCOM_STGPREFIX=
 
 # Parse our published-branches configuration file to get the name of
 # the current "stable" branch. This is weird and dumb, yes.
@@ -35,7 +35,7 @@ publish: ## Builds this branch's publishable HTML and other artifacts under buil
 
 stage: ## Host online for review
 	mut-publish build/${GIT_BRANCH}/html ${DOTCOM_STAGING_BUCKET} --prefix=${DOTCOM_STGPREFIX} --stage ${ARGS}
-	@echo "Hosted at ${DOTCOM_STAGING_URL}/${DOTCOM_STGPREFIX}/${USER}/${GIT_BRANCH}/index.html"
+	@echo "Hosted at ${DOTCOM_STAGING_URL}/${USER}/${GIT_BRANCH}/index.html"
 
 deploy: build/public ## Deploy to the production bucket
 	mut-publish build/public ${DOTCOM_PRODUCTION_BUCKET} --prefix=${DOTCOM_PREFIX} --deploy --redirect-prefix='bi-connector' ${ARGS}
