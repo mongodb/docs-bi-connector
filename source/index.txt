@@ -32,7 +32,9 @@ Using this model, the |bi| components store no data,
 and purely serve to bridge your MongoDB server with business
 intelligence tools.
 
-.. include:: /images/bi-connector.rst
+.. figure:: /images/bi-connector.svg 
+   :figwidth: 650px
+   :alt: Image of BI Connector
 
 .. class:: hidden
 

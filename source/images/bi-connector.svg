@@ -15,9 +15,9 @@
     </g>
     <g>
       <text transform="matrix(1, 0, 0, 1, 247.67, 65.863)" id="tspan4201">
-        <tspan x="-34.569" y="-12" font-family="GillSans" font-size="15" fill="#FFFFFF">Business</tspan>
-        <tspan x="-34.569" y="5" font-family="GillSans" font-size="15" fill="#FFFFFF">Intelligence</tspan>
-        <tspan x="-34.569" y="22" font-family="GillSans" font-size="15" fill="#FFFFFF">Connector</tspan>
+        <tspan x="-34.569" y="-12" font-family="Euclid Circular A" font-size="15" fill="#FFFFFF">Business</tspan>
+        <tspan x="-34.569" y="5" font-family="Euclid Circular A" font-size="15" fill="#FFFFFF">Intelligence</tspan>
+        <tspan x="-34.569" y="22" font-family="Euclid Circular A" font-size="15" fill="#FFFFFF">Connector</tspan>
       </text>
     </g>
     <g>
@@ -31,7 +31,7 @@
       </g>
     </g>
     <text transform="matrix(0.966, -0.259, 0.259, 0.966, 154.622, 40.533)" id="tspan17836">
-      <tspan x="-22.996" y="5" font-family="GillSans" font-size="15" fill="#2A86C0">schema</tspan>
+      <tspan x="-22.996" y="5" font-family="Euclid Circular A" font-size="15" fill="#2A86C0">schema</tspan>
     </text>
     <g>
       <g id="path17810-9">
@@ -44,7 +44,7 @@
       </g>
     </g>
     <text transform="matrix(0.966, -0.259, 0.259, 0.966, 154.622, 64.875)" id="tspan19197">
-      <tspan x="-22.685" y="5" font-family="GillSans" font-size="15" fill="#6CB33F">queries</tspan>
+      <tspan x="-22.685" y="5" font-family="Euclid Circular A" font-size="15" fill="#6CB33F">queries</tspan>
     </text>
     <g>
       <g id="path17810-2">
@@ -57,7 +57,7 @@
       </g>
     </g>
     <text transform="matrix(0.966, -0.259, 0.259, 0.966, 154.622, 89.174)" id="tspan17836-46">
-      <tspan x="-30.8" y="5" font-family="GillSans" font-size="15" fill="#2A86C0">responses</tspan>
+      <tspan x="-30.8" y="5" font-family="Euclid Circular A" font-size="15" fill="#2A86C0">responses</tspan>
     </text>
     <g>
       <g id="path17810-9-1">
@@ -70,7 +70,7 @@
       </g>
     </g>
     <text transform="matrix(0.966, 0.259, -0.259, 0.966, 341.859, 56.848)" id="tspan19197-8">
-      <tspan x="-22.685" y="5" font-family="GillSans" font-size="15" fill="#6CB33F">queries</tspan>
+      <tspan x="-22.685" y="5" font-family="Euclid Circular A" font-size="15" fill="#6CB33F">queries</tspan>
     </text>
     <g>
       <g id="path17810-2-9">
@@ -83,19 +83,19 @@
       </g>
     </g>
     <text transform="matrix(0.966, 0.259, -0.259, 0.966, 339.278, 87.174)" id="tspan17836-46-6">
-      <tspan x="-30.8" y="5" font-family="GillSans" font-size="15" fill="#2A86C0">responses</tspan>
+      <tspan x="-30.8" y="5" font-family="Euclid Circular A" font-size="15" fill="#2A86C0">responses</tspan>
     </text>
     <g>
       <path d="M17.215,52.283 L100.199,52.283 C108.05,52.283 114.414,59.651 114.414,68.739 L114.414,120.762 C114.414,129.851 108.05,137.219 100.199,137.219 L17.215,137.219 C9.364,137.219 3,129.851 3,120.762 L3,68.739 C3,59.651 9.364,52.283 17.215,52.283 z" fill="#FFFFFF"/>
       <path d="M17.215,52.283 L100.199,52.283 C108.05,52.283 114.414,59.651 114.414,68.739 L114.414,120.762 C114.414,129.851 108.05,137.219 100.199,137.219 L17.215,137.219 C9.364,137.219 3,129.851 3,120.762 L3,68.739 C3,59.651 9.364,52.283 17.215,52.283 z" fill-opacity="0" stroke="#358EC4" stroke-width="2"/>
     </g>
     <text transform="matrix(1, 0, 0, 1, 58.707, 94.751)">
-      <tspan x="-43.526" y="-14.86" font-family="GillSans" font-size="18" fill="#4B4B4B">Business </tspan>
-      <tspan x="-43.526" y="6.14" font-family="GillSans" font-size="18" fill="#4B4B4B">Intelligence </tspan>
-      <tspan x="-43.526" y="27.14" font-family="GillSans" font-size="18" fill="#4B4B4B">Tool</tspan>
+      <tspan x="-43.526" y="-14.86" font-family="Euclid Circular A" font-size="18" fill="#4B4B4B">Business </tspan>
+      <tspan x="-43.526" y="6.14" font-family="Euclid Circular A" font-size="18" fill="#4B4B4B">Intelligence </tspan>
+      <tspan x="-43.526" y="27.14" font-family="Euclid Circular A" font-size="18" fill="#4B4B4B">Tool</tspan>
     </text>
     <text transform="matrix(1, 0, 0, 1, 434.293, 94.751)">
-      <tspan x="-43.526" y="-14.86" font-family="GillSans" font-size="18" fill="#4B4B4B">MongoDB</tspan>
+      <tspan x="-43.526" y="-14.86" font-family="Euclid Circular A" font-size="18" fill="#4B4B4B">MongoDB</tspan>
     </text>
     <g>
       <path d="M428.202,48.471 C400.8,48.471 378.586,45.967 378.586,42.877 C378.586,39.788 400.8,37.284 428.202,37.284 C455.605,37.284 477.819,39.788 477.819,42.877 C477.819,45.967 455.605,48.471 428.202,48.471 z" fill="#FFFFFF"/>
