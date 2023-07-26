@@ -1,5 +1,6 @@
 name = "bi-connector"
 title = "MongoDB Connector for BI"
+eol = true
 
 intersphinx = ["https://www.mongodb.com/docs/manual/objects.inv", 
                "https://docs.atlas.mongodb.com/objects.inv"]
@@ -70,3 +71,10 @@ mongorestore = ":binary:`~bin.mongorestore`"
 mongosqld = ":binary:`~bin.mongosqld`"
 mongos = ":binary:`~bin.mongos`"
 mongo = ":binary:`~bin.mongo`"
+
+[[banners]]
+targets = ["*"]
+variant = "info"
+value = """\
+    This version of the documentation is archived and no longer supported. View the `current documentation <link>`__ to learn how to `upgrade your version of [product name] <link>`__.\
+    """
