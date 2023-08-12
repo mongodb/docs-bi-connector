@@ -76,5 +76,5 @@ mongo = ":binary:`~bin.mongo`"
 targets = ["*"]
 variant = "info"
 value = """\
-    This version of the documentation is archived and no longer supported. View the `current documentation <link>`__ to learn how to `upgrade your version of [product name] <link>`__.\
+    This version of the documentation is archived and no longer supported. View the `current documentation <{+hardlink+}>`__ instead.\
     """
