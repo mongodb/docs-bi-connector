@@ -74,8 +74,8 @@ BI Connector Returns ``NULL`` Values due to Mapping Error
 ----------------------------------------------------------
 
 A known mapping error can occur that causes all returned values to be ``NULL`` 
-in the result. This error occurs when you query a collection in which documents
-contain an array field that can be ``NULL``, and the same array contains 
+in the result. This error occurs when you query a collection that
+contains an array field that can be ``NULL``, and the same array contains 
 an additional field that can also be ``NULL``. A workaround for this error is to 
 create a view by including the ``nonnullsched`` parameter with the ``createView`` method.
 
