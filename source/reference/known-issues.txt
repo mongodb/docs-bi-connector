@@ -68,3 +68,21 @@ Given the exact same |sql| query, the |bi-short| does not return
       GROUP BY class;
       
       Empty set (0.00 sec)
+
+
+Mapping Maybe-nulls at Different Object Depths
+----------------------------------------------
+A known mapping error occurs when an array field is sometimes ``NULL`` 
+and a field within that array field is also sometimes ``NULL``. A workaround
+for this error is to include the ``nonnullsched`` parameter.
+
+.. example::
+
+   For a collection named ``nextDeparture`` with an array field that is 
+   sometimes ``NULL`` called ``response.sechedule``, we can create the 
+   following view:
+
+   .. code-block:: javascript
+
+      db.createView('nonullsched', '"nextDeparture"',  [{'$match': {'response.schedule': {'$type': 'array'}}}])
+
