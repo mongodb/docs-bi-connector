@@ -75,7 +75,7 @@ Mapping Potentially Null Values at Different Object Depths
 A known mapping error can occur that causes all returned values to be ``NULL`` 
 in the result. This error occurs when you query a collection in which documents
 contain an array field that can be ``NULL`` and that array contains a 
-field that can also be ``NULL``. A workaround for this error is to 
+an additional field that can also be ``NULL``. A workaround for this error is to 
 include the ``nonnullsched`` parameter with the ``createView`` method.
 
 .. example::
