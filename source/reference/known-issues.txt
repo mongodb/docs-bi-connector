@@ -91,4 +91,3 @@ is not ``NULL``.
    .. code-block:: javascript
 
       db.createView('nonullsched', '"nextDeparture"',  [{'$match': {'response.schedule': {'$type': 'array'}}}])
-
