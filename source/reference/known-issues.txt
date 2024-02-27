@@ -70,14 +70,17 @@ Given the exact same |sql| query, the |bi-short| does not return
       Empty set (0.00 sec)
 
 
-BI Connector Returns ``NULL`` Values due to Mapping Error
+BI Connector Returns ``NULL`` Values Due to Mapping Error
 ----------------------------------------------------------
 
-A known mapping error can occur that causes all returned values to be ``NULL`` 
-in the result. This error occurs when you query a collection that
+A known mapping error can occur that causes |bi-short| to return all ``NULL`` 
+values. This error occurs when you query a collection that
 contains an array field that can be ``NULL``, and the same array contains 
 an additional field that can also be ``NULL``. A workaround for this error is to 
-create a view by including the ``nonnullsched`` parameter with the ``createView`` method.
+create a view by including the ``nonnullsched`` parameter with the 
+``createView`` method, which will only return documents in which the array 
+is not ``NULL``.
+
 
 .. example::
 
