@@ -77,9 +77,8 @@ A known mapping error can occur that causes |bi-short| to return all ``NULL``
 values. This error occurs when you query a collection that
 contains an array field that can be ``NULL``, and the same array contains 
 an additional field that can also be ``NULL``. A workaround for this error is to 
-create a view by including the ``nonnullsched`` parameter with the 
-``createView`` method, which will only return documents in which the array 
-is not ``NULL``.
+create a view with the ``$match`` filter that only returns documents in which 
+the field ``$type`` is ``array`` with the ``createView`` method.
 
 
 .. example::
