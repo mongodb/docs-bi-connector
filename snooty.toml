@@ -31,7 +31,7 @@ om-full = "MongoDB Ops Manager"
 
 [substitutions]
 ent-build = "MongoDB Enterprise"
-hardlink = "https://www.mongodb.com/docs/bi-connector/current/"
+hardlink = "https://www.mongodb.com/docs/bi-connector/current/" 
 adc = ":abbr:`ADC (Active Directory Controller)`"
 bi-atlas-short-link = ":doc:`BI Connector for Atlas </atlas-bi-connector>`"
 bi-atlas-short = "BI Connector for Atlas"
