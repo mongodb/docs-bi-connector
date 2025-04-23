@@ -31,7 +31,7 @@ om-full = "MongoDB Ops Manager"
 
 [substitutions]
 ent-build = "MongoDB Enterprise"
-hardlink = "https://www.mongodb.com/docs/bi-connector/current/" 
+hardlink = "https://www.mongodb.com/docs/bi-connector/"
 adc = ":abbr:`ADC (Active Directory Controller)`"
 bi-atlas-short-link = ":doc:`BI Connector for Atlas </atlas-bi-connector>`"
 bi-atlas-short = "BI Connector for Atlas"
@@ -75,5 +75,5 @@ mongo = ":binary:`~bin.mongo`"
 targets = ["*"]
 variant = "info"
 value = """\
-    This version of the documentation is archived and no longer supported. View the `current documentation <{+hardlink+}>`__ instead.\
+    This version of the documentation is archived and no longer supported. View the `current documentation <https://www.mongodb.com/docs/bi-connector/current/>`__ instead.\
     """
