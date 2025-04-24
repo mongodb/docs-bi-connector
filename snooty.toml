@@ -75,5 +75,5 @@ mongo = ":binary:`~bin.mongo`"
 targets = ["*"]
 variant = "info"
 value = """\
-    This version of the documentation is archived and no longer supported. View the `current documentation <{+hardlink+}>`__ instead.\
+    This version of the documentation is archived and no longer supported. View the `current documentation <https://www.mongodb.com/docs/bi-connector/current/>`_ instead.\
     """
